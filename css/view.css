@@ -764,7 +764,8 @@ form.appnitro
 
 .header-image {
 	text-align: center;
-	padding-bottom: 15px;
+	padding-bottom: 10px;
+	padding-top: 20px;
 }
 /*** Password ****/
 #main_body ul.password{
@@ -2631,4 +2632,8 @@ div.mf_progress_value span{
 }
 .scrollToTop:hover{
 	text-decoration:none;
+}
+
+#reset_link {
+	padding:4px 5px 15px 9px;
 }

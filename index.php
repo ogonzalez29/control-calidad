@@ -1,15 +1,5 @@
 <?php
-
-	$hostname = "localhost";
-	$username = "root";
-	$password = "";
-	$databaseName = "servital_servita3";
-
-	$connect = mysqli_connect($hostname, $username, $password, $databaseName);
-	$query = "SELECT * FROM `cc_vehiclemake`";
-
-	$result1 = mysqli_query($connect, $query);
-
+require 'ddmenu_config.php'; //Database connection
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -25,13 +15,41 @@
 	<script type="text/javascript" src="js/calendar.js"></script>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui/ui/jquery.effects.core.js"></script>
+	<script language=JavaScript>
+		function reload(form)
+		{
+		var val=form.cat.options[form.cat.options.selectedIndex].value;
+		self.location='index.php?cat=' + val ;
+		}
+
+	</script>												
 
 	<!--[if lt IE 9]><script src="js/signaturepad/flashcanvas.js"></script><![endif]-->
 	<script type="text/javascript" src="js/signaturepad/jquery.signaturepad.min.js"></script>
 	<script type="text/javascript" src="js/signaturepad/json2.min.js"></script>
 </head>
 <body id="main_body" >
-	
+<?php
+
+@$cat=$_GET['cat']; // Use this line or below line if register_global is off
+if(strlen($cat) > 0 and !is_numeric($cat)){ // to check if $cat is numeric data or not. 
+echo "Data Error";
+exit;
+}
+
+///////// Getting the data from Mysql table for first list box//////////
+$quer2="SELECT DISTINCT make,make_id FROM cc_vehiclemake order by make"; 
+///////////// End of query for first list box////////////
+
+/////// for second drop down list we will check if category is selected else we will display all the subcategory///// 
+if(isset($cat) and strlen($cat) > 0){
+$quer="SELECT DISTINCT type FROM cc_vehiclemake_line where make_id=$cat order by type"; 
+}else{$quer="SELECT DISTINCT type FROM cc_vehiclemake_line order by type"; } 
+////////// end of query for second subcategory drop down list box ///////////////////////////
+
+echo "<form method=post name=f1 action='print_cc.php'>";
+/// Add your form processing page address to action in above line. Example  action=dd-check.php////
+?>
 	<img id="top" src="img/top.png" alt="">
 	<div id="form_container">
 		<h1><a>Certificado de Control Calidad</a></h1>
@@ -107,27 +125,28 @@
 		<li id="li_15" >
 			<label class="description" for="element_15">Marca </label>
 		<div>
-		<select class="element select medium" id="element_15" name="element_15"> 
-			<!-- <option value="" selected="selected"></option>
-			<option value="1" >Renault</option>
-			<option value="2" >Chevrolet</option>
-			<option value="3" >Volkswagen</option> -->
-			<?php while ($row1 = mysqli_fetch_array($result1)):;?>
-				<option><?php echo $row1[0];?></option>
-			<?php endwhile;?>	
-		</select>
+		 	<?php
+			echo "<select class='element select medium' id='element_15' name='cat' onchange=\"reload(this.form)\">
+			<option value=''></option>";
+			foreach ($dbo->query($quer2) as $noticia2){ 
+				if($noticia2['make_id']==@$cat){
+					echo "<option selected value='$noticia2[make_id]'>$noticia2[make]</option>"."<BR>";}
+				else {
+					echo "<option value='$noticia2[make_id]'>$noticia2[make]</option>";}}
+			echo "</select>";
+			?>
 		</div> 
 		</li>		
 		<li id="li_16" >
 			<label class="description" for="element_16">Línea </label>
 		<div>
-		<select class="element select medium" id="element_16" name="element_16"> 
-			<!-- <option value="" selected="selected"></option>
-			<option value="1" >Clio</option>
-			<option value="2" >Megane</option>
-			<option value="3" >Sandero</option> -->
-			
-		</select>
+		<?php
+			echo "<select class='element select medium' id='element_16' name='subcat'>
+			<option value=''></option>";
+			foreach ($dbo->query($quer) as $noticia) {
+				echo "<option value='$noticia[make_id]'>$noticia[type]</option>";}
+			echo "</select>"
+			?>
 		</div> 
 		</li>		<li id="li_4" >
 		<label class="description" for="element_4">Modelo </label>
@@ -528,7 +547,7 @@
 	          <canvas class="mf_canvas_pad" width="309" height="130"></canvas>
 	          <input type="hidden" name="element_7" id="element_7">
 	        </div>
-	        <a class="mf_sigpad_clear element_7_clear" href="#">Clear</a>
+	        <a class="mf_sigpad_clear element_7_clear" href="#">Borrar</a>
 	        <script type="text/javascript">
 				$(function(){
 					var sigpad_options_7 = {
@@ -555,6 +574,10 @@
 				<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
 		</li>
 			</ul>
+		<br>
+		<div id="reset_link">
+			<a href="index.php">Reiniciar otro certificado</a>
+		</div>	
 		</form>	
 		<div id="footer">
 			Copyright &copy; 2016 <a href="http://www.servitalleres.com" target="_blank">Servitalleres</a>
