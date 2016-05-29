@@ -2637,3 +2637,11 @@ div.mf_progress_value span{
 #reset_link {
 	padding:4px 5px 15px 9px;
 }
+
+.mockup-overlay{
+	top: 0;
+	position: absolute;
+ 	z-index: -1;
+	opacity: 0.4;
+	padding: 25px 25px 25px 25px;
+}
