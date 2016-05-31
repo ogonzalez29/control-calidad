@@ -31,7 +31,9 @@ h3{
 	width: 100%;
 }
 
-.row .row-1 .row-2{
+.row,
+.row-1,
+.row-2{
     width: 100%;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -94,7 +96,7 @@ h3{
 }
 
 .col-3 {
-    width: 24.4%;
+    width: 24.3%;
     display: -webkit-inline-box;
 }
 
@@ -161,4 +163,17 @@ h3{
 .col-12 h1{
 	margin-top: 30px;
 	margin-bottom: 20px;
+}
+
+.col-12 h2{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.col-6 td{
+	text-align: center;
+}
+
+.col-6 td.first_col{
+	text-align: left;
 }

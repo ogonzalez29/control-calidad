@@ -217,7 +217,7 @@ echo "<form method=post name=f1 action='print_cc.php'>";
 						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
 			        </tr>
 			            </tr><tr class="alt" id="mr_3">
-			        	<td class="first_col">ALimpiabrisas (eficacia)</td>
+			        	<td class="first_col">Limpiabrisas (eficacia)</td>
 			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
 						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
 						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
@@ -507,7 +507,105 @@ echo "<form method=post name=f1 action='print_cc.php'>";
 			        </tr>
 			    </tbody>
 			</table>
-			</li>		
+			</li>
+			<li class="section_break">
+			<p></p>
+			</li>
+			<li id="li_3"  class="matrix">
+			<table>
+					<caption>
+							Desgaste de las llantas (%): 
+					</caption>
+					   <thead>
+					    	<tr>
+					        	<th style="width: 20%" scope="col"><span style="display: none">Desgaste de las llantas (%):</span></th>
+					            <th id="mc_3_1" style="width: 15%" scope="col">25</th>
+								<th id="mc_3_2" style="width: 15%" scope="col">50</th>
+								<th id="mc_3_3" style="width: 15%" scope="col">75</th>
+								<th id="mc_3_4" style="width: 15%" scope="col">100</th>
+					        </tr>
+					    </thead>
+					    <tbody>
+					    	<tr class="alt" id="mr_3">
+					        	<td class="first_col">Delantera izquierda</td>
+					            <td><label style="display: none" for="element_3_1">25</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
+								<td><label style="display: none" for="element_3_2">50</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
+								<td><label style="display: none" for="element_3_3">75</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+								<td><label style="display: none" for="element_3_3">100</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+					        </tr>
+					        <tr class="alt" id="mr_3">
+					        	<td class="first_col">Delantera derecha</td>
+					            <td><label style="display: none" for="element_3_1">25</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
+								<td><label style="display: none" for="element_3_2">50</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
+								<td><label style="display: none" for="element_3_3">75</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+								<td><label style="display: none" for="element_3_3">100</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+					        </tr>
+					        <tr class="alt" id="mr_3">
+					        	<td class="first_col">Trasera izquierda</td>
+					            <td><label style="display: none" for="element_3_1">25</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
+								<td><label style="display: none" for="element_3_2">50</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
+								<td><label style="display: none" for="element_3_3">75</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+								<td><label style="display: none" for="element_3_3">100</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+					        </tr>
+					        <tr class="alt" id="mr_3">
+					        	<td class="first_col">Trasera derecha</td>
+					            <td><label style="display: none" for="element_3_1">25</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
+								<td><label style="display: none" for="element_3_2">50</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
+								<td><label style="display: none" for="element_3_3">75</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+								<td><label style="display: none" for="element_3_3">100</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+					        </tr>
+					    </tbody>
+				</table>
+				</li>
+				<li class="section_break">
+				<p></p>
+				</li>						
+				<li id="li_3"  class="matrix">
+				<table>
+					<caption>
+							Presión de las llantas (psi): 
+					</caption>
+					   <thead>
+					    	<tr>
+					        	<th style="width: 20%" scope="col"><span style="display: none">Presión de las llantas (psi):</span></th>
+					            <th id="mc_3_1" style="width: 15%" scope="col">30</th>
+								<th id="mc_3_2" style="width: 15%" scope="col">32</th>
+								<th id="mc_3_3" style="width: 15%" scope="col">34</th>
+								<th id="mc_3_4" style="width: 15%" scope="col">36</th>
+					        </tr>
+					    </thead>
+					    <tbody>
+					    	<tr class="alt" id="mr_3">
+					        	<td class="first_col">Delantera izquierda</td>
+					            <td><label style="display: none" for="element_3_1">30</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
+								<td><label style="display: none" for="element_3_2">32</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
+								<td><label style="display: none" for="element_3_3">34</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+								<td><label style="display: none" for="element_3_3">36</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+					        </tr>
+					        <tr class="alt" id="mr_3">
+					        	<td class="first_col">Delantera derecha</td>
+					            <td><label style="display: none" for="element_3_1">30</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
+								<td><label style="display: none" for="element_3_2">32</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
+								<td><label style="display: none" for="element_3_3">34</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+								<td><label style="display: none" for="element_3_3">36</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+					        </tr>
+					        <tr class="alt" id="mr_3">
+					        	<td class="first_col">Trasera izquierda</td>
+					            <td><label style="display: none" for="element_3_1">30</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
+								<td><label style="display: none" for="element_3_2">32</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
+								<td><label style="display: none" for="element_3_3">34</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+								<td><label style="display: none" for="element_3_3">36</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+					        </tr>
+					        <tr class="alt" id="mr_3">
+					        	<td class="first_col">Trasera derecha</td>
+					            <td><label style="display: none" for="element_3_1">30</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
+								<td><label style="display: none" for="element_3_2">32</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
+								<td><label style="display: none" for="element_3_3">34</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+								<td><label style="display: none" for="element_3_3">36</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+					        </tr>
+					    </tbody>
+				</table>
+				</li>		
 			<li class="section_break">
 			<h3>Semáforo</h3>
 			<p></p>
