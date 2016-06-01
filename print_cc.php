@@ -11,6 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="css/view1.css">
 		<link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css">
+		<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
 	</head>
 	<body>
 	<div class="grid">
@@ -507,7 +508,81 @@
 				</table>
 			</div>
 		</div>
-	</div>
+		<div class="row">
+			<div style="text-align: center;" class="col-12">
+				<h3>IMPORTANTE: Los controles realizados son únicamente sobre los elementos visibles del vehículo y no implican desmontaje alguno, por lo tanto el taller no asume responsabilidad en caso de la no detección de una falla no aparente.</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div style="text-align: center;" class="col-12">
+				<h3>Llamamos la atención sobre los siguientes trabajos pendientes de realizar:</h3>
+			</div>
+		</div>
+		<div class ="row">
+			<div class="col-3">
+				<div style="text-align: center;" class="col-12">
+					<h2>Semáforo</h2>
+					<svg height="120" width="120">
+						<circle cx="50%" cy="50%" r="50" stroke="red" stroke-width="3" fill="red" />
+						<text x="50%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="2px" dy=".3em">Inmediato</text>
+					</svg>
+					<svg height="120" width="120">
+						<circle cx="50%" cy="50%" r="50" stroke="yellow" stroke-width="3" fill="yellow" />
+						<text x="50%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="2px" dy=".3em">De ser posible</text>
+					</svg>
+					<svg height="120" width="120">
+						<circle cx="50%" cy="50%" r="50" stroke="green" stroke-width="3" fill="green" />
+						<text x="50%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="2px" dy=".3em">A prever</text>
+					</svg>
+					<h2>Observaciones:</h2>
+
+				</div>
+			</div>
+			<div class="col-9">
+				<div style="text-align:center" class="col-12">
+					<h2>Comentarios</h2>
+					<div class="col-12">
+						<h3></h3>
+					</div>
+					<div class="col-12">
+						<h3></h3>
+					</div>
+					<div class="col-12">
+						<h3></h3>
+					</div>
+					<div class="col-12">
+						<h3></h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="col-6">
+				<div class="col-12">
+					<h2>Conformidad factura/trabajos:</h2>
+					<div class="col-12">
+						<h1></h1>
+					</div>
+					<div class="col-12">
+						<h3>Firma y sello del taller</h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="col-6">
+					<h2>Próximo mantenimiento a los:</h2>
+				</div>
+				<div style="float:right"; class="col-6">
+					<h2>5.000 kms</h2>
+				</div>
+				<div class="col-12">
+					<h1></h1>
+				</div>
+				<div class="col-12">
+					<h3>Firma del cliente</h3>
+				</div>
+			</div>
+		</div>
 		<!-- <?Php
 			$cat=$_POST['cat'];
 			$subcat=$_POST['subcat'];
