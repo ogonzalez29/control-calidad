@@ -9,7 +9,7 @@
 	<head>
 		<title>Certificado de Control Calidad</title>
 		<link rel="stylesheet" type="text/css" href="css/view1.css">
-		<link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+		<!-- <link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'> -->
 		<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css">
 		<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
 	</head>
@@ -17,8 +17,8 @@
 	<div class="grid">
 		<div class="row">
 			<div class="col-12">
-				<div class="col-12">
-					<img src="http://placehold.it/400x70">
+				<div style="padding: 5px 2px 2px 2px;" class="col-12">
+					<img src="img/logo.png">
 				</div>
 				<div style="text-align: center;" class="col-12">
 					<h1>CERTIFICADO DE CONTROL CALIDAD</h1>
@@ -42,7 +42,7 @@
 				<div class="col-06">
 					<h3>Linea:</h3>
 				</div>
-				<div class="col-2">
+				<div class="col-1">
 					<h3>Clio</h3>
 				</div>
 				<div class="col-08">
@@ -64,19 +64,19 @@
 				<div class="col-1">
 					<h3>Fecha:</h3>	
 				</div>
-				<div class="col-3">
+				<div class="col-1">
 					<h3>28/05/2016</h3>
 				</div>
-				<div class="col-2">
+				<div class="col-3">
 					<h3>Orden de reparacion</h3>
 				</div>
 				<div class="col-1">
 					<h3>4156</h3>
 				</div>
-				<div class="col-2">
+				<div class="col-3">
 					<h3>Asesor de servicio</h3>	
 				</div>
-				<div class="col-3">
+				<div class="col-2">
 					<!-- <h3><?php 
 						$cat=$_POST['cat'];
 						echo "$cat"; ?></h3> -->
@@ -97,7 +97,7 @@
 					</caption>
 					   <thead>
 					    	<tr>
-					        	<th style="width: 30%" scope="col"><span style="display: none">Instrumentos y equipamento:</span></th>
+					        	<th style="width: 45%" scope="col"><span style="display: none">Instrumentos y equipamento:</span></th>
 					            <th id="mc_3_1" style="width: 15%" scope="col">B</th>
 								<th id="mc_3_2" style="width: 15%" scope="col">M</th>
 								<th id="mc_3_3" style="width: 15%" scope="col">N/A</th>
@@ -208,12 +208,12 @@
 					    </tbody>
 					</table>
 					<table>
-					<caption>
+					<caption style="height:22px;">
 							Alumbrado exterior: 
 					</caption>
 					   <thead>
 					    	<tr>
-					        	<th style="width: 20%" scope="col"><span style="display: none">Alumbrado exterior:</span></th>
+					        	<th style="width: 45%" scope="col"><span style="display: none">Alumbrado exterior:</span></th>
 					            <th id="mc_3_1" style="width: 15%" scope="col">B</th>
 								<th id="mc_3_2" style="width: 15%" scope="col">M</th>
 								<th id="mc_3_3" style="width: 15%" scope="col">N/A</th>
@@ -258,12 +258,12 @@
 					    </tbody>
 				</table>
 				<table>
-				<caption>
+				<caption style="height:22px;">
 						Presentación del vehículo: 
 				</caption>
 				   <thead>
 				    	<tr>
-				        	<th style="width: 30%" scope="col"><span style="display: none">Presentación del vehículo:</span></th>
+				        	<th style="width: 45%" scope="col"><span style="display: none">Presentación del vehículo:</span></th>
 				            <th id="mc_3_1" style="width: 15%" scope="col">B</th>
 							<th id="mc_3_2" style="width: 15%" scope="col">M</th>
 							<th id="mc_3_3" style="width: 15%" scope="col">N/A</th>
@@ -298,7 +298,7 @@
 					</caption>
 					   <thead>
 					    	<tr>
-					        	<th style="width: 20%" scope="col"><span style="display: none">Desgaste de las llantas (%):</span></th>
+					        	<th style="width: 30%" scope="col"><span style="display: none">Desgaste de las llantas (%):</span></th>
 					            <th id="mc_3_1" style="width: 15%" scope="col">25</th>
 								<th id="mc_3_2" style="width: 15%" scope="col">50</th>
 								<th id="mc_3_3" style="width: 15%" scope="col">75</th>
@@ -342,7 +342,7 @@
 					</caption>
 					   <thead>
 					    	<tr>
-					        	<th style="width: 20%" scope="col"><span style="display: none">Presión de las llantas (psi):</span></th>
+					        	<th style="width: 30%" scope="col"><span style="display: none">Presión de las llantas (psi):</span></th>
 					            <th id="mc_3_1" style="width: 15%" scope="col">30</th>
 								<th id="mc_3_2" style="width: 15%" scope="col">32</th>
 								<th id="mc_3_3" style="width: 15%" scope="col">34</th>
@@ -386,10 +386,10 @@
 				</caption>
 				   <thead>
 				    	<tr>
-				        	<th style="width: 30%" scope="col"><span style="display: none">Control debajo del capot:</span></th>
-				            <th id="mc_3_1" style="width: 15%" scope="col">B</th>
-							<th id="mc_3_2" style="width: 15%" scope="col">M</th>
-							<th id="mc_3_3" style="width: 15%" scope="col">N/A</th>
+				        	<th style="width: 55%" scope="col"><span style="display: none">Control debajo del capot:</span></th>
+				            <th id="mc_3_1" style="width: 12%" scope="col">B</th>
+							<th id="mc_3_2" style="width: 12%" scope="col">M</th>
+							<th id="mc_3_3" style="width: 12%" scope="col">N/A</th>
 				        </tr>
 				    </thead>
 				    <tbody>
@@ -455,10 +455,10 @@
 				</caption>
 				   <thead>
 				    	<tr>
-				        	<th style="width: 40%" scope="col"><span style="display: none">Prueba de ruta:</span></th>
-				            <th id="mc_3_1" style="width: 15%" scope="col">B</th>
-							<th id="mc_3_2" style="width: 15%" scope="col">M</th>
-							<th id="mc_3_3" style="width: 15%" scope="col">N/A</th>
+				        	<th style="width: 55%" scope="col"><span style="display: none">Prueba de ruta:</span></th>
+				            <th id="mc_3_1" style="width: 12%" scope="col">B</th>
+							<th id="mc_3_2" style="width: 12%" scope="col">M</th>
+							<th id="mc_3_3" style="width: 12%" scope="col">N/A</th>
 				        </tr>
 				    </thead>
 				    <tbody>
@@ -509,7 +509,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div style="text-align: center;" class="col-12">
+			<div style="text-align: center; border: 1px solid black;" class="col-12">
 				<h3>IMPORTANTE: Los controles realizados son únicamente sobre los elementos visibles del vehículo y no implican desmontaje alguno, por lo tanto el taller no asume responsabilidad en caso de la no detección de una falla no aparente.</h3>
 			</div>
 		</div>
@@ -518,21 +518,21 @@
 				<h3>Llamamos la atención sobre los siguientes trabajos pendientes de realizar:</h3>
 			</div>
 		</div>
-		<div class ="row">
+		<div style="border-bottom: 1px solid black;" class ="row">
 			<div class="col-3">
 				<div style="text-align: center;" class="col-12">
 					<h2>Semáforo</h2>
 					<svg height="120" width="120">
 						<circle cx="50%" cy="50%" r="50" stroke="red" stroke-width="3" fill="red" />
-						<text x="50%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="2px" dy=".3em">Inmediato</text>
+						<text x="50%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="0.5px" dy=".3em">Inmediato</text>
 					</svg>
 					<svg height="120" width="120">
 						<circle cx="50%" cy="50%" r="50" stroke="yellow" stroke-width="3" fill="yellow" />
-						<text x="50%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="2px" dy=".3em">De ser posible</text>
+						<text x="50%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="0.5px" dy=".3em">De ser posible</text>
 					</svg>
 					<svg height="120" width="120">
 						<circle cx="50%" cy="50%" r="50" stroke="green" stroke-width="3" fill="green" />
-						<text x="50%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="2px" dy=".3em">A prever</text>
+						<text x="50%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="0.5px" dy=".3em">A prever</text>
 					</svg>
 					<h2>Observaciones:</h2>
 
@@ -541,13 +541,13 @@
 			<div class="col-9">
 				<div style="text-align:center" class="col-12">
 					<h2>Comentarios</h2>
-					<div class="col-12">
+					<div style="border-bottom: 1px solid black;" class="col-12">
 						<h3></h3>
 					</div>
-					<div class="col-12">
+					<div style="border-bottom: 1px solid black;" class="col-12">
 						<h3></h3>
 					</div>
-					<div class="col-12">
+					<div style="border-bottom: 1px solid black;" class="col-12">
 						<h3></h3>
 					</div>
 					<div class="col-12">
@@ -569,14 +569,14 @@
 				</div>
 			</div>
 			<div class="col-6">
-				<div class="col-6">
+				<div class="col-8">
 					<h2>Próximo mantenimiento a los:</h2>
 				</div>
-				<div style="float:right"; class="col-6">
+				<div style="float:right; text-align:center;" class="col-4">
 					<h2>5.000 kms</h2>
 				</div>
 				<div class="col-12">
-					<h1></h1>
+					<h1 style="margin-top: 5px;"></h1>
 				</div>
 				<div class="col-12">
 					<h3>Firma del cliente</h3>
@@ -597,8 +597,8 @@
 		<!-- <div id="footer">
 					Copyright &copy; 2016 <a href="http://www.servitalleres.com" target="_blank">Servitalleres</a>
 		</div> -->
-		<div class="mockup-overlay">
+		<!-- <div class="mockup-overlay">
 			<img src="img/certificado_control_calidad.png">
-		</div> 
+		</div> --> 
 	</body>
 </html>

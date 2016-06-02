@@ -1,6 +1,13 @@
-*{
-	border: 1px solid red !important;
+html,body{
+    height:297mm;
+    width:210mm;
+    margin: 0 auto;
 }
+
+
+/**{
+	border: 1px solid red !important;
+}*/
 
 * {
     -webkit-box-sizing: border-box;
@@ -14,9 +21,15 @@
 }
 
 h3{
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 0.9em;
 }
+
+caption{
+	border: 1px solid black;
+}
+
 .mockup-overlay{
 	top: 0;
 	position: absolute;
@@ -27,8 +40,9 @@ h3{
 
 .grid{
 	margin: 0 auto;
-	max-width: 1280px;
+	/*max-width: 1280px;*/
 	width: 100%;
+	/*box-shadow: 0 0 8px rgba(0,0,0,0.2);*/
 }
 
 .row,
@@ -164,16 +178,19 @@ h3{
 .col-12 h1{
 	margin-top: 30px;
 	margin-bottom: 20px;
+	font-size: 1.4em;
 }
 
 .col-12 h2,
 .col-6 h2{
 	margin-top: 5px;
 	margin-bottom: 5px;
+	font-size: 1em;
 }
 
 .col-6 td{
 	text-align: center;
+	font-size: 0.8em;
 }
 
 .col-6 td.first_col{
@@ -181,7 +198,7 @@ h3{
 }
 
 .col-3 svg{
-	margin: 12px 10px 10px 10px;
+	margin: 5px 10px 7px 10px;
 	width: 80%
 }
 
@@ -200,7 +217,7 @@ h3{
 	margin-top: 8px;
 }
 
-.footer .col-6{
+.footer .col-8{
 	display: inline-block;
 }
 
@@ -211,4 +228,21 @@ h3{
 
 .footer .col-12 h3{
 	text-align: center;
+}
+
+.footer .col-6 .col-12 h1{
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	width: 100%;
+	margin-top: 10px;
+}
+
+table, th, td {
+   border: 1px solid black;
+}
+
+table {
+    /*border-collapse: collapse;*/
+    width: 100%;
 }
