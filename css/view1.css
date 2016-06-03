@@ -38,6 +38,10 @@ caption{
 	padding: 25px 25px 25px 25px;
 }
 
+.footer{
+	border:1px solid black;
+}
+
 .grid{
 	margin: 0 auto;
 	/*max-width: 1280px;*/
@@ -51,8 +55,76 @@ caption{
 .footer{
     width: 100%;
     margin-bottom: 10px;
-    margin-top: 10px;
     display: flex;
+}
+
+.row,
+.footer{
+	padding-top: 10px;
+}
+
+.row-3{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.row-1 .col-12 h3,
+.row-2 .col-12 h3{
+	font-size: 0.9em;
+	font-weight: 100;
+	width: 100%;
+	text-align: center;
+}
+
+.row-1,
+.row-2,
+.row-3,
+.row-5,
+.row-6,
+.row-7{
+	margin: 0;
+	border: 1px solid black;
+}
+
+.row-4,
+.row-7{
+	width: 100%;
+    display: flex;
+}
+
+.row-5{
+	padding: 16px 0 16px 0;
+}
+
+.row-7 .col-9{
+	margin-right: 25px;
+}
+
+.row-1 .col-12 .col-09,
+.row-1 .col-12 .col-1_6,
+.row-1 .col-12 .col-3{
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.row-1 .col-12 .col-09{
+	border-right: 1px solid black; 
+}
+
+.row-1 .col-12 .col-08{
+	border-left: 1px solid black; 
+}
+
+.row-2 .col-12 .col-09,
+.row-2 .col-12 .col-1,
+.row-2 .col-12 .col-1_5,
+.row-2 .col-12 .col-2{
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.row-2 .col-12 .col-1_4{
+	border-left: 1px solid black;
 }
 
 .col-01{
@@ -92,7 +164,7 @@ caption{
 }
 
 .col-09{
-	width: 7.5%;
+	width: 7.6%;
 	display: -webkit-inline-box;
 }
 
@@ -101,13 +173,30 @@ caption{
     display: -webkit-inline-box;
 }
 
-.col-15{
-	width: 
+.col-1_4{
+	width: 10%;
+	display: -webkit-inline-box;
+}
+
+.col-1_5{
+	width: 10.8%;
+	display:-webkit-inline-box
+}
+
+.col-1_6{
+	width: 15.7%;
+	display: -webkit-inline-box;
+	text-align: center;
 }
 
 .col-2 {
     width: 16.66%;
     display: -webkit-inline-box;
+}
+
+.col-2_2{
+	width: 18%;
+	display: -webkit-inline-box;
 }
 
 .col-3 {
@@ -186,11 +275,12 @@ caption{
 	margin-top: 5px;
 	margin-bottom: 5px;
 	font-size: 1em;
+	text-align: center;
+	width: 100%;
 }
 
 .col-6 td{
 	text-align: center;
-	font-size: 0.8em;
 }
 
 .col-6 td.first_col{
@@ -198,8 +288,8 @@ caption{
 }
 
 .col-3 svg{
-	margin: 5px 10px 7px 10px;
-	width: 80%
+	margin: 5px 10px 7px 0;
+	width: 100%
 }
 
 .col-9 h2{
@@ -208,8 +298,10 @@ caption{
 }
 
 .col-9 .col-12 .col-12 h3{
-	height: 120px;
+	height: 105px;
 	text-align: left;
+	font-weight: 100;
+	margin-top: 20px;
 }
 
 .col-3 .col-12 h2,
@@ -231,8 +323,6 @@ caption{
 }
 
 .footer .col-6 .col-12 h1{
-	border-left: 1px solid black;
-	border-right: 1px solid black;
 	border-bottom: 1px solid black;
 	width: 100%;
 	margin-top: 10px;
@@ -240,6 +330,8 @@ caption{
 
 table, th, td {
    border: 1px solid black;
+   font-size: 0.9em;
+   font-weight:100;
 }
 
 table {

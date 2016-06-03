@@ -3,7 +3,7 @@
 
 ?>
 
-<!doctype html public "-//w3c//dtd html 3.2//en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html>
 	<head>
@@ -30,51 +30,45 @@
 				<div class="col-08">
 					<h3>Cliente:</h3>	
 				</div>
-				<div class="col-2">
+				<div class="col-3">
 					<h3>Daniel Gonzalez</h3>
 				</div>
 				<div class="col-07">
 					<h3>Marca:</h3>
 				</div>
-				<div class="col-2">
+				<div class="col-1_6">
 					<h3>Renault</h3>
 				</div>
-				<div class="col-06">
+				<div class="col-07">
 					<h3>Linea:</h3>
 				</div>
-				<div class="col-1">
+				<div class="col-3">
 					<h3>Clio</h3>
 				</div>
-				<div class="col-08">
-					<h3>Placas:</h3>
+				<div class="col-07">
+					<h3>Placa:</h3>
 				</div>
-				<div class="col-1">
+				<div class="col-09">
 					<h3>CVL685</h3>
-				</div>
-				<div class ="col-09">
-					<h3>Kilometraje:</h3>
-				</div>
-				<div class ="col-09">
-					<h3>78000</h3>
 				</div>
 			</div>
 		</div>
 		<div class="row-2">
 			<div class="col-12">
-				<div class="col-1">
-					<h3>Fecha:</h3>	
+				<div class ="col-1_4">
+					<h3>Kilometraje:</h3>
 				</div>
-				<div class="col-1">
-					<h3>28/05/2016</h3>
-				</div>
-				<div class="col-3">
-					<h3>Orden de reparacion</h3>
+				<div class ="col-09">
+					<h3>78000</h3>
+				</div>	
+				<div class="col-2_2">
+					<h3>Orden de reparación:</h3>
 				</div>
 				<div class="col-1">
 					<h3>4156</h3>
 				</div>
-				<div class="col-3">
-					<h3>Asesor de servicio</h3>	
+				<div class="col-2_2">
+					<h3>Asesor de servicio:</h3>	
 				</div>
 				<div class="col-2">
 					<!-- <h3><?php 
@@ -82,14 +76,20 @@
 						echo "$cat"; ?></h3> -->
 					<h3>Daniel Gonzalez</h3>
 				</div>
+				<div class="col-08">
+					<h3>Fecha:</h3>	
+				</div>
+				<div class="col-1_5">
+					<h3>28/05/2016</h3>
+				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row-3">
 			<div style="text-align: center;" class="col-12">
 				<h2>PUNTOS DE CONTROL</h2>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row-4">
 			<div class="col-6">
 				<table style="float:left">
 					<caption>
@@ -208,7 +208,7 @@
 					    </tbody>
 					</table>
 					<table>
-					<caption style="height:22px;">
+					<caption>
 							Alumbrado exterior: 
 					</caption>
 					   <thead>
@@ -258,7 +258,7 @@
 					    </tbody>
 				</table>
 				<table>
-				<caption style="height:22px;">
+				<caption>
 						Presentación del vehículo: 
 				</caption>
 				   <thead>
@@ -450,7 +450,7 @@
 				    </tbody>
 				</table>
 				<table>
-				<caption>
+				<caption style="height:19px;">
 						Prueba de ruta: 
 				</caption>
 				   <thead>
@@ -508,33 +508,33 @@
 				</table>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row-5">
 			<div style="text-align: center; border: 1px solid black;" class="col-12">
 				<h3>IMPORTANTE: Los controles realizados son únicamente sobre los elementos visibles del vehículo y no implican desmontaje alguno, por lo tanto el taller no asume responsabilidad en caso de la no detección de una falla no aparente.</h3>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row-6">
 			<div style="text-align: center;" class="col-12">
 				<h3>Llamamos la atención sobre los siguientes trabajos pendientes de realizar:</h3>
 			</div>
 		</div>
-		<div style="border-bottom: 1px solid black;" class ="row">
+		<div class ="row-7">
 			<div class="col-3">
-				<div style="text-align: center;" class="col-12">
-					<h2>Semáforo</h2>
+				<div class="col-12">
+					<h2 style="padding-left: 42px;">Semáforo</h2>
 					<svg height="120" width="120">
-						<circle cx="50%" cy="50%" r="50" stroke="red" stroke-width="3" fill="red" />
-						<text x="50%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="0.5px" dy=".3em">Inmediato</text>
+						<circle cx="40%" cy="50%" r="50" stroke="red" stroke-width="3" fill="red" />
+						<text x="40%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="0.5px" dy=".3em">Inmediato</text>
 					</svg>
 					<svg height="120" width="120">
-						<circle cx="50%" cy="50%" r="50" stroke="yellow" stroke-width="3" fill="yellow" />
-						<text x="50%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="0.5px" dy=".3em">De ser posible</text>
+						<circle cx="40%" cy="50%" r="50" stroke="yellow" stroke-width="3" fill="yellow" />
+						<text x="40%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="0.5px" dy=".3em">De ser posible</text>
 					</svg>
 					<svg height="120" width="120">
-						<circle cx="50%" cy="50%" r="50" stroke="green" stroke-width="3" fill="green" />
-						<text x="50%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="0.5px" dy=".3em">A prever</text>
+						<circle cx="40%" cy="50%" r="50" stroke="green" stroke-width="3" fill="green" />
+						<text x="40%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="0.5px" dy=".3em">A prever</text>
 					</svg>
-					<h2>Observaciones:</h2>
+					<h2 style="padding-left: 20px;">Observaciones:</h2>
 
 				</div>
 			</div>
@@ -542,7 +542,7 @@
 				<div style="text-align:center" class="col-12">
 					<h2>Comentarios</h2>
 					<div style="border-bottom: 1px solid black;" class="col-12">
-						<h3></h3>
+						<h3>Es necesario asnmgapsgnpqnbpabnpabckvfa;lv ad agap gmpjgpagja'pgja'pm</h3>
 					</div>
 					<div style="border-bottom: 1px solid black;" class="col-12">
 						<h3></h3>
@@ -558,7 +558,7 @@
 		</div>
 		<div class="footer">
 			<div class="col-6">
-				<div class="col-12">
+				<div style="border-right: 1px solid black;" class="col-12">
 					<h2>Conformidad factura/trabajos:</h2>
 					<div class="col-12">
 						<h1></h1>
@@ -569,14 +569,14 @@
 				</div>
 			</div>
 			<div class="col-6">
-				<div class="col-8">
+				<div style="border-right:1px solid black;" class="col-8">
 					<h2>Próximo mantenimiento a los:</h2>
 				</div>
-				<div style="float:right; text-align:center;" class="col-4">
+				<div style="float:right;" class="col-4">
 					<h2>5.000 kms</h2>
 				</div>
-				<div class="col-12">
-					<h1 style="margin-top: 5px;"></h1>
+				<div style="border-top: 1px solid black;" class="col-12">
+					<h1 style="margin-top: 4px;"></h1>
 				</div>
 				<div class="col-12">
 					<h3>Firma del cliente</h3>
