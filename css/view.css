@@ -163,6 +163,15 @@ form.appnitro
 	padding:0 0 8px;
 }
 
+#main_body form li span span {
+	display:block;
+	float:left;
+	margin:0;
+	padding: 0;
+	width:100%;
+	color: #FF0000;
+}
+
 #main_body form li div.left
 {
 	display:inline;
@@ -354,6 +363,7 @@ form.appnitro
 	margin:0;
 	padding: 0;
 	width:100%;
+	color: #FF0000;
 }
 
 #main_body form li div span.state_list{

@@ -1,5 +1,6 @@
 <?php
 require 'connect_db.php'; //Database connection
+require 'data_check.php'; //Input field data check file
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -7,6 +8,9 @@ require 'connect_db.php'; //Database connection
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="cache-control" content="no-cache"> <!-- tells browser not to cache -->
+	<meta http-equiv="expires" content="0"> <!-- says that the cache expires 'now' -->
+	<meta http-equiv="pragma" content="no-cache"> <!-- says not to use cached stuff, if there is any -->
 	<title>Certificado de Control Calidad</title>
 	<link rel="stylesheet" type="text/css" href="css/view.css" media="all">
 	<link rel="stylesheet" type="text/css" href="view.mobile.css" media="all"/>
@@ -47,13 +51,20 @@ $quer="SELECT DISTINCT type FROM cc_vehiclemake_line where make_id=$cat order by
 }else{$quer="SELECT DISTINCT type FROM cc_vehiclemake_line order by type"; } 
 ////////// end of query for second subcategory drop down list box ///////////////////////////
 
-echo "<form method=post name=f1 action='print_cc.php'>";
+$errors_array = array_filter($errors);
+if (empty($errors_array)) {
+	echo "<form method=post name=f1 action='print_cc.php'>";
+}
+else{
+	echo "<form method=post name=f1 action=''>";
+}
+// echo "<form method=post name=f1 action='print_cc.php'>";
 /// Add your form processing page address to action in above line. Example  action=dd-check.php////
 ?>
 	<img id="top" src="img/top.png" alt="">
 	<div id="form_container">
 		<h1><a>Certificado de Control Calidad</a></h1>
-		<form id="form_1134337" class="appnitro"  method="post" action="">
+		<form id="form_1134337" class="appnitro"  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 			<div class="header-image">
 				<a href="http://servitalleres.com" target="_blank"><img src="img/logo.png"></a>
 			</div>
@@ -94,18 +105,21 @@ echo "<form method=post name=f1 action='print_cc.php'>";
 		<li id="li_3" >
 		<label class="description" for="element_3">Orden de reparación </label>
 		<div>
-			<input id="element_3" name="element_3" class="element text medium" type="text" maxlength="255" value=""/> 
+			<input id="element_3" name="order" class="element text medium" type="text" maxlength="255" value="<?php echo $order;?>"/>
+			<span><?php echo $orderErr;?></span>
 		</div> 
 		</li>
 		<li id="li_7" >
 		<label class="description" for="element_7">Asesor de servicio </label>
 		<span>
-			<input id="element_7_1" name= "element_7_1" class="element text" maxlength="255" size="8" value=""/>
+			<input id="element_7_1" name= "name" class="element text" maxlength="255" size="8" value="<?php echo $name;?>"/>
 			<label>Nombre</label>
+			<span><?php echo $nameErr;?></span>
 		</span>
 		<span>
-			<input id="element_7_2" name= "element_7_2" class="element text" maxlength="255" size="14" value=""/>
+			<input id="element_7_2" name= "last_name" class="element text" maxlength="255" size="14" value="<?php echo $last_name;?>"/>
 			<label>Apellido</label>
+			<span><?php echo $last_nameErr;?></span>
 		</span> 
 		</li>
 		<li class="section_break">
