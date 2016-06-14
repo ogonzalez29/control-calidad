@@ -65,7 +65,7 @@
 					<h3>Orden de reparación:</h3>
 				</div>
 				<div class="col-1">
-					<h3>4156</h3>
+					<h3>4598</h3>
 				</div>
 				<div class="col-2_2">
 					<h3>Asesor de servicio:</h3>	

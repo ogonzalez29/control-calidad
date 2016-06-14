@@ -155,53 +155,53 @@ caption{
 
 .col-07{
 	width: 5.83%;
-	display: -webkit-inline-box;
+	display: inline-block;
 }
 
 .col-08{
 	width: 6.66%;
-	display: -webkit-inline-box;
+	display: inline-block;
 }
 
 .col-09{
 	width: 7.6%;
-	display: -webkit-inline-box;
+	display: inline-block;
 }
 
 .col-1 {
     width: 8.33%;
-    display: -webkit-inline-box;
+    display: inline-block;
 }
 
 .col-1_4{
 	width: 10%;
-	display: -webkit-inline-box;
+	display: inline-block;
 }
 
 .col-1_5{
 	width: 10.8%;
-	display:-webkit-inline-box
+	display:inline-block;
 }
 
 .col-1_6{
 	width: 15.7%;
-	display: -webkit-inline-box;
+	display: inline-block;
 	text-align: center;
 }
 
 .col-2 {
     width: 16.66%;
-    display: -webkit-inline-box;
+    display: inline-block;
 }
 
 .col-2_2{
 	width: 18%;
-	display: -webkit-inline-box;
+	display: inline-block;
 }
 
 .col-3 {
     width: 24.3%;
-    display: -webkit-inline-box;
+    display: inline-block;
 }
 
 .col-4 {

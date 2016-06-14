@@ -1,9 +1,12 @@
 <?php
 //// define variables array and set to empty values
-$errors = array('$orderErr' => "", '$nameErr' => "");
+global $orderErr;
+global $nameErr;
+global $last_nameErr;
 
+$errors = array('$orderErr' => "", '$nameErr' => "", '$last_nameErr' => "");
 
-$orderErr = $nameErr = $last_nameErr = $emailErr = $genderErr = $websiteErr = "";
+// $orderErr = $nameErr = $last_nameErr = $emailErr = $genderErr = $websiteErr = "";
 $order = $name = $last_name = $email = $gender = $comment = $website = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -15,8 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match("/^[0-9 ]*$/",$order)) {
       $orderErr = "* Solo números sin espacios permitidos"; 
     }
-
   }
+
+  $errors = array($orderErr);
 
   if (empty($_POST["name"])) {
     $nameErr = "* Nombre requerido";
@@ -28,6 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 
+  array_push($errors, $nameErr);
+
   if (empty($_POST["last_name"])) {
     $last_nameErr = "* Apellido requerido";
   } else {
@@ -37,6 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $last_nameErr = "* Solo letras y espacios en blanco permitidos"; 
     }
   }
+
+  array_push($errors, $last_nameErr);
   
   // if (empty($_POST["email"])) {
   //   $emailErr = "Email is required";

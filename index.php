@@ -56,8 +56,12 @@ if (empty($errors_array)) {
 	echo "<form method=post name=f1 action='print_cc.php'>";
 }
 else{
-	echo "<form method=post name=f1 action=''>";
+ echo "<form method=post name=f2 action=''>";
 }
+
+// var_dump($errors);
+// var_dump($errors_array);
+// var_dump($orderErr);
 // echo "<form method=post name=f1 action='print_cc.php'>";
 /// Add your form processing page address to action in above line. Example  action=dd-check.php////
 ?>
