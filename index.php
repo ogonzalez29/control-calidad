@@ -52,17 +52,12 @@ $quer="SELECT DISTINCT type FROM cc_vehiclemake_line where make_id=$cat order by
 ////////// end of query for second subcategory drop down list box ///////////////////////////
 
 $errors_array = array_filter($errors);
-if (empty($errors_array)) {
-	echo "<form method=post name=f1 action='print_cc.php'>";
+if (!empty($errors_array)) {
+	echo "<form method=post action='index.php'>";
 }
 else{
- echo "<form method=post name=f2 action=''>";
+	header("location: print_cc.php");
 }
-
-// var_dump($errors);
-// var_dump($errors_array);
-// var_dump($orderErr);
-// echo "<form method=post name=f1 action='print_cc.php'>";
 /// Add your form processing page address to action in above line. Example  action=dd-check.php////
 ?>
 	<img id="top" src="img/top.png" alt="">
@@ -687,7 +682,7 @@ else{
 		<li class="buttons">
 			    <input type="hidden" name="form_id" value="1134337" />
 			    
-				<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+				<input id="saveForm" class="button_text" type="submit" name="submit" value="Enviar" />
 		</li>
 			</ul>
 		<br>
