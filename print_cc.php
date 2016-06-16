@@ -7,6 +7,7 @@
 
 <html>
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Certificado de Control Calidad</title>
 		<link rel="stylesheet" type="text/css" href="css/view1.css">
 		<!-- <link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'> -->

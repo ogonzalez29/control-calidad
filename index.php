@@ -52,18 +52,23 @@ $quer="SELECT DISTINCT type FROM cc_vehiclemake_line where make_id=$cat order by
 ////////// end of query for second subcategory drop down list box ///////////////////////////
 
 $errors_array = array_filter($errors);
-if (!empty($errors_array)) {
-	echo "<form method=post action='index.php'>";
+$check = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	if (!empty($errors_array)) {
+		echo "<form method=post action='index.php'>";
+	}
+	else{
+		header("location: print_cc.php");
+	}
 }
-else{
-	header("location: print_cc.php");
-}
+// var_dump($check);
+// var_dump($errors_array);
 /// Add your form processing page address to action in above line. Example  action=dd-check.php////
 ?>
 	<img id="top" src="img/top.png" alt="">
 	<div id="form_container">
 		<h1><a>Certificado de Control Calidad</a></h1>
-		<form id="form_1134337" class="appnitro"  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+			<form id="form_1134337" class="appnitro" method="post" action="">
 			<div class="header-image">
 				<a href="http://servitalleres.com" target="_blank"><img src="img/logo.png"></a>
 			</div>
