@@ -1,6 +1,5 @@
 <?php
 //Page code to print results
-
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -66,7 +65,7 @@
 					<h3>Orden de reparación:</h3>
 				</div>
 				<div class="col-1">
-					<h3>4598</h3>
+					<h3><?php echo $order;?></h3>
 				</div>
 				<div class="col-2_2">
 					<h3>Asesor de servicio:</h3>	
