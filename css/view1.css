@@ -73,7 +73,7 @@ caption{
 	font-size: 0.9em;
 	font-weight: 100;
 	width: 100%;
-	text-align: center;
+/*	text-align: right;*/
 }
 
 .row-1,
@@ -112,7 +112,8 @@ caption{
 }
 
 .row-1 .col-12 .col-08{
-	border-left: 1px solid black; 
+	border-left: 1px solid black;
+	border-right: 1px solid black;  
 }
 
 .row-2 .col-12 .col-09,
@@ -154,7 +155,7 @@ caption{
 }
 
 .col-07{
-	width: 5.83%;
+	width: 6.17%;
 	display: inline-block;
 }
 
@@ -173,14 +174,27 @@ caption{
     display: inline-block;
 }
 
-.col-1_4{
+.col-1_1{
 	width: 10%;
 	display: inline-block;
 }
 
-.col-1_5{
+.col-1_2{
 	width: 10.8%;
 	display:inline-block;
+	border-left: 1px solid black;
+}
+
+.col-1_4{
+	width: 11%;
+	display: inline-block;
+	text-align: right;
+}
+
+.col-1_5{
+	width: 12%;
+	display: inline-block;
+	border-right: 1px solid black;
 }
 
 .col-1_6{
@@ -200,7 +214,7 @@ caption{
 }
 
 .col-3 {
-    width: 24.3%;
+    width: 24%;
     display: inline-block;
 }
 

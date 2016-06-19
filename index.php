@@ -65,7 +65,7 @@ include ('info.php');
 		echo "<form method=post action='index.php'>";
 	}
 	else{
-		mysql_query("INSERT document SET order_num='$order', firstname='$name', lastname='$last_name'")
+		mysql_query("INSERT document SET ordernumber='$order', firstname='$name', lastname='$last_name'")
  		or die(mysql_error());
 		// $user_info="INSERT INTO document (order,name,last_name) VALUES('$_POST[order]', '$_POST[name]', '$_POST[last_name]')";
 		// if (!mysql_query($user_info,$connect)) {

@@ -1,5 +1,6 @@
 <?php
-//Page code to print results
+//Connect to the database
+include ('info.php');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -25,13 +26,24 @@
 				</div>
 			</div>
 		</div>
+		<?php
+		//get results from database
+		$result = mysql_query("SELECT * FROM document")
+			or die(mysql_error());
+
+		//loop through results of database query, displaying them in the format
+		while ($row = mysql_fetch_array($result)) {
+		?>
 		<div class="row-1">
 			<div class="col-12">
 				<div class="col-08">
 					<h3>Cliente:</h3>	
 				</div>
-				<div class="col-3">
-					<h3>Daniel Gonzalez</h3>
+				<div class="col-1_4">
+					<h3><?php echo $row['firstname']?></h3>
+				</div>
+				<div class="col-1_5">
+					<h3><?php echo $row['lastname']?></h3>
 				</div>
 				<div class="col-07">
 					<h3>Marca:</h3>
@@ -55,7 +67,7 @@
 		</div>
 		<div class="row-2">
 			<div class="col-12">
-				<div class ="col-1_4">
+				<div class ="col-1_1">
 					<h3>Kilometraje:</h3>
 				</div>
 				<div class ="col-09">
@@ -65,21 +77,18 @@
 					<h3>Orden de reparación:</h3>
 				</div>
 				<div class="col-1">
-					<h3><?php echo $order;?></h3>
+					<h3><?php echo $row['ordernumber']?></h3>
 				</div>
 				<div class="col-2_2">
 					<h3>Asesor de servicio:</h3>	
 				</div>
 				<div class="col-2">
-					<!-- <h3><?php 
-						$cat=$_POST['cat'];
-						echo "$cat"; ?></h3> -->
 					<h3>Daniel Gonzalez</h3>
 				</div>
 				<div class="col-08">
 					<h3>Fecha:</h3>	
 				</div>
-				<div class="col-1_5">
+				<div class="col-1_2">
 					<h3>28/05/2016</h3>
 				</div>
 			</div>
@@ -583,6 +592,9 @@
 				</div>
 			</div>
 		</div>
+		<?php
+		}
+		?>
 		<!-- <?Php
 			$cat=$_POST['cat'];
 			$subcat=$_POST['subcat'];
