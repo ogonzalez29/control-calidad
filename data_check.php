@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $name = test_input($_POST["name"]);
     // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+    if (!preg_match("/^[a-zA-Záéíóúñ]*$/",$name)) {
       $nameErr = "* Solo letras y espacios en blanco permitidos"; 
     }
   }
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $last_name = test_input($_POST["last_name"]);
     // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$last_name)) {
+    if (!preg_match("/^[a-zA-Záéíóúñ]*$/",$last_name)) {
       $last_nameErr = "* Solo letras y espacios en blanco permitidos"; 
     }
   }

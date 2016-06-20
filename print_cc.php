@@ -28,7 +28,7 @@ include ('info.php');
 		</div>
 		<?php
 		//get results from database
-		$result = mysql_query("SELECT * FROM document")
+		$result = mysql_query("SELECT * FROM document ORDER BY id DESC LIMIT 1")
 			or die(mysql_error());
 
 		//loop through results of database query, displaying them in the format
