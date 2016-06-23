@@ -19,37 +19,74 @@ require 'data_check.php'; //Input field data check file
 	<script type="text/javascript" src="js/calendar.js"></script>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui/ui/jquery.effects.core.js"></script>
-	<script language=JavaScript>
-		function reload(form)
-		{
-		var val=form.cat.options[form.cat.options.selectedIndex].value;
-		self.location='index.php?cat=' + val ;
-		}
-
-	</script>												
-
 	<!--[if lt IE 9]><script src="js/signaturepad/flashcanvas.js"></script><![endif]-->
 	<script type="text/javascript" src="js/signaturepad/jquery.signaturepad.min.js"></script>
 	<script type="text/javascript" src="js/signaturepad/json2.min.js"></script>
+	<script type="text/javascript">
+		function AjaxFunction()
+		{
+		var httpxml;
+		try
+		  {
+		  // Firefox, Opera 8.0+, Safari
+		  httpxml=new XMLHttpRequest();
+		  }
+		catch (e)
+		  {
+		  // Internet Explorer
+				  try
+		   			 		{
+		   				 httpxml=new ActiveXObject("Msxml2.XMLHTTP");
+		    				}
+		  			catch (e)
+		    				{
+		    			try
+		      		{
+		      		httpxml=new ActiveXObject("Microsoft.XMLHTTP");
+		     		 }
+		    			catch (e)
+		      		{
+		      		alert("Your browser does not support AJAX!");
+		      		return false;
+		      		}
+		    		}
+		  	}
+			function stateck() 
+			    {
+			    if(httpxml.readyState==4)
+			      {
+			//alert(httpxml.responseText);
+			var myarray = JSON.parse(httpxml.responseText);
+			// Remove the options from 2nd dropdown list 
+			for(j=document.testform.subcat.options.length-1;j>=0;j--)
+			{
+				document.testform.subcat.remove(j);
+			}
+
+
+			for (i=0;i<myarray.data.length;i++)
+			{
+				var optn = document.createElement("OPTION");
+				optn.text = myarray.data[i].subcategory;
+				optn.value = myarray.data[i].subcategory;  // You can change this to subcategory 
+				document.testform.subcat.options.add(optn);
+
+			} 
+			      }
+			    } // end of function stateck
+			var url="dd.php";
+			var cat_id=document.getElementById('s1').value;
+			url=url+"?category="+cat_id;
+			url=url+"&sid="+Math.random();
+			httpxml.onreadystatechange=stateck;
+			//alert(url);
+			httpxml.open("GET",url,true);
+			httpxml.send(null);
+			  }
+	</script>	
 </head>
 <body id="main_body" >
 <?php
-
-@$cat=$_GET['cat']; // Use this line or below line if register_global is off
-if(strlen($cat) > 0 and !is_numeric($cat)){ // to check if $cat is numeric data or not. 
-echo "Data Error";
-exit;
-}
-
-///////// Getting the data from Mysql table for first list box//////////
-$quer2="SELECT DISTINCT make,make_id FROM cc_vehiclemake order by make"; 
-///////////// End of query for first list box////////////
-
-/////// for second drop down list we will check if category is selected else we will display all the subcategory///// 
-if(isset($cat) and strlen($cat) > 0){
-$quer="SELECT DISTINCT type FROM cc_vehiclemake_line where make_id=$cat order by type"; 
-}else{$quer="SELECT DISTINCT type FROM cc_vehiclemake_line order by type"; } 
-////////// end of query for second subcategory drop down list box ///////////////////////////
 
 $errors_array = array_filter($errors);
 
@@ -57,15 +94,38 @@ include ('info.php');
 
  if (isset($_POST['submit'])) {
 
- 	$order = mysql_real_escape_string(htmlspecialchars($_POST['order']));
- 	$name = mysql_real_escape_string(htmlspecialchars($_POST['name']));
- 	$last_name = mysql_real_escape_string(htmlspecialchars($_POST['last_name']));
+ 	$day = $_POST['day'];
+ 	$month = $_POST['month'];
+ 	$year = $_POST['year'];
+ 	$ordernumber = mysql_real_escape_string(htmlspecialchars($_POST['ordernumber']));
+ 	$firstname1 = mysql_real_escape_string(htmlspecialchars($_POST['firstname1']));
+ 	$lastname1 = mysql_real_escape_string(htmlspecialchars($_POST['lastname1']));
+ 	$firstname = mysql_real_escape_string(htmlspecialchars($_POST['firstname']));
+ 	$lastname = mysql_real_escape_string(htmlspecialchars($_POST['lastname']));
+ 	$make = $_POST['cat'];
+ 	$line = $_POST['subcat'];
+ 	$model = mysql_real_escape_string(htmlspecialchars($_POST['model']));
+ 	$license = mysql_real_escape_string(htmlspecialchars($_POST['license']));
+ 	$mileage = mysql_real_escape_string(htmlspecialchars($_POST['mileage']));
 
 	if (!empty($errors_array)) {
 		echo "<form method=post action='index.php'>";
 	}
 	else{
-		mysql_query("INSERT document SET ordernumber='$order', firstname='$name', lastname='$last_name'")
+		mysql_query("INSERT document SET day='$day', 
+										 month='$month', 
+										 year='$year',
+										 ordernumber='$ordernumber',
+										 firstname1='$firstname1', 
+										 lastname1='$lastname1',
+										 firstname='$firstname', 
+										 lastname='$lastname',  
+										 make='$make',
+										 type='$line',
+										 model='$model', 
+										 license='$license',
+										 mileage='$mileage'	 
+										 ")
  		or die(mysql_error());
 		// $user_info="INSERT INTO document (order,name,last_name) VALUES('$_POST[order]', '$_POST[name]', '$_POST[last_name]')";
 		// if (!mysql_query($user_info,$connect)) {
@@ -77,14 +137,12 @@ include ('info.php');
 		header("location: print_cc.php");
 	}
 }
-// var_dump($check);
-// var_dump($errors_array);
 /// Add your form processing page address to action in above line. Example  action=dd-check.php////
 ?>
 	<img id="top" src="img/top.png" alt="">
 	<div id="form_container">
 		<h1><a>Certificado de Control Calidad</a></h1>
-			<form id="form_1134337" class="appnitro" method="post" action="">
+			<form name="testform" id="form_1134337" class="appnitro" method="post" action="">
 			<div class="header-image">
 				<a href="http://servitalleres.com" target="_blank"><img src="img/logo.png"></a>
 			</div>
@@ -96,15 +154,15 @@ include ('info.php');
 		<li id="li_6" >
 		<label class="description" for="element_6">Fecha </label>
 		<span>
-			<input id="element_6_1" name="element_6_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<input id="element_6_1" name="month" class="element text" size="2" maxlength="2" value="<?php echo $month;?>" type="text"> /
 			<label for="element_6_1">MM</label>
 		</span>
 		<span>
-			<input id="element_6_2" name="element_6_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<input id="element_6_2" name="day" class="element text" size="2" maxlength="2" value="<?php echo $day;?>" type="text"> /
 			<label for="element_6_2">DD</label>
 		</span>
 		<span>
-	 		<input id="element_6_3" name="element_6_3" class="element text" size="4" maxlength="4" value="" type="text">
+	 		<input id="element_6_3" name="year" class="element text" size="4" maxlength="4" value="<?php echo $year;?>" type="text">
 			<label for="element_6_3">AAAA</label>
 		</span>
 	
@@ -125,21 +183,21 @@ include ('info.php');
 		<li id="li_3" >
 		<label class="description" for="element_3">Orden de reparación </label>
 		<div>
-			<input id="element_3" name="order" class="element text medium" type="text" maxlength="255" value="<?php echo $order;?>"/>
+			<input id="element_3" name="ordernumber" class="element text medium" type="text" maxlength="255" value="<?php echo $ordernumber;?>"/>
 			<span><?php echo $orderErr;?></span>
 		</div> 
 		</li>
 		<li id="li_7" >
 		<label class="description" for="element_7">Asesor de servicio </label>
 		<span>
-			<input id="element_7_1" name= "name" class="element text" maxlength="255" size="8" value="<?php echo $name;?>"/>
+			<input id="element_7_1" name= "firstname1" class="element text" maxlength="255" size="8" value="<?php echo $firstname1;?>"/>
 			<label>Nombre</label>
-			<span><?php echo $nameErr;?></span>
+			<span><?php echo $nameErr1;?></span>
 		</span>
 		<span>
-			<input id="element_7_2" name= "last_name" class="element text" maxlength="255" size="14" value="<?php echo $last_name;?>"/>
+			<input id="element_7_2" name= "lastname1" class="element text" maxlength="255" size="14" value="<?php echo $lastname1;?>"/>
 			<label>Apellido</label>
-			<span><?php echo $last_nameErr;?></span>
+			<span><?php echo $last_nameErr1;?></span>
 		</span> 
 		</li>
 		<li class="section_break">
@@ -148,54 +206,54 @@ include ('info.php');
 		<li id="li_2" >
 		<label class="description" for="element_2">Cliente </label>
 		<span>
-			<input id="element_2_1" name= "element_2_1" class="element text" maxlength="255" size="8" value=""/>
+			<input id="element_2_1" name= "firstname" class="element text" maxlength="255" size="8" value="<?php echo $firstname;?>"/>
 			<label>Nombre</label>
+			<span><?php echo $nameErr;?></span>
 		</span>
 		<span>
-			<input id="element_2_2" name= "element_2_2" class="element text" maxlength="255" size="14" value=""/>
+			<input id="element_2_2" name= "lastname" class="element text" maxlength="255" size="14" value="<?php echo $lastname;?>"/>
 			<label>Apellido</label>
+			<span><?php echo $last_nameErr;?></span>
 		</span> 
 		</li>	
 		<li id="li_15" >
 			<label class="description" for="element_15">Marca </label>
 		<div>
 		 	<?php
-			echo "<select class='element select medium' id='element_15' name='cat' onchange=\"reload(this.form)\">
-			<option value=''></option>";
-			foreach ($dbo->query($quer2) as $noticia2){ 
-				if($noticia2['make_id']==@$cat){
-					echo "<option selected value='$noticia2[make_id]'>$noticia2[make]</option>"."<BR>";}
-				else {
-					echo "<option value='$noticia2[make_id]'>$noticia2[make]</option>";}}
-			echo "</select>";
+			echo "<select class='element select medium' name=cat id='s1' onchange=AjaxFunction();><option value=''></option>";
+
+			$sql="select * from category "; // Query to collect data from table 
+
+			foreach ($dbo->query($sql) as $row) {
+			echo "<option value=$row[category]>$row[category]</option>";
+			}	
 			?>
+			</select>
 		</div> 
 		</li>		
 		<li id="li_16" >
 			<label class="description" for="element_16">Línea </label>
 		<div>
-		<?php
-			echo "<select class='element select medium' id='element_16' name='subcat'>
-			<option value=''></option>";
-			foreach ($dbo->query($quer) as $noticia) {
-				echo "<option value='$noticia[make_id]'>$noticia[type]</option>";}
-			echo "</select>"
-			?>
+			<select class='element select medium' name=subcat id='s2'>
+			</select>
 		</div> 
 		</li>		<li id="li_4" >
 		<label class="description" for="element_4">Modelo </label>
 		<div>
-			<input id="element_4" name="element_4" class="element text medium" type="text" maxlength="255" value=""/> 
+			<input id="element_4" name="model" class="element text medium" type="text" maxlength="255" value="<?php echo $model;?>"/> 
+			<span><?php echo $modelErr;?></span>
 		</div> 
 		</li>		<li id="li_5" >
 		<label class="description" for="element_5">Placas </label>
 		<div>
-			<input id="element_5" name="element_5" class="element text medium" type="text" maxlength="255" value=""/> 
+			<input id="element_5" name="license" class="element text medium" type="text" maxlength="255" value="<?php echo $license;?>"/> 
+			<span><?php echo $licenseErr;?></span>
 		</div> 
 		</li>		<li id="li_12" >
 		<label class="description" for="element_12">Kilometraje </label>
 		<div>
-			<input id="element_12" name="element_12" class="element text medium" type="text" maxlength="255" value=""/> 
+			<input id="element_12" name="mileage" class="element text medium" type="text" maxlength="255" value="<?php echo $mileage;?>"/> 
+			<span><?php echo $mileageErr;?></span>
 		</div> 
 		</li>		
 		<li class="section_break">

@@ -3,48 +3,121 @@
 global $orderErr;
 global $nameErr;
 global $last_nameErr;
+global $nameErr1;
+global $last_nameErr1;
+global $modelErr;
+global $mileageErr;
+global $licenseErr;
 
-$errors = array('$orderErr' => "", '$nameErr' => "", '$last_nameErr' => "");
+$errors = array('$orderErr' => "", 
+                '$nameErr' => "", 
+                '$last_nameErr' => "", 
+                '$nameErr1' => "", 
+                '$last_nameErr1' => "", 
+                '$modelErr' => "", 
+                '$mileageErr' => "",
+                '$licenseErr' => "");
 
 // $orderErr = $nameErr = $last_nameErr = $emailErr = $genderErr = $websiteErr = "";
-$order = $name = $last_name = $email = $gender = $comment = $website = "";
+$firstname = $lastname = $make = $model = $license = $mileage = $ordernumber = $firstname1 = $lastname1 = $day = $month = $year = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["order"])) {
+  if (empty($_POST["ordernumber"])) {
     $orderErr = "* Orden de reparación requerida";
   } else {
-    $order = test_input($_POST["order"]);
+    $ordernumber = test_input($_POST["ordernumber"]);
     // check if order only contains numbers and no whitespaces
-    if (!preg_match("/^[0-9 ]*$/",$order)) {
+    if (!preg_match("/^[0-9 ]*$/",$ordernumber)) {
       $orderErr = "* Solo números sin espacios permitidos"; 
     }
   }
 
   $errors = array($orderErr);
 
-  if (empty($_POST["name"])) {
+  if (empty($_POST["firstname1"])) {
+    $nameErr1 = "* Nombre requerido";
+  } else {
+    $firstname1 = test_input($_POST["firstname1"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Záéíóúñ]*$/",$firstname1)) {
+      $nameErr1 = "* Solo letras y espacios en blanco permitidos"; 
+    }
+  }
+
+  array_push($errors, $nameErr1);
+
+  if (empty($_POST["lastname1"])) {
+    $last_nameErr1 = "* Apellido requerido";
+  } else {
+    $lastname1 = test_input($_POST["lastname1"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Záéíóúñ]*$/",$lastname1)) {
+      $last_nameErr1 = "* Solo letras y espacios en blanco permitidos"; 
+    }
+  }
+
+  array_push($errors, $last_nameErr1);
+
+  if (empty($_POST["firstname"])) {
     $nameErr = "* Nombre requerido";
   } else {
-    $name = test_input($_POST["name"]);
+    $firstname = test_input($_POST["firstname"]);
     // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Záéíóúñ]*$/",$name)) {
+    if (!preg_match("/^[a-zA-Záéíóúñ]*$/",$firstname)) {
       $nameErr = "* Solo letras y espacios en blanco permitidos"; 
     }
   }
 
   array_push($errors, $nameErr);
 
-  if (empty($_POST["last_name"])) {
+  if (empty($_POST["lastname"])) {
     $last_nameErr = "* Apellido requerido";
   } else {
-    $last_name = test_input($_POST["last_name"]);
+    $lastname = test_input($_POST["lastname"]);
     // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Záéíóúñ]*$/",$last_name)) {
+    if (!preg_match("/^[a-zA-Záéíóúñ]*$/",$lastname)) {
       $last_nameErr = "* Solo letras y espacios en blanco permitidos"; 
     }
   }
 
   array_push($errors, $last_nameErr);
+
+  if (empty($_POST["model"])) {
+    $modelErr = "* Modelo del vehículo requerido";
+  } else {
+    $model = test_input($_POST["model"]);
+    // check if order only contains numbers and no whitespaces
+    if (!preg_match("/^[0-9 ]*$/",$model)) {
+      $modelErr = "* Solo números sin espacios permitidos"; 
+    }
+  }
+
+  array_push($errors, $modelErr);
+
+if (empty($_POST["license"])) {
+    $licenseErr = "* Placa del vehículo requerida";
+  } else {
+    $license = test_input($_POST["license"]);
+    // check if order only contains numbers and no whitespaces
+    if (!preg_match("/^[0-9A-Z ]*$/",$license)) {
+      $licenseErr = "* Solo letras en mayúscula y números sin espacios permitidos"; 
+    }
+  }
+
+  array_push($errors, $licenseErr);
+
+if (empty($_POST["mileage"])) {
+    $mileageErr = "* Kilometraje del vehículo requerido";
+  } else {
+    $mileage = test_input($_POST["mileage"]);
+    // check if order only contains numbers and no whitespaces
+    if (!preg_match("/^[0-9 ]*$/",$mileage)) {
+      $mileageErr = "* Solo números sin espacios permitidos"; 
+    }
+  }
+
+  array_push($errors, $mileageErr);
+
   
   // if (empty($_POST["email"])) {
   //   $emailErr = "Email is required";

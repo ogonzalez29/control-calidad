@@ -39,29 +39,32 @@ include ('info.php');
 				<div class="col-08">
 					<h3>Cliente:</h3>	
 				</div>
-				<div class="col-1_4">
-					<h3><?php echo $row['firstname']?></h3>
-				</div>
-				<div class="col-1_5">
-					<h3><?php echo $row['lastname']?></h3>
+				<div class="col-3">
+					<h3><?php echo $row['firstname']. ' '. $row['lastname']?></h3>
 				</div>
 				<div class="col-07">
 					<h3>Marca:</h3>
 				</div>
 				<div class="col-1_6">
-					<h3>Renault</h3>
+					<h3><?php echo $row['make']?></h3>
 				</div>
-				<div class="col-07">
+				<div class="col-06">
 					<h3>Linea:</h3>
 				</div>
-				<div class="col-3">
-					<h3>Clio</h3>
+				<div class="col-1_5">
+					<h3><?php echo $row['type']?></h3>
+				</div>
+				<div class="col-08">
+					<h3>Modelo:</h3>
+				</div>
+				<div style="border-left: 1px solid black; border-right: 1px solid black;"class="col-06">
+					<h3><?php echo $row['model']?></h3>
 				</div>
 				<div class="col-07">
 					<h3>Placa:</h3>
 				</div>
 				<div class="col-09">
-					<h3>CVL685</h3>
+					<h3><?php echo $row['license']?></h3>
 				</div>
 			</div>
 		</div>
@@ -71,7 +74,7 @@ include ('info.php');
 					<h3>Kilometraje:</h3>
 				</div>
 				<div class ="col-09">
-					<h3>78000</h3>
+					<h3><?php echo $row['mileage']?></h3>
 				</div>	
 				<div class="col-2_2">
 					<h3>Orden de reparación:</h3>
@@ -83,13 +86,13 @@ include ('info.php');
 					<h3>Asesor de servicio:</h3>	
 				</div>
 				<div class="col-2">
-					<h3>Daniel Gonzalez</h3>
+					<h3><?php echo $row['firstname1']. ' '. $row['lastname1']?></h3>
 				</div>
 				<div class="col-08">
 					<h3>Fecha:</h3>	
 				</div>
 				<div class="col-1_2">
-					<h3>28/05/2016</h3>
+					<h3><?php echo $row['day']. '/'. $row['month']. '/'. $row['year']?></h3>
 				</div>
 			</div>
 		</div>
