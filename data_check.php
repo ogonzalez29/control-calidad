@@ -5,6 +5,8 @@ global $nameErr;
 global $last_nameErr;
 global $nameErr1;
 global $last_nameErr1;
+global $makeErr;
+global $lineErr;
 global $modelErr;
 global $mileageErr;
 global $licenseErr;
@@ -13,7 +15,9 @@ $errors = array('$orderErr' => "",
                 '$nameErr' => "", 
                 '$last_nameErr' => "", 
                 '$nameErr1' => "", 
-                '$last_nameErr1' => "", 
+                '$last_nameErr1' => "",
+                '$makeErr' => "",
+                '$lineErr' => "", 
                 '$modelErr' => "", 
                 '$mileageErr' => "",
                 '$licenseErr' => "");
@@ -82,6 +86,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   array_push($errors, $last_nameErr);
 
+  if ($_POST['cat'] == "") {
+    $makeErr = "* Marca del vehículo requerida";
+  }
+
+  array_push($errors, $makeErr);
+
+    if ($_POST['subcat'] == "") {
+    $lineErr = "* Línea del vehículo requerida";
+  }
+
+  array_push($errors, $lineErr);
+
   if (empty($_POST["model"])) {
     $modelErr = "* Modelo del vehículo requerido";
   } else {
@@ -93,6 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   array_push($errors, $modelErr);
+
 
 if (empty($_POST["license"])) {
     $licenseErr = "* Placa del vehículo requerida";

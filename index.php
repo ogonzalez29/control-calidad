@@ -107,6 +107,7 @@ include ('info.php');
  	$model = mysql_real_escape_string(htmlspecialchars($_POST['model']));
  	$license = mysql_real_escape_string(htmlspecialchars($_POST['license']));
  	$mileage = mysql_real_escape_string(htmlspecialchars($_POST['mileage']));
+ 	// $element = $_POST['element'];
 
 	if (!empty($errors_array)) {
 		echo "<form method=post action='index.php'>";
@@ -138,6 +139,9 @@ include ('info.php');
 	}
 }
 /// Add your form processing page address to action in above line. Example  action=dd-check.php////
+// var_dump($cat);
+// var_dump($subcat);
+
 ?>
 	<img id="top" src="img/top.png" alt="">
 	<div id="form_container">
@@ -229,6 +233,7 @@ include ('info.php');
 			}	
 			?>
 			</select>
+			<span><?php echo $makeErr;?></span>
 		</div> 
 		</li>		
 		<li id="li_16" >
@@ -236,6 +241,7 @@ include ('info.php');
 		<div>
 			<select class='element select medium' name=subcat id='s2'>
 			</select>
+			<span><?php echo $lineErr;?></span>
 		</div> 
 		</li>		<li id="li_4" >
 		<label class="description" for="element_4">Modelo </label>
@@ -275,9 +281,9 @@ include ('info.php');
 			    <tbody>
 			    	<tr class="alt" id="mr_3">
 			        	<td class="first_col">Indicadores y luces de bordo</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element[1]" type="radio" value="1" ></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element[1]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element[1]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Reloj a la hora</td>
