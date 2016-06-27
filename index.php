@@ -174,6 +174,12 @@ include ('info.php');
 	$m7_el6 = $_POST['matrix_7'][6];
 	$m7_el7 = $_POST['matrix_7'][7];
 
+	//Footer information of print_cc.php
+	$comment1 = $_POST['comment1'];
+	$comment2 = $_POST['comment2'];
+	$comment3 = $_POST['comment3'];
+	$comment4 = $_POST['comment4'];
+
 	if (!empty($errors_array)) {
 		echo "<form method=post action='index.php'>";
 	}
@@ -240,7 +246,11 @@ include ('info.php');
 										 m7_el4='$m7_el4',
 										 m7_el5='$m7_el5',
 										 m7_el6='$m7_el6',
-										 m7_el7='$m7_el7'
+										 m7_el7='$m7_el7',
+										 comment1='$comment1',
+										 comment2='$comment2',
+										 comment3='$comment3',
+										 comment4='$comment4'
 										 ")
  		or die(mysql_error());
 		// $user_info="INSERT INTO document (order,name,last_name) VALUES('$_POST[order]', '$_POST[name]', '$_POST[last_name]')";
@@ -833,17 +843,17 @@ include ('info.php');
 		</li>		<li id="li_21" >
 		<label class="description" for="element_21">Inmediato </label>
 		<div>
-			<textarea id="element_21" name="element_21" class="element textarea medium"></textarea> 
+			<textarea id="element_21" name="comment1" class="element textarea medium"><?php echo $comment1;?></textarea> 
 		</div> 
 		</li>		<li id="li_22" >
 		<label class="description" for="element_22">De ser posible </label>
 		<div>
-			<textarea id="element_22" name="element_22" class="element textarea medium"></textarea> 
+			<textarea id="element_22" name="comment2" class="element textarea medium"><?php echo $comment2;?></textarea> 
 		</div> 
 		</li>		<li id="li_23" >
 		<label class="description" for="element_23">A prever </label>
 		<div>
-			<textarea id="element_23" name="element_23" class="element textarea medium"></textarea> 
+			<textarea id="element_23" name="comment3" class="element textarea medium"><?php echo $comment3;?></textarea> 
 		</div> 
 		</li>
 		<li class="section_break">
@@ -851,7 +861,7 @@ include ('info.php');
 		</li>		<li id="li_24" >
 		<label class="description" for="element_24">Observaciones </label>
 		<div>
-			<textarea id="element_24" name="element_24" class="element textarea medium"></textarea> 
+			<textarea id="element_24" name="comment4" class="element textarea medium"><?php echo $comment4;?></textarea> 
 		</div> 
 		</li>		<li id="li_25" >
 		<label class="description" for="element_25">Próximo mantenimiento a los (kms): </label>

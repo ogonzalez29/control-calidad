@@ -554,16 +554,16 @@ include ('info.php');
 				<div style="text-align:center" class="col-12">
 					<h2>Comentarios</h2>
 					<div style="border-bottom: 1px solid black;" class="col-12">
-						<h3>Es necesario asnmgapsgnpqnbpabnpabckvfa;lv ad agap gmpjgpagja'pgja'pm</h3>
+						<h3><?php echo $row['comment1']?></h3>
 					</div>
 					<div style="border-bottom: 1px solid black;" class="col-12">
-						<h3></h3>
+						<h3><?php echo $row['comment2']?></h3>
 					</div>
 					<div style="border-bottom: 1px solid black;" class="col-12">
-						<h3></h3>
+						<h3><?php echo $row['comment3']?></h3>
 					</div>
 					<div class="col-12">
-						<h3></h3>
+						<h3><?php echo $row['comment4']?></h3>
 					</div>
 				</div>
 			</div>

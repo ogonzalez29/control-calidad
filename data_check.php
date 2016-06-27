@@ -23,7 +23,7 @@ $errors = array('$orderErr' => "",
                 '$licenseErr' => "");
 
 // $orderErr = $nameErr = $last_nameErr = $emailErr = $genderErr = $websiteErr = "";
-$firstname = $lastname = $make = $model = $license = $mileage = $ordernumber = $firstname1 = $lastname1 = $day = $month = $year = "";
+$firstname = $lastname = $make = $model = $license = $mileage = $ordernumber = $firstname1 = $lastname1 = $day = $month = $year = $comment1 = $comment2 = $comment3 = $comment4 ="";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["ordernumber"])) {
@@ -135,7 +135,32 @@ if (empty($_POST["mileage"])) {
 
   array_push($errors, $mileageErr);
 
-  
+if (empty($_POST["comment1"])) {
+    $comment1 = "";
+  } else {
+    $comment1 = test_input($_POST["comment1"]);
+  }
+
+if (empty($_POST["comment2"])) {
+    $comment2 = "";
+  } else {
+    $comment2 = test_input($_POST["comment2"]);
+  }
+
+if (empty($_POST["comment3"])) {
+    $comment3 = "";
+  } else {
+    $comment3 = test_input($_POST["comment3"]);
+  }
+
+  if (empty($_POST["comment4"])) {
+    $comment4 = "";
+  } else {
+    $comment4 = test_input($_POST["comment4"]);
+  }
+
+
+
   // if (empty($_POST["email"])) {
   //   $emailErr = "Email is required";
   // } else {
@@ -145,28 +170,7 @@ if (empty($_POST["mileage"])) {
   //     $emailErr = "Invalid email format"; 
   //   }
   // }
-    
-  // if (empty($_POST["website"])) {
-  //   $website = "";
-  // } else {
-  //   $website = test_input($_POST["website"]);
-  //   // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-  //   if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-  //     $websiteErr = "Invalid URL"; 
-  //   }
-  // }
 
-  // if (empty($_POST["comment"])) {
-  //   $comment = "";
-  // } else {
-  //   $comment = test_input($_POST["comment"]);
-  // }
-
-  // if (empty($_POST["gender"])) {
-  //   $genderErr = "Gender is required";
-  // } else {
-  //   $gender = test_input($_POST["gender"]);
-  // }
 }
 
 function test_input($data) {
