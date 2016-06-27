@@ -94,6 +94,7 @@ include ('info.php');
 
  if (isset($_POST['submit'])) {
 
+ 	//Header information of print_cc.php 
  	$day = $_POST['day'];
  	$month = $_POST['month'];
  	$year = $_POST['year'];
@@ -108,6 +109,70 @@ include ('info.php');
  	$license = mysql_real_escape_string(htmlspecialchars($_POST['license']));
  	$mileage = mysql_real_escape_string(htmlspecialchars($_POST['mileage']));
  	// $element = $_POST['element'];
+
+ 	//Matrix 1 information of print_cc.php (instrumentos y equipamento)
+ 	$m1_el1 = $_POST['matrix_1'][1];
+ 	$m1_el2 = $_POST['matrix_1'][2];
+	$m1_el3 = $_POST['matrix_1'][3];
+	$m1_el4 = $_POST['matrix_1'][4];
+	$m1_el5 = $_POST['matrix_1'][5];
+	$m1_el6 = $_POST['matrix_1'][6];
+	$m1_el7 = $_POST['matrix_1'][7];
+	$m1_el8 = $_POST['matrix_1'][8];
+	$m1_el9 = $_POST['matrix_1'][9];
+	$m1_el10 = $_POST['matrix_1'][10];
+	$m1_el11 = $_POST['matrix_1'][11];
+	$m1_el12 = $_POST['matrix_1'][12];
+	$m1_el13 = $_POST['matrix_1'][13];
+	$m1_el14 = $_POST['matrix_1'][14];
+	$m1_el15 = $_POST['matrix_1'][15];
+	$m1_el16 = $_POST['matrix_1'][16];
+	$m1_el17 = $_POST['matrix_1'][17];
+
+	//Matrix 2 information of print_cc.php (alumbrado exterior)
+ 	$m2_el1 = $_POST['matrix_2'][1];
+ 	$m2_el2 = $_POST['matrix_2'][2];
+	$m2_el3 = $_POST['matrix_2'][3];
+	$m2_el4 = $_POST['matrix_2'][4];
+	$m2_el5 = $_POST['matrix_2'][5];
+	$m2_el6 = $_POST['matrix_2'][6];
+
+	//Matrix 3 information of print_cc.php (presentación del vehículo)
+ 	$m3_el1 = $_POST['matrix_3'][1];
+ 	$m3_el2 = $_POST['matrix_3'][2];
+	$m3_el3 = $_POST['matrix_3'][3];
+
+	//Matrix 4 information of print_cc.php (desgaste de las llantas)
+ 	$m4_el1 = $_POST['matrix_4'][1];
+ 	$m4_el2 = $_POST['matrix_4'][2];
+	$m4_el3 = $_POST['matrix_4'][3];
+	$m4_el4 = $_POST['matrix_4'][4];
+
+	//Matrix 5 information of print_cc.php (presión de las llantas)
+ 	$m5_el1 = $_POST['matrix_5'][1];
+ 	$m5_el2 = $_POST['matrix_5'][2];
+	$m5_el3 = $_POST['matrix_5'][3];
+	$m5_el4 = $_POST['matrix_5'][4];
+
+	//Matrix 6 information of print_cc.php (control debajo del capot)
+ 	$m6_el1 = $_POST['matrix_6'][1];
+ 	$m6_el2 = $_POST['matrix_6'][2];
+	$m6_el3 = $_POST['matrix_6'][3];
+	$m6_el4 = $_POST['matrix_6'][4];
+	$m6_el5 = $_POST['matrix_6'][5];
+	$m6_el6 = $_POST['matrix_6'][6];
+	$m6_el7 = $_POST['matrix_6'][7];
+	$m6_el8 = $_POST['matrix_6'][8];
+	$m6_el9 = $_POST['matrix_6'][9];
+
+	//Matrix 7 information of print_cc.php (prueba de ruta)
+ 	$m7_el1 = $_POST['matrix_7'][1];
+ 	$m7_el2 = $_POST['matrix_7'][2];
+	$m7_el3 = $_POST['matrix_7'][3];
+	$m7_el4 = $_POST['matrix_7'][4];
+	$m7_el5 = $_POST['matrix_7'][5];
+	$m7_el6 = $_POST['matrix_7'][6];
+	$m7_el7 = $_POST['matrix_7'][7];
 
 	if (!empty($errors_array)) {
 		echo "<form method=post action='index.php'>";
@@ -125,7 +190,57 @@ include ('info.php');
 										 type='$line',
 										 model='$model', 
 										 license='$license',
-										 mileage='$mileage'	 
+										 mileage='$mileage',
+										 m1_el1='$m1_el1',
+										 m1_el2='$m1_el2',	 
+										 m1_el3='$m1_el3',
+										 m1_el4='$m1_el4',
+										 m1_el5='$m1_el5',
+										 m1_el6='$m1_el6',
+										 m1_el7='$m1_el7',
+										 m1_el8='$m1_el8',
+										 m1_el9='$m1_el9',
+										 m1_el10='$m1_el10',
+										 m1_el11='$m1_el11',
+										 m1_el12='$m1_el12',
+										 m1_el13='$m1_el13',
+										 m1_el14='$m1_el14',
+										 m1_el15='$m1_el15',
+										 m1_el16='$m1_el16',
+										 m1_el17='$m1_el17',
+										 m2_el1='$m2_el1',
+										 m2_el2='$m2_el2',	 
+										 m2_el3='$m2_el3',
+										 m2_el4='$m2_el4',
+										 m2_el5='$m2_el5',
+										 m2_el6='$m2_el6',
+										 m3_el1='$m3_el1',
+										 m3_el2='$m3_el2',	 
+										 m3_el3='$m3_el3',
+										 m4_el1='$m4_el1',
+										 m4_el2='$m4_el2',	 
+										 m4_el3='$m4_el3',
+										 m4_el4='$m4_el4',
+										 m5_el1='$m5_el1',
+										 m5_el2='$m5_el2',	 
+										 m5_el3='$m5_el3',
+										 m5_el4='$m5_el4',
+										 m6_el1='$m6_el1',
+										 m6_el2='$m6_el2',	 
+										 m6_el3='$m6_el3',
+										 m6_el4='$m6_el4',
+										 m6_el5='$m6_el5',
+										 m6_el6='$m6_el6',
+										 m6_el7='$m6_el7',
+										 m6_el8='$m6_el8',
+										 m6_el9='$m6_el9',
+										 m7_el1='$m7_el1',
+										 m7_el2='$m7_el2',	 
+										 m7_el3='$m7_el3',
+										 m7_el4='$m7_el4',
+										 m7_el5='$m7_el5',
+										 m7_el6='$m7_el6',
+										 m7_el7='$m7_el7'
 										 ")
  		or die(mysql_error());
 		// $user_info="INSERT INTO document (order,name,last_name) VALUES('$_POST[order]', '$_POST[name]', '$_POST[last_name]')";
@@ -134,6 +249,8 @@ include ('info.php');
 		// 	die('Error:'.mysql_error());
 		// }
 		// mysql_close($connect);
+
+		// include ('tables.php');
 		
 		header("location: print_cc.php");
 	}
@@ -281,104 +398,104 @@ include ('info.php');
 			    <tbody>
 			    	<tr class="alt" id="mr_3">
 			        	<td class="first_col">Indicadores y luces de bordo</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element[1]" type="radio" value="1" ></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element[1]" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element[1]" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_1[1]" type="radio" value="1" ></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_1[1]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_1[1]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Reloj a la hora</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_1[2]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_1[2]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_1[2]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Cocuyos</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_1[3]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_1[3]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_1[3]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Encendido radio (código)</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_1[4]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_1[4]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_1[4]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Ventilación, calefacción, A/A</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_1[5]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_1[5]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_1[5]" type="radio" value="3"  /></td>
 			        </tr><tr class="alt" id="mr_3">
 			        	<td class="first_col">Accionamiento y sonido pito</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_1[6]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_1[6]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_1[6]" type="radio" value="3"  /></td>
 			        </tr>
 			            </tr><tr class="alt" id="mr_3">
 			        	<td class="first_col">Limpiabrisas (eficacia)</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_1[7]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_1[7]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_1[7]" type="radio" value="3"  /></td>
 			        </tr>
 			            </tr><tr class="alt" id="mr_3">
 			        	<td class="first_col">Activación alarma</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_1[8]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_1[8]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_1[8]" type="radio" value="3"  /></td>
 			        </tr>
 			            </tr><tr class="alt" id="mr_3">
 			        	<td class="first_col">Espejos retrovisores</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_1[9]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_1[9]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_1[9]" type="radio" value="3"  /></td>
 			        </tr>
 			            </tr><tr class="alt" id="mr_3">
 			        	<td class="first_col">Elevavidrios (programación)</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_1[10]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_1[10]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_1[10]" type="radio" value="3"  /></td>
 			        </tr>
 			            </tr><tr class="alt" id="mr_3">
 			        	<td class="first_col">Bloqueo central (programación)</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_1[11]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_1[11]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_1[11]" type="radio" value="3"  /></td>
 			        </tr>
 			            </tr><tr class="alt" id="mr_3">
 			        	<td class="first_col">Sonido de parlantes</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_1[12]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_1[12]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_1[12]" type="radio" value="3"  /></td>
 			        </tr>
 			            </tr><tr class="alt" id="mr_3">
 			        	<td class="first_col">Activación sensor reverso</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_1[13]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_1[13]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_1[13]" type="radio" value="3"  /></td>
 			        </tr>
 			            </tr><tr class="alt" id="mr_3">
 			        	<td class="first_col">Presencia copa de seguridad</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_1[14]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_1[14]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_1[14]" type="radio" value="3"  /></td>
 			        </tr>
 			            </tr><tr class="alt" id="mr_3">
 			        	<td class="first_col">Presencia documentos vehículo</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_1[15]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_1[15]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_1[15]" type="radio" value="3"  /></td>
 			        </tr>
 			            </tr><tr class="alt" id="mr_3">
 			        	<td class="first_col">Carga y vencimiento extinguidor</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_1[16]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_1[16]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_1[16]" type="radio" value="3"  /></td>
 			        </tr>
 			            </tr><tr class="alt" id="mr_3">
 			        	<td class="first_col">Programación cambio de aceite</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_1[17]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_1[17]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_1[17]" type="radio" value="3"  /></td>
 			        </tr>
 
 			    </tbody>
@@ -402,38 +519,38 @@ include ('info.php');
 			    <tbody>
 			    	<tr class="alt" id="mr_3">
 			        	<td class="first_col">Luz baja, media y alta</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_2[1]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_2[1]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_2[1]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Direccionales, repetidores</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_2[2]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_2[2]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_2[2]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Stops</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_2[3]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_2[3]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_2[3]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Reversa</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_2[4]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_2[4]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_2[4]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Guantera, luz techo, baúl</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_2[5]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_2[5]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_2[5]" type="radio" value="3"  /></td>
 			        </tr><tr class="alt" id="mr_3">
 			        	<td class="first_col">Exploradoras y antiniebla</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_2[6]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_2[6]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_2[6]" type="radio" value="3"  /></td>
 			        </tr>
 			    </tbody>
 			</table>	
@@ -457,21 +574,21 @@ include ('info.php');
 			    <tbody>
 			    	<tr class="alt" id="mr_3">
 			        	<td class="first_col">Limpieza carteras, cinturones</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_3[1]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_3[1]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_3[1]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Limpieza millaré y guarnecidos</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_3[2]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_3[2]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_3[2]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Limpieza exterior (chapas, etc)</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_3[3]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_3[3]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_3[3]" type="radio" value="3"  /></td>
 			        </tr>
 			    </tbody>
 			</table>
@@ -495,57 +612,57 @@ include ('info.php');
 			    <tbody>
 			    	<tr class="alt" id="mr_3">
 			        	<td class="first_col">Nivel aceite motor y ajuste filtro</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_6[1]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_6[1]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_6[1]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Nivel líquido de frenos</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_6[2]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_6[2]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_6[2]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Nivel líquido refrigerante</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_6[3]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_6[3]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_6[3]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Nivel aceite de caja</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_6[4]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_6[4]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_6[4]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Nivel hidráulico de dirección</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_6[5]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_6[5]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_6[5]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Agua limpiabrisas del. y tras</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_6[6]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_6[6]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_6[6]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Fijación y ajuste bornes batería</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_6[7]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_6[7]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_6[7]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Presencia de tapas, obturadores</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_6[8]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_6[8]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_6[8]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Presencia del protector motor</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_6[9]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_6[9]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_6[9]" type="radio" value="3"  /></td>
 			        </tr>
 			    </tbody>
 			</table>
@@ -568,40 +685,46 @@ include ('info.php');
 			    </thead>
 			    <tbody>
 			    	<tr class="alt" id="mr_3">
+				        	<td class="first_col">Centrado del timón</td>
+				            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_7[1]" type="radio" value="1"  /></td>
+							<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_7[1]" type="radio" value="2"  /></td>
+							<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_7[1]" type="radio" value="3"  /></td>
+				    </tr>
+			    	<tr class="alt" id="mr_3">
 			        	<td class="first_col">Cambio de marchas neutro y andando</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_7[2]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_7[2]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_7[2]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Rendimiento y aceleración</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_7[3]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_7[3]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_7[3]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Temperatura de motor</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_7[4]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_7[4]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_7[4]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Encendido en frío y caliente</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_7[5]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_7[5]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_7[5]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Efectividad y estabilidad frenado</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_7[6]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_7[6]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_7[6]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
 			        	<td class="first_col">Especificación ruidos susp. y dirección</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element_3_1" name="matrix_7[7]" type="radio" value="1"  /></td>
+						<td><label style="display: none" for="element_3_2">M</label><input id="element_3_2" name="matrix_7[7]" type="radio" value="2"  /></td>
+						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_7[7]" type="radio" value="3"  /></td>
 			        </tr>
 			    </tbody>
 			</table>
@@ -626,31 +749,31 @@ include ('info.php');
 					    <tbody>
 					    	<tr class="alt" id="mr_3">
 					        	<td class="first_col">Delantera izquierda</td>
-					            <td><label style="display: none" for="element_3_1">25</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-								<td><label style="display: none" for="element_3_2">50</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-								<td><label style="display: none" for="element_3_3">75</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
-								<td><label style="display: none" for="element_3_3">100</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+					            <td><label style="display: none" for="element_3_1">25</label><input id="element_3_1" name="matrix_4[1]" type="radio" value="1"  /></td>
+								<td><label style="display: none" for="element_3_2">50</label><input id="element_3_2" name="matrix_4[1]" type="radio" value="2"  /></td>
+								<td><label style="display: none" for="element_3_3">75</label><input id="element_3_3" name="matrix_4[1]" type="radio" value="3"  /></td>
+								<td><label style="display: none" for="element_3_3">100</label><input id="element_3_3" name="matrix_4[1]" type="radio" value="4"  /></td>
 					        </tr>
 					        <tr class="alt" id="mr_3">
 					        	<td class="first_col">Delantera derecha</td>
-					            <td><label style="display: none" for="element_3_1">25</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-								<td><label style="display: none" for="element_3_2">50</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-								<td><label style="display: none" for="element_3_3">75</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
-								<td><label style="display: none" for="element_3_3">100</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+					            <td><label style="display: none" for="element_3_1">25</label><input id="element_3_1" name="matrix_4[2]" type="radio" value="1"  /></td>
+								<td><label style="display: none" for="element_3_2">50</label><input id="element_3_2" name="matrix_4[2]" type="radio" value="2"  /></td>
+								<td><label style="display: none" for="element_3_3">75</label><input id="element_3_3" name="matrix_4[2]" type="radio" value="3"  /></td>
+								<td><label style="display: none" for="element_3_3">100</label><input id="element_3_3" name="matrix_4[2]" type="radio" value="4"  /></td>
 					        </tr>
 					        <tr class="alt" id="mr_3">
 					        	<td class="first_col">Trasera izquierda</td>
-					            <td><label style="display: none" for="element_3_1">25</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-								<td><label style="display: none" for="element_3_2">50</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-								<td><label style="display: none" for="element_3_3">75</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
-								<td><label style="display: none" for="element_3_3">100</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+					            <td><label style="display: none" for="element_3_1">25</label><input id="element_3_1" name="matrix_4[3]" type="radio" value="1"  /></td>
+								<td><label style="display: none" for="element_3_2">50</label><input id="element_3_2" name="matrix_4[3]" type="radio" value="2"  /></td>
+								<td><label style="display: none" for="element_3_3">75</label><input id="element_3_3" name="matrix_4[3]" type="radio" value="3"  /></td>
+								<td><label style="display: none" for="element_3_3">100</label><input id="element_3_3" name="matrix_4[3]" type="radio" value="4"  /></td>
 					        </tr>
 					        <tr class="alt" id="mr_3">
 					        	<td class="first_col">Trasera derecha</td>
-					            <td><label style="display: none" for="element_3_1">25</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-								<td><label style="display: none" for="element_3_2">50</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-								<td><label style="display: none" for="element_3_3">75</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
-								<td><label style="display: none" for="element_3_3">100</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+					            <td><label style="display: none" for="element_3_1">25</label><input id="element_3_1" name="matrix_4[4]" type="radio" value="1"  /></td>
+								<td><label style="display: none" for="element_3_2">50</label><input id="element_3_2" name="matrix_4[4]" type="radio" value="2"  /></td>
+								<td><label style="display: none" for="element_3_3">75</label><input id="element_3_3" name="matrix_4[4]" type="radio" value="3"  /></td>
+								<td><label style="display: none" for="element_3_3">100</label><input id="element_3_3" name="matrix_4[4]" type="radio" value="4"  /></td>
 					        </tr>
 					    </tbody>
 				</table>
@@ -675,31 +798,31 @@ include ('info.php');
 					    <tbody>
 					    	<tr class="alt" id="mr_3">
 					        	<td class="first_col">Delantera izquierda</td>
-					            <td><label style="display: none" for="element_3_1">30</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-								<td><label style="display: none" for="element_3_2">32</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-								<td><label style="display: none" for="element_3_3">34</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
-								<td><label style="display: none" for="element_3_3">36</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+					            <td><label style="display: none" for="element_3_1">30</label><input id="element_3_1" name="matrix_5[1]" type="radio" value="1"  /></td>
+								<td><label style="display: none" for="element_3_2">32</label><input id="element_3_2" name="matrix_5[1]" type="radio" value="2"  /></td>
+								<td><label style="display: none" for="element_3_3">34</label><input id="element_3_3" name="matrix_5[1]" type="radio" value="3"  /></td>
+								<td><label style="display: none" for="element_3_3">36</label><input id="element_3_3" name="matrix_5[1]" type="radio" value="4"  /></td>
 					        </tr>
 					        <tr class="alt" id="mr_3">
 					        	<td class="first_col">Delantera derecha</td>
-					            <td><label style="display: none" for="element_3_1">30</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-								<td><label style="display: none" for="element_3_2">32</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-								<td><label style="display: none" for="element_3_3">34</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
-								<td><label style="display: none" for="element_3_3">36</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+					            <td><label style="display: none" for="element_3_1">30</label><input id="element_3_1" name="matrix_5[2]" type="radio" value="1"  /></td>
+								<td><label style="display: none" for="element_3_2">32</label><input id="element_3_2" name="matrix_5[2]" type="radio" value="2"  /></td>
+								<td><label style="display: none" for="element_3_3">34</label><input id="element_3_3" name="matrix_5[2]" type="radio" value="3"  /></td>
+								<td><label style="display: none" for="element_3_3">36</label><input id="element_3_3" name="matrix_5[2]" type="radio" value="4"  /></td>
 					        </tr>
 					        <tr class="alt" id="mr_3">
 					        	<td class="first_col">Trasera izquierda</td>
-					            <td><label style="display: none" for="element_3_1">30</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-								<td><label style="display: none" for="element_3_2">32</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-								<td><label style="display: none" for="element_3_3">34</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
-								<td><label style="display: none" for="element_3_3">36</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+					            <td><label style="display: none" for="element_3_1">30</label><input id="element_3_1" name="matrix_5[3]" type="radio" value="1"  /></td>
+								<td><label style="display: none" for="element_3_2">32</label><input id="element_3_2" name="matrix_5[3]" type="radio" value="2"  /></td>
+								<td><label style="display: none" for="element_3_3">34</label><input id="element_3_3" name="matrix_5[3]" type="radio" value="3"  /></td>
+								<td><label style="display: none" for="element_3_3">36</label><input id="element_3_3" name="matrix_5[3]" type="radio" value="4"  /></td>
 					        </tr>
 					        <tr class="alt" id="mr_3">
 					        	<td class="first_col">Trasera derecha</td>
-					            <td><label style="display: none" for="element_3_1">30</label><input id="element_3_1" name="element_3" type="radio" value="1"  /></td>
-								<td><label style="display: none" for="element_3_2">32</label><input id="element_3_2" name="element_3" type="radio" value="2"  /></td>
-								<td><label style="display: none" for="element_3_3">34</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
-								<td><label style="display: none" for="element_3_3">36</label><input id="element_3_3" name="element_3" type="radio" value="3"  /></td>
+					            <td><label style="display: none" for="element_3_1">30</label><input id="element_3_1" name="matrix_5[4]" type="radio" value="1"  /></td>
+								<td><label style="display: none" for="element_3_2">32</label><input id="element_3_2" name="matrix_5[4]" type="radio" value="2"  /></td>
+								<td><label style="display: none" for="element_3_3">34</label><input id="element_3_3" name="matrix_5[4]" type="radio" value="3"  /></td>
+								<td><label style="display: none" for="element_3_3">36</label><input id="element_3_3" name="matrix_5[4]" type="radio" value="4"  /></td>
 					        </tr>
 					    </tbody>
 				</table>
