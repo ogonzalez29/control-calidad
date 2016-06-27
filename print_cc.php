@@ -585,7 +585,7 @@ include ('info.php');
 					<h2>Próximo mantenimiento a los:</h2>
 				</div>
 				<div style="float:right;" class="col-4">
-					<h2>5.000 kms</h2>
+					<h2><?php echo $row['nextMileage']. ' '. "kms"?></h2>
 				</div>
 				<div style="border-top: 1px solid black;" class="col-12">
 					<h1 style="margin-top: 4px;"></h1>

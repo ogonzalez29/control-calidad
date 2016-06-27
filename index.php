@@ -179,6 +179,7 @@ include ('info.php');
 	$comment2 = $_POST['comment2'];
 	$comment3 = $_POST['comment3'];
 	$comment4 = $_POST['comment4'];
+	$nextMileage = mysql_real_escape_string(htmlspecialchars($_POST['nextMileage']));
 
 	if (!empty($errors_array)) {
 		echo "<form method=post action='index.php'>";
@@ -250,7 +251,8 @@ include ('info.php');
 										 comment1='$comment1',
 										 comment2='$comment2',
 										 comment3='$comment3',
-										 comment4='$comment4'
+										 comment4='$comment4',
+										 nextMileage='$nextMileage'
 										 ")
  		or die(mysql_error());
 		// $user_info="INSERT INTO document (order,name,last_name) VALUES('$_POST[order]', '$_POST[name]', '$_POST[last_name]')";
@@ -266,8 +268,8 @@ include ('info.php');
 	}
 }
 /// Add your form processing page address to action in above line. Example  action=dd-check.php////
-// var_dump($cat);
-// var_dump($subcat);
+// var_dump($mileage);
+// var_dump($nextMileage);
 
 ?>
 	<img id="top" src="img/top.png" alt="">
@@ -866,11 +868,12 @@ include ('info.php');
 		</li>		<li id="li_25" >
 		<label class="description" for="element_25">Próximo mantenimiento a los (kms): </label>
 		<div>
-			<input id="element_25" name="element_25" class="element text medium" type="text" maxlength="255" value=""/> 
-		</div> 
+			<input id="element_25" name="nextMileage" class="element text medium" type="text" maxlength="255" value="<?php echo $nextMileage;?>"/> 
+			<span><?php echo $nextMileageErr;?></span> 
+		</div>
 		</li>
 		<li id="li_7"  >
-		<label class="description" for="element_7">Firma del cliente: </label>
+		<label class="description" for="element_7">Firma del asesor de servicio: </label>
 		<div id="mf_sigpad_7">
 			<div class="mf_sig_wrapper medium">
 	          <canvas class="mf_canvas_pad" width="309" height="130"></canvas>
