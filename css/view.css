@@ -1433,8 +1433,8 @@ div.mf_progress_value span{
 }
 .mf_canvas_pad{
 	border-radius: 10px;
-	cursor: url("../../../js/signaturepad/pen.cur"), crosshair;
-  	cursor: url("../../../js/signaturepad/pen.cur") 16 16, crosshair;
+	cursor: url("../js/signaturepad/pen.cur"), crosshair;
+  	cursor: url("../js/signaturepad/pen.cur") 16 16, crosshair;
 }
 #machform_review_table .mf_canvas_pad{
   cursor: auto;

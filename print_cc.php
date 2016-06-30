@@ -13,6 +13,9 @@ include ('info.php');
 		<!-- <link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'> -->
 		<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css">
 		<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/signaturepad/jquery.signaturepad.min.js"></script>
+		<script type="text/javascript" src="js/signaturepad/json2.min.js"></script>
 	</head>
 	<body>
 	<div class="grid">
@@ -569,15 +572,37 @@ include ('info.php');
 			</div>
 		</div>
 		<div class="footer">
-			<div class="col-6">
-				<div style="border-right: 1px solid black;" class="col-12">
-					<h2>Conformidad factura/trabajos:</h2>
-					<div class="col-12">
-						<h1></h1>
+			<div style="border-right: 1px solid black;" class="col-6">
+				<div class="col-12">
+					<h2>Conformidad factura / trabajos:</h2>
+				</div>
+				<div style="border-bottom: 1px solid black;" class="col-12">
+					<div id="mf_sigpad_7">
+						<div class="mf_sig_wrapper medium">
+				          <canvas class="mf_canvas_pad" width="309" height="129"></canvas>
+				          <input type="hidden" name="output" id="output" class="output">
+				        </div>
+				        <script type="text/javascript">
+							$(function(){
+								var sigpad_options_7 = {
+					               drawOnly : false,
+					               displayOnly: true,
+					               clear: '.element_7_clear',
+					               bgColour: '#fff',
+					               penColour: '#000',
+					               output: '#output',
+					               lineTop: 95,
+					               lineMargin: 10,
+					               validateFields: false
+					        	};
+					        	var sigpad_data_7 = <?php echo $row['signature']?>;
+					      		$('#mf_sigpad_7').signaturePad(sigpad_options_7).regenerate(sigpad_data_7);
+							});
+						</script>
 					</div>
-					<div class="col-12">
-						<h3>Firma y sello del taller</h3>
-					</div>
+				</div>
+				<div class="col-12">
+					<h3>Firma y sello del taller</h3>
 				</div>
 			</div>
 			<div class="col-6">
@@ -588,7 +613,7 @@ include ('info.php');
 					<h2><?php echo $row['nextMileage']. ' '. "kms"?></h2>
 				</div>
 				<div style="border-top: 1px solid black;" class="col-12">
-					<h1 style="margin-top: 4px;"></h1>
+					<h1 style="margin-top: 5px;"></h1>
 				</div>
 				<div class="col-12">
 					<h3>Firma del cliente</h3>
@@ -598,12 +623,7 @@ include ('info.php');
 		<?php
 		}
 		?>
-		<!-- <?Php
-			$cat=$_POST['cat'];
-			$subcat=$_POST['subcat'];
-
-			echo "Value of \$cat = $cat <br>Value of \$subcat = $subcat ";
-		?>
+		<!--	
 		<br><br>
 		<a href=index.php>Reiniciar otro certificado</a>
 

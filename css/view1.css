@@ -49,6 +49,31 @@ caption{
 	/*box-shadow: 0 0 8px rgba(0,0,0,0.2);*/
 }
 
+.mf_canvas_pad{
+	border-radius: 10px;
+	cursor: url("../js/signaturepad/pen.cur"), crosshair;
+  	cursor: url("../js/signaturepad/pen.cur") 16 16, crosshair;
+}
+
+#machform_review_table .mf_canvas_pad{
+  cursor: auto;
+}s
+
+.mf_sig_wrapper{
+	margin: 0 10% 0 10%;
+	float: left;
+	width: 309px;
+}
+
+.mf_sig_wrapper {
+	border-radius: 10px;
+	/*border: 1px solid #ccc;*/
+	/*width: 309px;*/
+	padding-bottom: 0px !important;
+	padding: 3px !important;
+	margin: 0 10% 0 10%;
+}
+
 .row,
 .row-1,
 .row-2,
@@ -58,8 +83,7 @@ caption{
     display: flex;
 }
 
-.row,
-.footer{
+.row{
 	padding-top: 10px;
 }
 
@@ -276,7 +300,7 @@ caption{
 
 .col-12 h1{
 	margin-top: 30px;
-	margin-bottom: 20px;
+	margin-bottom: 0px;
 	font-size: 1.4em;
 }
 

@@ -11,6 +11,7 @@ global $modelErr;
 global $mileageErr;
 global $licenseErr;
 global $nextMileageErr;
+global $signatureErr;
 
 $errors = array('$orderErr' => "", 
                 '$nameErr' => "", 
@@ -22,10 +23,12 @@ $errors = array('$orderErr' => "",
                 '$modelErr' => "", 
                 '$mileageErr' => "",
                 '$licenseErr' => "",
-                '$nextMileageErr' =>"");
+                '$nextMileageErr' =>"",
+                '$signatureErr' =>"");
 
 // $orderErr = $nameErr = $last_nameErr = $emailErr = $genderErr = $websiteErr = "";
-$firstname = $lastname = $make = $model = $license = $mileage = $ordernumber = $firstname1 = $lastname1 = $day = $month = $year = $comment1 = $comment2 = $comment3 = $comment4 = $nextMileage= "";
+$firstname = $lastname = $make = $model = $license = $mileage = $ordernumber = $firstname1 = $lastname1 = $day = $month = $year = $comment1 = $comment2 = $comment3 = $comment4 = $nextMileage= $signature="";
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["ordernumber"])) {
@@ -113,69 +116,73 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   array_push($errors, $modelErr);
 
 
-if (empty($_POST["license"])) {
-    $licenseErr = "* Placa del vehículo requerida";
-  } else {
-    $license = test_input($_POST["license"]);
-    // check if order only contains numbers and no whitespaces
-    if (!preg_match("/^[0-9A-Z ]*$/",$license)) {
-      $licenseErr = "* Solo letras en mayúscula y números sin espacios permitidos"; 
+  if (empty($_POST["license"])) {
+      $licenseErr = "* Placa del vehículo requerida";
+    } else {
+      $license = test_input($_POST["license"]);
+      // check if order only contains numbers and no whitespaces
+      if (!preg_match("/^[0-9A-Z ]*$/",$license)) {
+        $licenseErr = "* Solo letras en mayúscula y números sin espacios permitidos"; 
+      }
     }
-  }
 
-  array_push($errors, $licenseErr);
+    array_push($errors, $licenseErr);
 
-if (empty($_POST["mileage"])) {
-    $mileageErr = "* Kilometraje del vehículo requerido";
-  } else {
-    $mileage = test_input($_POST["mileage"]);
-    // check if order only contains numbers and no whitespaces
-    if (!preg_match("/^[0-9 ]*$/",$mileage)) {
-      $mileageErr = "* Solo números sin espacios permitidos"; 
+  if (empty($_POST["mileage"])) {
+      $mileageErr = "* Kilometraje del vehículo requerido";
+    } else {
+      $mileage = test_input($_POST["mileage"]);
+      // check if order only contains numbers and no whitespaces
+      if (!preg_match("/^[0-9 ]*$/",$mileage)) {
+        $mileageErr = "* Solo números sin espacios permitidos"; 
+      }
     }
-  }
 
-  array_push($errors, $mileageErr);
+    array_push($errors, $mileageErr);
 
-if (empty($_POST["comment1"])) {
-    $comment1 = "";
-  } else {
-    $comment1 = test_input($_POST["comment1"]);
-  }
-
-if (empty($_POST["comment2"])) {
-    $comment2 = "";
-  } else {
-    $comment2 = test_input($_POST["comment2"]);
-  }
-
-if (empty($_POST["comment3"])) {
-    $comment3 = "";
-  } else {
-    $comment3 = test_input($_POST["comment3"]);
-  }
-
-if (empty($_POST["comment4"])) {
-    $comment4 = "";
-  } else {
-    $comment4 = test_input($_POST["comment4"]);
-  }
-
-if (empty($_POST["nextMileage"])) {
-    $nextMileageErr = "* Próximo kilometraje requerido";
-  } elseif ($_POST["nextMileage"]<$_POST["mileage"]) {
-    $nextMileageErr = "* El valor debe ser superior al kilometraje actual";
-  } else {
-    $nextMileage = test_input($_POST["nextMileage"]);
-    // check if order only contains numbers and no whitespaces
-    if (!preg_match("/^[0-9 ]*$/",$nextMileage)) {
-      $nextMileageErr = "* Solo números sin espacios permitidos"; 
+  if (empty($_POST["comment1"])) {
+      $comment1 = "";
+    } else {
+      $comment1 = test_input($_POST["comment1"]);
     }
-  }
+
+  if (empty($_POST["comment2"])) {
+      $comment2 = "";
+    } else {
+      $comment2 = test_input($_POST["comment2"]);
+    }
+
+  if (empty($_POST["comment3"])) {
+      $comment3 = "";
+    } else {
+      $comment3 = test_input($_POST["comment3"]);
+    }
+
+  if (empty($_POST["comment4"])) {
+      $comment4 = "";
+    } else {
+      $comment4 = test_input($_POST["comment4"]);
+    }
+
+  if (empty($_POST["nextMileage"])) {
+      $nextMileageErr = "* Próximo kilometraje requerido";
+    } elseif ($_POST["nextMileage"]<$_POST["mileage"]) {
+      $nextMileageErr = "* El valor debe ser superior al kilometraje actual";
+    } else {
+      $nextMileage = test_input($_POST["nextMileage"]);
+      // check if order only contains numbers and no whitespaces
+      if (!preg_match("/^[0-9 ]*$/",$nextMileage)) {
+        $nextMileageErr = "* Solo números sin espacios permitidos"; 
+      }
+    }
 
   array_push($errors, $nextMileageErr);
 
+  if (!json_decode($_POST["output"])){
+      $signatureErr = "* Firma del asesor requerida";
+    }
 
+  array_push($errors, $signatureErr);
 
   // if (empty($_POST["email"])) {
   //   $emailErr = "Email is required";
