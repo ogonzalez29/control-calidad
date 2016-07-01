@@ -97,7 +97,7 @@ require_once 'save_data.php'; //Save input to database
 			</div>
 			<div class="form_description">
 				<h2>Certificado de Control Calidad</h2>
-				<p>Revisión de 25 puntos de control calidad de la reparación mecánica</p>
+				<p>Revisión de 50 puntos de control calidad de la reparación mecánica</p>
 			</div>						
 			<ul >
 		<li id="li_6" >
@@ -664,6 +664,7 @@ require_once 'save_data.php'; //Save input to database
 			<textarea onKeyPress=check_length_1(this.form); onKeyDown=check_length_1(this.form); id="element_21" name="comment1" class="element textarea medium"><?php echo $comment1;?></textarea> 
 			<br>
 			<input size=1 value=300 name=text_num_1 style="float:right; text-align:right;">
+			<span><?php echo $comment1Err;?></span>
 		</div> 
 		</li>		<li id="li_22" >
 		<label class="description" for="element_22">De ser posible </label>
@@ -671,6 +672,7 @@ require_once 'save_data.php'; //Save input to database
 			<textarea onKeyPress=check_length_2(this.form); onKeyDown=check_length_2(this.form); id="element_22" name="comment2" class="element textarea medium"><?php echo $comment2;?></textarea> 
 			<br>
 			<input size=1 value=300 name=text_num_2 style="float:right; text-align:right;">
+			<span><?php echo $comment2Err;?></span>
 		</div> 
 		</li>		<li id="li_23" >
 		<label class="description" for="element_23">A prever </label>
@@ -678,6 +680,7 @@ require_once 'save_data.php'; //Save input to database
 			<textarea onKeyPress=check_length_3(this.form); onKeyDown=check_length_3(this.form); id="element_23" name="comment3" class="element textarea medium"><?php echo $comment3;?></textarea> 
 			<br>
 			<input size=1 value=300 name=text_num_3 style="float:right; text-align:right;">
+			<span><?php echo $comment3Err;?></span>
 		</div> 
 		</li>
 		<li class="section_break">
@@ -688,6 +691,7 @@ require_once 'save_data.php'; //Save input to database
 			<textarea onKeyPress=check_length_4(this.form); onKeyDown=check_length_4(this.form); id="element_24" name="comment4" class="element textarea medium"><?php echo $comment4;?></textarea> 
 			<br>
 			<input size=1 value=300 name=text_num_4 style="float:right; text-align:right;">
+			<span><?php echo $comment4Err;?></span>
 		</div> 
 		</li>		<li id="li_25" >
 		<label class="description" for="element_25">Próximo mantenimiento a los (kms): </label>
