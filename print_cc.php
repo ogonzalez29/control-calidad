@@ -18,25 +18,28 @@ include ('info.php');
 		<script type="text/javascript" src="js/signaturepad/json2.min.js"></script>
 	</head>
 	<body>
+	<?php
+	//get results from database
+	$result = mysql_query("SELECT * FROM document ORDER BY id DESC LIMIT 1")
+		or die(mysql_error());
+
+	//loop through results of database query, displaying them in the format
+	while ($row = mysql_fetch_array($result)) {
+	?>
 	<div class="grid">
 		<div class="row">
 			<div class="col-12">
 				<div style="padding: 5px 2px 2px 2px;" class="col-12">
 					<img src="img/logo.png">
+					<div style="float:right; color:red;" class="col-1_1">
+						<h2 style="text-align:right;"><?php echo 'N. '. ($row['id']+1000)?></h2>
+					</div>
 				</div>
 				<div style="text-align: center;" class="col-12">
 					<h1>CERTIFICADO DE CONTROL CALIDAD</h1>
 				</div>
 			</div>
 		</div>
-		<?php
-		//get results from database
-		$result = mysql_query("SELECT * FROM document ORDER BY id DESC LIMIT 1")
-			or die(mysql_error());
-
-		//loop through results of database query, displaying them in the format
-		while ($row = mysql_fetch_array($result)) {
-		?>
 		<div class="row-1">
 			<div class="col-12">
 				<div class="col-08">

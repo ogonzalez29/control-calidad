@@ -23,6 +23,7 @@ require_once 'save_data.php'; //Save input to database
 	<!--[if lt IE 9]><script src="js/signaturepad/flashcanvas.js"></script><![endif]-->
 	<script type="text/javascript" src="js/signaturepad/jquery.signaturepad.min.js"></script>
 	<script type="text/javascript" src="js/signaturepad/json2.min.js"></script>
+	<script type="text/javascript" src="js/checklength.js"></script>
 	<script type="text/javascript">
 		function AjaxFunction()
 		{
@@ -660,17 +661,23 @@ require_once 'save_data.php'; //Save input to database
 		</li>		<li id="li_21" >
 		<label class="description" for="element_21">Inmediato </label>
 		<div>
-			<textarea id="element_21" name="comment1" class="element textarea medium"><?php echo $comment1;?></textarea> 
+			<textarea onKeyPress=check_length_1(this.form); onKeyDown=check_length_1(this.form); id="element_21" name="comment1" class="element textarea medium"><?php echo $comment1;?></textarea> 
+			<br>
+			<input size=1 value=300 name=text_num_1 style="float:right; text-align:right;">
 		</div> 
 		</li>		<li id="li_22" >
 		<label class="description" for="element_22">De ser posible </label>
 		<div>
-			<textarea id="element_22" name="comment2" class="element textarea medium"><?php echo $comment2;?></textarea> 
+			<textarea onKeyPress=check_length_2(this.form); onKeyDown=check_length_2(this.form); id="element_22" name="comment2" class="element textarea medium"><?php echo $comment2;?></textarea> 
+			<br>
+			<input size=1 value=300 name=text_num_2 style="float:right; text-align:right;">
 		</div> 
 		</li>		<li id="li_23" >
 		<label class="description" for="element_23">A prever </label>
 		<div>
-			<textarea id="element_23" name="comment3" class="element textarea medium"><?php echo $comment3;?></textarea> 
+			<textarea onKeyPress=check_length_3(this.form); onKeyDown=check_length_3(this.form); id="element_23" name="comment3" class="element textarea medium"><?php echo $comment3;?></textarea> 
+			<br>
+			<input size=1 value=300 name=text_num_3 style="float:right; text-align:right;">
 		</div> 
 		</li>
 		<li class="section_break">
@@ -678,7 +685,9 @@ require_once 'save_data.php'; //Save input to database
 		</li>		<li id="li_24" >
 		<label class="description" for="element_24">Observaciones </label>
 		<div>
-			<textarea id="element_24" name="comment4" class="element textarea medium"><?php echo $comment4;?></textarea> 
+			<textarea onKeyPress=check_length_4(this.form); onKeyDown=check_length_4(this.form); id="element_24" name="comment4" class="element textarea medium"><?php echo $comment4;?></textarea> 
+			<br>
+			<input size=1 value=300 name=text_num_4 style="float:right; text-align:right;">
 		</div> 
 		</li>		<li id="li_25" >
 		<label class="description" for="element_25">Próximo mantenimiento a los (kms): </label>
