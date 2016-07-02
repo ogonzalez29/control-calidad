@@ -539,7 +539,7 @@ include ('info.php');
 		<div class ="row-7">
 			<div class="col-3">
 				<div class="col-12">
-					<h2 style="padding-left: 42px;">Semáforo</h2>
+					<h2 style="padding-right: 38px;">Semáforo</h2>
 					<svg height="120" width="120">
 						<circle cx="40%" cy="50%" r="50" stroke="red" stroke-width="3" fill="red" />
 						<text x="40%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="0.5px" dy=".3em">Inmediato</text>
@@ -552,7 +552,7 @@ include ('info.php');
 						<circle cx="40%" cy="50%" r="50" stroke="green" stroke-width="3" fill="green" />
 						<text x="40%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="0.5px" dy=".3em">A prever</text>
 					</svg>
-					<h2 style="padding-left: 20px;">Observaciones:</h2>
+					<h2 style="padding-right: 30px;">Observaciones:</h2>
 
 				</div>
 			</div>

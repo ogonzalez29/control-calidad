@@ -1,5 +1,6 @@
 <?php
 //// define variables array and set to empty values
+global $dateErr;
 global $orderErr;
 global $nameErr;
 global $last_nameErr;
@@ -10,6 +11,13 @@ global $lineErr;
 global $modelErr;
 global $mileageErr;
 global $licenseErr;
+global $matrix1Err;
+global $matrix2Err;
+global $matrix3Err;
+global $matrix4Err;
+global $matrix5Err;
+global $matrix6Err;
+global $matrix7Err;
 global $nextMileageErr;
 global $signatureErr;
 global $comment1Err;
@@ -17,7 +25,8 @@ global $comment2Err;
 global $comment3Err;
 global $comment4Err;
 
-$errors = array('$orderErr' => "", 
+$errors = array('$dateErr' => "",
+                '$orderErr' => "", 
                 '$nameErr' => "", 
                 '$last_nameErr' => "", 
                 '$nameErr1' => "", 
@@ -27,6 +36,13 @@ $errors = array('$orderErr' => "",
                 '$modelErr' => "", 
                 '$mileageErr' => "",
                 '$licenseErr' => "",
+                '$matrix1Err' => "",
+                '$matrix2Err' => "",
+                '$matrix3Err' => "",
+                '$matrix4Err' => "",
+                '$matrix5Err' => "",
+                '$matrix6Err' => "",
+                '$matrix7Err' => "",
                 '$nextMileageErr' =>"",
                 '$signatureErr' =>"",
                 '$comment1Err' =>"",
@@ -35,10 +51,16 @@ $errors = array('$orderErr' => "",
                 'comment4Err'=>"");
 
 // $orderErr = $nameErr = $last_nameErr = $emailErr = $genderErr = $websiteErr = "";
-$firstname = $lastname = $make = $model = $license = $mileage = $ordernumber = $firstname1 = $lastname1 = $day = $month = $year = $comment1 = $comment2 = $comment3 = $comment4 = $nextMileage= $signature="";
+$month = $day = $year = $firstname = $lastname = $make = $model = $license = $mileage = $ordernumber = $firstname1 = $lastname1 =  $comment1 = $comment2 = $comment3 = $comment4 = $nextMileage= $signature="";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if(empty($_POST["month"]) || empty($_POST["day"]) || empty($_POST["year"])){
+    $dateErr = "* Fecha requerida";
+  }
+
+  $errors = array($dateErr);
+
   if (empty($_POST["ordernumber"])) {
     $orderErr = "* Orden de reparación requerida";
   } else {
@@ -49,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 
-  $errors = array($orderErr);
+  array_push($errors, $orderErr);
 
   if (empty($_POST["firstname1"])) {
     $nameErr1 = "* Nombre requerido";
@@ -148,12 +170,70 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     array_push($errors, $mileageErr);
 
+  //Check if all items have an option selected (change number as needed)
+  if (!isset($_POST['matrix_1'])) {
+    $matrix1Err = "* Se debe seleccionar una opción por ítem";
+  } elseif (count($_POST['matrix_1'])<17){
+    $matrix1Err = "* Se debe seleccionar una opción por ítem";
+  }
+
+  array_push($errors, $matrix1Err);
+
+  //Check if all items have an option selected (change number as needed)
+  if (!isset($_POST['matrix_2'])) {
+    $matrix2Err = "* Se debe seleccionar una opción por ítem";
+  } elseif (count($_POST['matrix_2'])<6){
+    $matrix2Err = "* Se debe seleccionar una opción por ítem";
+  }
+
+  array_push($errors, $matrix2Err);
+
+  if (!isset($_POST['matrix_3'])) {
+    $matrix3Err = "* Se debe seleccionar una opción por ítem";
+  } elseif (count($_POST['matrix_3'])<3){
+    $matrix3Err = "* Se debe seleccionar una opción por ítem";
+  }
+
+  array_push($errors, $matrix3Err);
+
+  if (!isset($_POST['matrix_4'])) {
+    $matrix4Err = "* Se debe seleccionar una opción por ítem";
+  } elseif (count($_POST['matrix_4'])<9){
+    $matrix4Err = "* Se debe seleccionar una opción por ítem";
+  }
+
+  array_push($errors, $matrix4Err);
+
+  if (!isset($_POST['matrix_5'])) {
+    $matrix5Err = "* Se debe seleccionar una opción por ítem";
+  } elseif (count($_POST['matrix_5'])<7){
+    $matrix5Err = "* Se debe seleccionar una opción por ítem";
+  }
+
+  array_push($errors, $matrix5Err);
+
+  if (!isset($_POST['matrix_6'])) {
+    $matrix6Err = "* Se debe seleccionar una opción por ítem";
+  } elseif (count($_POST['matrix_6'])<4){
+    $matrix6Err = "* Se debe seleccionar una opción por ítem";
+  }
+
+  array_push($errors, $matrix6Err);
+
+  if (!isset($_POST['matrix_7'])) {
+    $matrix7Err = "* Se debe seleccionar una opción por ítem";
+  } elseif (count($_POST['matrix_7'])<4){
+    $matrix7Err = "* Se debe seleccionar una opción por ítem";
+  }
+
+  array_push($errors, $matrix7Err);
+
   if (empty($_POST["comment1"])) {
       $comment1 = "";
     } else {
       $comment1 = test_input($_POST["comment1"]);
       // check if comment1 only contains numbers, letters and whitespaces
-      if (!preg_match("/^[0-9a-zA-Záéíóúñ]*$/",$comment1)) {
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;: ]*$/",$comment1)) {
         $comment1Err = "* Solo números, letras y espacios permitidos"; 
       }
     }
@@ -165,7 +245,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $comment2 = test_input($_POST["comment2"]);
       // check if comment1 only contains numbers, letters and whitespaces
-      if (!preg_match("/^[0-9a-zA-Záéíóúñ]*$/",$comment2)) {
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;: ]*$/",$comment2)) {
         $comment2Err = "* Solo números, letras y espacios permitidos"; 
       }
     }
@@ -177,7 +257,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $comment3 = test_input($_POST["comment3"]);
       // check if comment1 only contains numbers, letters and whitespaces
-      if (!preg_match("/^[0-9a-zA-Záéíóúñ]*$/",$comment3)) {
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;: ]*$/",$comment3)) {
         $comment3Err = "* Solo números, letras y espacios permitidos"; 
       }
     }
@@ -189,7 +269,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $comment4 = test_input($_POST["comment4"]);
       // check if comment1 only contains numbers, letters and whitespaces
-      if (!preg_match("/^[0-9a-zA-Záéíóúñ]*$/",$comment4)) {
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;: ]*$/",$comment4)) {
         $comment4Err = "* Solo números, letras y espacios permitidos"; 
       }
     }

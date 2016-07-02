@@ -105,6 +105,7 @@ require_once 'save_data.php'; //Save input to database
 		<span>
 			<input id="element_6_1" name="month" class="element text" size="2" maxlength="2" value="<?php echo $month;?>" type="text"> /
 			<label for="element_6_1">MM</label>
+			<span><?php echo $dateErr;?></span>
 		</span>
 		<span>
 			<input id="element_6_2" name="day" class="element text" size="2" maxlength="2" value="<?php echo $day;?>" type="text"> /
@@ -328,6 +329,9 @@ require_once 'save_data.php'; //Save input to database
 
 			    </tbody>
 			</table>
+			<div>
+				<span><?php echo $matrix1Err;?></span>
+			</div>
 			<li class="section_break">
 			<p></p>
 			</li>
@@ -381,7 +385,10 @@ require_once 'save_data.php'; //Save input to database
 						<td><label style="display: none" for="element_3_3">N/A</label><input id="element_3_3" name="matrix_2[6]" type="radio" value="3"  /></td>
 			        </tr>
 			    </tbody>
-			</table>	
+			</table>
+			<div>
+				<span><?php echo $matrix2Err;?></span>
+			</div>	
 		</li>				
 		<li class="section_break">
 		<p></p>
@@ -420,6 +427,9 @@ require_once 'save_data.php'; //Save input to database
 			        </tr>
 			    </tbody>
 			</table>
+			<div>
+				<span><?php echo $matrix3Err;?></span>
+			</div>
 			</li>		
 			<li class="section_break">
 			<p></p>
@@ -494,6 +504,9 @@ require_once 'save_data.php'; //Save input to database
 			        </tr>
 			    </tbody>
 			</table>
+			<div>
+				<span><?php echo $matrix4Err;?></span>
+			</div>
 			</li>		
 			<li class="section_break">
 			<p></p>
@@ -556,6 +569,9 @@ require_once 'save_data.php'; //Save input to database
 			        </tr>
 			    </tbody>
 			</table>
+			<div>
+				<span><?php echo $matrix5Err;?></span>
+			</div>
 			</li>
 			<li class="section_break">
 			<p></p>
@@ -605,6 +621,9 @@ require_once 'save_data.php'; //Save input to database
 					        </tr>
 					    </tbody>
 				</table>
+				<div>
+				<span><?php echo $matrix6Err;?></span>
+			</div>
 				</li>
 				<li class="section_break">
 				<p></p>
@@ -654,6 +673,9 @@ require_once 'save_data.php'; //Save input to database
 					        </tr>
 					    </tbody>
 				</table>
+				<div>
+				<span><?php echo $matrix7Err;?></span>
+			</div>
 				</li>		
 			<li class="section_break">
 			<h3>Semáforo</h3>
@@ -706,8 +728,8 @@ require_once 'save_data.php'; //Save input to database
 			<div class="mf_sig_wrapper medium">
 	          <canvas class="mf_canvas_pad" width="309" height="130"></canvas>
 	          <input type="hidden" name="output" id="output" class="output">
-	          <span><?php echo $signatureErr;?></span> 
 	        </div>
+	        <span><?php echo $signatureErr;?></span> 
 	        <a class="mf_sigpad_clear element_7_clear" href="#">Borrar</a>
 	        <script type="text/javascript">
 				$(function(){
