@@ -24,7 +24,7 @@ require_once 'save_data.php'; //Save input to database
 	<script type="text/javascript" src="js/signaturepad/jquery.signaturepad.min.js"></script>
 	<script type="text/javascript" src="js/signaturepad/json2.min.js"></script>
 	<script type="text/javascript" src="js/checklength.js"></script>
-	<script type="text/javascript">
+	<script type="text/javascript"> // Drop-down dependent menus script
 		function AjaxFunction()
 		{
 		var httpxml;
@@ -85,7 +85,7 @@ require_once 'save_data.php'; //Save input to database
 			httpxml.open("GET",url,true);
 			httpxml.send(null);
 			  }
-	</script>	
+	</script>
 </head>
 <body id="main_body" >
 	<img id="top" src="img/top.png" alt="">
@@ -130,14 +130,14 @@ require_once 'save_data.php'; //Save input to database
 			});
 		</script>
 		</li>	
-		<li id="li_3" >
+		<li id="li_4" >
 		<label class="description" for="element_3">Orden de reparación </label>
 		<div>
 			<input id="element_3" name="ordernumber" class="element text medium" type="text" maxlength="255" value="<?php echo $ordernumber;?>"/>
 			<span><?php echo $orderErr;?></span>
 		</div> 
 		</li>
-		<li id="li_7" >
+		<li id="li_2" >
 		<label class="description" for="element_7">Asesor de servicio </label>
 		<span>
 			<input id="element_7_1" name= "firstname1" class="element text" maxlength="255" size="8" value="<?php echo $firstname1;?>"/>

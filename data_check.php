@@ -198,7 +198,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (!isset($_POST['matrix_4'])) {
     $matrix4Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_4'])<9){
+  } elseif (count($_POST['matrix_4'])<4){
     $matrix4Err = "* Se debe seleccionar una opción por ítem";
   }
 
@@ -206,7 +206,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (!isset($_POST['matrix_5'])) {
     $matrix5Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_5'])<7){
+  } elseif (count($_POST['matrix_5'])<4){
     $matrix5Err = "* Se debe seleccionar una opción por ítem";
   }
 
@@ -214,7 +214,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (!isset($_POST['matrix_6'])) {
     $matrix6Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_6'])<4){
+  } elseif (count($_POST['matrix_6'])<9){
     $matrix6Err = "* Se debe seleccionar una opción por ítem";
   }
 
@@ -222,7 +222,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (!isset($_POST['matrix_7'])) {
     $matrix7Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_7'])<4){
+  } elseif (count($_POST['matrix_7'])<7){
     $matrix7Err = "* Se debe seleccionar una opción por ítem";
   }
 
