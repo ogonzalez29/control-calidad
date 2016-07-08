@@ -2,7 +2,7 @@
 
 var formValues = JSON.parse(localStorage.getItem('formValues')) || {};
 var $checkboxes = $(".matrix :radio");
-var $button = $("#checkbox-container button");
+var $button = $("#form_container a");
 
 // function allChecked(){
 //   return $checkboxes.length === $checkboxes.filter(":checked").length;
@@ -29,9 +29,9 @@ localStorage.setItem("formValues", JSON.stringify(formValues));
 	localStorage.clear();
 	}
 
-	// $button.on("click", function() {
-//  	clearStorage();
-	// });
+	$button.on("click", function() {
+	 	clearStorage();
+	});
 
 	$checkboxes.on("change", function(){
 	// updateButtonStatus();

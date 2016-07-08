@@ -100,6 +100,12 @@ require_once 'save_data.php'; //Save input to database
 				<p>Revisión de 50 puntos de control calidad de la reparación mecánica</p>
 			</div>						
 			<ul >
+			<li id="li_2">
+				<div>
+					<a href="index.php">Dar click para iniciar un certificado</a>
+					<!-- <span class="error">* Favor oprimir para comenzar</span> -->
+				</div>
+			</li>
 		<li id="li_6" >
 		<label class="description" for="element_6">Fecha </label>
 		<span>
@@ -758,10 +764,7 @@ require_once 'save_data.php'; //Save input to database
 				<input id="saveForm" class="button_text" type="submit" name="submit" value="Enviar" />
 		</li>
 			</ul>
-		<br>
-		<div id="reset_link">
-			<a href="index.php">Reiniciar otro certificado</a>
-		</div>	
+		<br>	
 		</form>	
 		<div id="footer">
 			Copyright &copy; 2016 <a href="http://www.servitalleres.com" target="_blank">Servitalleres</a>
