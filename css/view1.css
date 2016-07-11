@@ -28,6 +28,7 @@ h3{
 
 caption{
 	border: 1px solid black;
+	font-weight: bold;
 }
 
 .mockup-overlay{
@@ -233,6 +234,11 @@ caption{
 	display: inline-block;
 }
 
+.col-2_3{
+	width: 19%;
+	display: inline-block;
+}
+
 .col-3 {
     width: 24.3%;
     display: inline-block;
@@ -333,7 +339,7 @@ caption{
 
 .col-9 .col-12 .col-12 h3{
 	height: 105px;
-	text-align: left;
+	text-align: justify;
 	font-weight: 100;
 	margin-top: 20px;
 }
@@ -365,7 +371,7 @@ caption{
 table, th, td {
    border: 1px solid black;
    font-size: 0.9em;
-   font-weight:100;
+   /*font-weight:100;*/
 }
 
 table {

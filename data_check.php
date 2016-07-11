@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $firstname1 = test_input($_POST["firstname1"]);
     // check if name only contains letters and whitespace
     if (!preg_match("/^[a-zA-Záéíóúñ]*$/",$firstname1)) {
-      $nameErr1 = "* Solo letras y espacios en blanco permitidos"; 
+      $nameErr1 = "* Solo letras sin espacios en blanco permitidos"; 
     }
   }
 
@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lastname1 = test_input($_POST["lastname1"]);
     // check if name only contains letters and whitespace
     if (!preg_match("/^[a-zA-Záéíóúñ]*$/",$lastname1)) {
-      $last_nameErr1 = "* Solo letras y espacios en blanco permitidos"; 
+      $last_nameErr1 = "* Solo letras sin espacios en blanco permitidos"; 
     }
   }
 
@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $firstname = test_input($_POST["firstname"]);
     // check if name only contains letters and whitespace
     if (!preg_match("/^[a-zA-Záéíóúñ]*$/",$firstname)) {
-      $nameErr = "* Solo letras y espacios en blanco permitidos"; 
+      $nameErr = "* Solo letras sin espacios en blanco permitidos"; 
     }
   }
 
@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $lastname = test_input($_POST["lastname"]);
     // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Záéíóúñ]*$/",$lastname)) {
+    if (!preg_match("/^[a-zA-Záéíóúñ ]*$/",$lastname)) {
       $last_nameErr = "* Solo letras y espacios en blanco permitidos"; 
     }
   }

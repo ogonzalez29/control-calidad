@@ -43,31 +43,31 @@ include ('info.php');
 		<div class="row-1">
 			<div class="col-12">
 				<div class="col-08">
-					<h3>Cliente:</h3>	
+					<h3 style="font-weight: bold;">Cliente:</h3>	
 				</div>
 				<div class="col-3">
 					<h3><?php echo $row['firstname']. ' '. $row['lastname']?></h3>
 				</div>
 				<div class="col-07">
-					<h3>Marca:</h3>
+					<h3 style="font-weight: bold;">Marca:</h3>
 				</div>
 				<div class="col-1_6">
 					<h3><?php echo $row['make']?></h3>
 				</div>
 				<div class="col-06">
-					<h3>Linea:</h3>
+					<h3 style="font-weight: bold;">Linea:</h3>
 				</div>
 				<div class="col-1_5">
 					<h3><?php echo $row['type']?></h3>
 				</div>
-				<div class="col-08">
-					<h3>Modelo:</h3>
+				<div style="border-left: 1px solid white;" class="col-09">
+					<h3 style="font-weight: bold;">Modelo:</h3>
 				</div>
 				<div style="border-left: 1px solid black; border-right: 1px solid black;"class="col-06">
 					<h3><?php echo $row['model']?></h3>
 				</div>
-				<div class="col-07">
-					<h3>Placa:</h3>
+				<div class="col-06">
+					<h3 style="font-weight: bold;">Placa:</h3>
 				</div>
 				<div class="col-09">
 					<h3><?php echo $row['license']?></h3>
@@ -76,26 +76,26 @@ include ('info.php');
 		</div>
 		<div class="row-2">
 			<div class="col-12">
-				<div class ="col-1_1">
-					<h3>Kilometraje:</h3>
+				<div style="border-left: 1px solid white;" class ="col-1_2">
+					<h3 style="font-weight: bold;">Kilometraje:</h3>
 				</div>
 				<div class ="col-09">
 					<h3><?php echo $row['mileage']?></h3>
 				</div>	
-				<div class="col-2_2">
-					<h3>Orden de reparación:</h3>
+				<div class="col-2_3">
+					<h3 style="font-weight: bold;">Orden de reparación:</h3>
 				</div>
 				<div class="col-1">
 					<h3><?php echo $row['ordernumber']?></h3>
 				</div>
 				<div class="col-2_2">
-					<h3>Asesor de servicio:</h3>	
+					<h3 style="font-weight: bold;">Asesor de servicio:</h3>	
 				</div>
 				<div class="col-2">
 					<h3><?php echo $row['firstname1']. ' '. $row['lastname1']?></h3>
 				</div>
-				<div class="col-08">
-					<h3>Fecha:</h3>	
+				<div class="col-07">
+					<h3 style="font-weight: bold;">Fecha:</h3>	
 				</div>
 				<div class="col-1_2">
 					<h3><?php echo $row['day']. '/'. $row['month']. '/'. $row['year']?></h3>
