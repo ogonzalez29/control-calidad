@@ -165,12 +165,12 @@ caption{
 
 .col-05{
 	width: 4.16%;
-	display: -webkit-inline-box;
+	display: inline-block;
 }
 
 .col-06{
 	width: 5%;
-	display: -webkit-inline-box;
+	display: inline-block;
 }
 
 .col-07{
