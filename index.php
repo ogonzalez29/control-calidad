@@ -1,4 +1,14 @@
 <?php
+//Verify if session started, else redirect to login.php
+session_start();
+if (!$_SESSION['logged']) {
+	header("Location: login.php");
+	exit;
+}
+echo "Bienvenido, ".$_SESSION['username'];
+echo "<br><br>";
+echo "<a href=logout.php>Cerrar Sesión</a>";
+//
 require 'connect_db.php'; //Database connection
 require 'data_check.php'; //Input field data check file
 require_once 'save_data.php'; //Save input to database

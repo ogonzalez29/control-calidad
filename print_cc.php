@@ -1,4 +1,10 @@
 <?php
+//Verify if session started, else redirect to login.php
+session_start();
+if (!$_SESSION['logged']) {
+	header("Location: login.php");
+	exit;
+}
 //Connect to the database
 include ('info.php');
 ?>
