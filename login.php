@@ -3,8 +3,8 @@
 //Define error variables and set to zero
 $usernameErr = $passwordErr = ""; 
 
-//Connects to your Database 
-$connect = mysqli_connect("localhost","root","", "test") or die(mysql_error()); 
+//Connects to your Database
+include ('info.php');
 
 //if the login form is submitted 
 if (isset($_POST['submit'])) {
@@ -24,15 +24,15 @@ if (isset($_POST['submit'])) {
  	// 	@$_POST['email'] = addslashes($_POST['email']);
  	// }
 
- 	$check = mysqli_query($connect, "SELECT * FROM users WHERE username = '".$_POST['username']."'")or die(mysql_error());
+ 	$check = mysql_query("SELECT * FROM users WHERE username = '".$_POST['username']."'")or die("Error...\n". mysql_error());
 
 	//Gives error if user doesn't exist
-	$check2 = mysqli_num_rows($check);
-	if ($check2 == 0){
-		die('That user does not exist in our database.<br /><br />If you think this is wrong <a href="login.php">try again</a>.');
-	}
+	// $check2 = mysqli_num_rows($check);
+	// if ($check2 == 0){
+	// 	die('That user does not exist in our database.<br /><br />If you think this is wrong <a href="login.php">try again</a>.');
+	// }
 
-	while($info = mysqli_fetch_array( $check )){
+	while($info = mysql_fetch_array( $check )){
 		$_POST['pass'] = stripslashes($_POST['pass']);
 	 	$info['password'] = stripslashes($info['password']);
 	 	$_POST['pass'] = md5($_POST['pass']);
@@ -49,6 +49,7 @@ if (isset($_POST['submit'])) {
 			header("Location: index.php"); 
 		}
 	}
+var_dump($_POST['username']);
 }
 ?>
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -82,7 +83,6 @@ if (isset($_POST['submit'])) {
 				</div>
 				<br>
 				<tr><td colspan="2" align="right"><input type="submit" name="submit" value="Iniciar Sesión"></td></tr>
- 
 	 		</form>
 		</div>
  	</div>
