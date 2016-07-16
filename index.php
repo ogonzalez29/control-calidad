@@ -111,9 +111,12 @@ require_once 'save_data.php'; //Save input to database
 			</div>						
 			<ul >
 			<li id="li_2">
-				<div>
+				<div style="float:left; width:50%;">
 					<a href="index.php">Dar click para iniciar un certificado</a>
 					<!-- <span class="error">* Favor oprimir para comenzar</span> -->
+				</div>
+				<div style="float:right;">
+					<a href="search.php">Dar click para buscar un certificado</a>
 				</div>
 			</li>
 		<li id="li_6" >
