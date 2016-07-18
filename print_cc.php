@@ -85,25 +85,25 @@ include ('info.php');
 				<div style="border-left: 1px solid white;" class ="col-1_2">
 					<h3 style="font-weight: bold;">Kilometraje:</h3>
 				</div>
-				<div class ="col-09">
+				<div style="border-left: 1px solid black; border-right: 1px solid black;" class ="col-08">
 					<h3><?php echo $row['mileage']?></h3>
 				</div>	
 				<div class="col-2_3">
 					<h3 style="font-weight: bold;">Orden de reparación:</h3>
 				</div>
-				<div class="col-1">
+				<div style="border-left: 1px solid black; border-right: 1px solid black;" class="col-06">
 					<h3><?php echo $row['ordernumber']?></h3>
 				</div>
 				<div class="col-2_2">
 					<h3 style="font-weight: bold;">Asesor de servicio:</h3>	
 				</div>
-				<div class="col-2">
+				<div style="border-left: 1px solid black; border-right: 1px solid black;" class="col-2_3">
 					<h3><?php echo $row['firstname1']. ' '. $row['lastname1']?></h3>
 				</div>
 				<div class="col-07">
 					<h3 style="font-weight: bold;">Fecha:</h3>	
 				</div>
-				<div class="col-1_2">
+				<div style="border-left: 1px solid black;" class="col-1_1">
 					<h3><?php echo $row['day']. '/'. $row['month']. '/'. $row['year']?></h3>
 				</div>
 			</div>

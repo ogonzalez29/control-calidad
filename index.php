@@ -7,7 +7,29 @@ if (!$_SESSION['logged']) {
 }
 echo "Bienvenido, ".$_SESSION['username'];
 echo "<br><br>";
+// echo session_id();
+// echo "<br><br>";
 echo "<a href=logout.php>Cerrar Sesión</a>";
+
+//Control session timeout to logout after 30 minutes of last login
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+    // last request was more than 30 minutes ago
+    session_unset();     // unset $_SESSION variable for the run-time 
+    session_destroy();   // destroy session data in storage
+}
+$_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
+
+//Change session ID periodically to avoid attacks on sessions
+if (!isset($_SESSION['CREATED'])) {
+    $_SESSION['CREATED'] = time();
+} else if (time() - $_SESSION['CREATED'] > 10) {
+    // session started more than 10 minutes ago
+    session_regenerate_id(true);    // change session ID for the current session and invalidate old session ID
+    $_SESSION['CREATED'] = time();  // update creation time
+}
+// var_dump($_SESSION['LAST_ACTIVITY']);
+// var_dump($_SESSION['CREATED']);
+
 //
 require 'connect_db.php'; //Database connection
 require 'data_check.php'; //Input field data check file
@@ -159,13 +181,15 @@ require_once 'save_data.php'; //Save input to database
 		<li id="li_2" >
 		<label class="description" for="element_7">Asesor de servicio </label>
 		<span>
-			<input id="element_7_1" name= "firstname1" class="element text" maxlength="255" size="8" value="<?php echo $firstname1;?>"/>
+			<input onKeyPress=check_length_5(this.form); onKeyDown=check_length_5(this.form); id="element_7_1" name= "firstname1" class="element text" maxlength="255" size="8" value="<?php echo $firstname1;?>"/>
 			<label>Nombre</label>
+			<input size=1 value=9 name=text_num_5 style="display:none; float:right; text-align:right;">
 			<span><?php echo $nameErr1;?></span>
 		</span>
 		<span>
-			<input id="element_7_2" name= "lastname1" class="element text" maxlength="255" size="14" value="<?php echo $lastname1;?>"/>
+			<input onKeyPress=check_length_6(this.form); onKeyDown=check_length_6(this.form); id="element_7_2" name= "lastname1" class="element text" maxlength="255" size="14" value="<?php echo $lastname1;?>"/>
 			<label>Apellido</label>
+			<input size=1 value=11 name=text_num_6 style="display:none; float:right; text-align:right;">
 			<span><?php echo $last_nameErr1;?></span>
 		</span> 
 		</li>
@@ -175,13 +199,15 @@ require_once 'save_data.php'; //Save input to database
 		<li id="li_2" >
 		<label class="description" for="element_2">Cliente </label>
 		<span>
-			<input id="element_2_1" name= "firstname" class="element text" maxlength="255" size="8" value="<?php echo $firstname;?>"/>
-			<label>Nombre</label>
+			<input onKeyPress=check_length_7(this.form); onKeyDown=check_length_7(this.form); id="element_2_1" name= "firstname" class="element text" maxlength="255" size="8" value="<?php echo $firstname;?>"/>
+			<label>Nombre(s)</label>
+			<input size=1 value=15 name=text_num_7 style="display:none; float:right; text-align:right;">
 			<span><?php echo $nameErr;?></span>
 		</span>
 		<span>
-			<input id="element_2_2" name= "lastname" class="element text" maxlength="255" size="14" value="<?php echo $lastname;?>"/>
+			<input onKeyPress=check_length_8(this.form); onKeyDown=check_length_8(this.form); id="element_2_2" name= "lastname" class="element text" maxlength="255" size="14" value="<?php echo $lastname;?>"/>
 			<label>Apellido</label>
+			<input size=1 value=11 name=text_num_8 style="display:none; float:right; text-align:right;">
 			<span><?php echo $last_nameErr;?></span>
 		</span> 
 		</li>	

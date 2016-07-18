@@ -66,5 +66,71 @@ else{ // Maximum length not reached so update the value of comment2 counter
 }
 }
 
+//Función para el campo de nombre asesor de servicio
+function check_length_5(testform)
+{
+maxLen = 9; // max number of characters allowed
+if (testform.firstname1.value.length >= maxLen) {
+// Alert message if maximum limit is reached. 
+// If required Alert can be removed. 
+var msg = "Haz alcanzado el máximo de caracteres permitido";
+alert(msg);
+// Reached the Maximum length so trim the textarea
+	testform.firstname1.value = testform.firstname1.value.substring(0, maxLen);
+ }
+else{ // Maximum length not reached so update the value of comment2 counter
+	testform.text_num_5.value = maxLen - testform.firstname1.value.length;
+}
+}
 
+//Función para el campo de apellido asesor de servicio
+function check_length_6(testform)
+{
+maxLen = 10; // max number of characters allowed
+if (testform.lastname1.value.length >= maxLen) {
+// Alert message if maximum limit is reached. 
+// If required Alert can be removed. 
+var msg = "Haz alcanzado el máximo de caracteres permitido";
+alert(msg);
+// Reached the Maximum length so trim the textarea
+	testform.lastname1.value = testform.lastname1.value.substring(0, maxLen);
+ }
+else{ // Maximum length not reached so update the value of comment2 counter
+	testform.text_num_6.value = maxLen - testform.lastname1.value.length;
+}
+}
+
+//Función para el campo de nombre cliente
+function check_length_7(testform)
+{
+maxLen = 15; // max number of characters allowed
+if (testform.firstname.value.length >= maxLen) {
+// Alert message if maximum limit is reached. 
+// If required Alert can be removed. 
+var msg = "Haz alcanzado el máximo de caracteres permitido";
+alert(msg);
+// Reached the Maximum length so trim the textarea
+	testform.firstname.value = testform.firstname.value.substring(0, maxLen);
+ }
+else{ // Maximum length not reached so update the value of comment2 counter
+	testform.text_num_7.value = maxLen - testform.firstname.value.length;
+}
+}
+
+//Función para el campo de apellido cliente
+function check_length_8(testform)
+{
+maxLen = 11; // max number of characters allowed
+if (testform.lastname.value.length >= maxLen) {
+// Alert message if maximum limit is reached. 
+// If required Alert can be removed. 
+var msg = "Haz alcanzado el máximo de caracteres permitido";
+alert(msg);
+// Reached the Maximum length so trim the textarea
+	testform.lastname.value = testform.lastname.value.substring(0, maxLen);
+ }
+else{ // Maximum length not reached so update the value of comment2 counter
+	testform.text_num_8.value = maxLen - testform.lastname.value.length;
+}
+}
 
