@@ -7,6 +7,7 @@ if (!$_SESSION['logged']) {
 }
 //Connect to the database
 include ('info.php');
+// require ('search.php');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -25,12 +26,25 @@ include ('info.php');
 	</head>
 	<body>
 	<?php
-	//get results from database
-	$result = mysql_query("SELECT * FROM document ORDER BY id DESC LIMIT 1")
-		or die(mysql_error());
+		//get last results from database if recently submitted
+		$result = mysql_query("SELECT * FROM document ORDER BY id DESC LIMIT 1")
+			or die(mysql_error());
 
-	//loop through results of database query, displaying them in the format
-	while ($row = mysql_fetch_array($result)) {
+		//set search variable to find results from database
+		$search = $_SESSION['cons'];
+	
+		if (!empty($search)) {
+			$result = mysql_query("SELECT * FROM document WHERE id = '$search' OR firstname = '$search' OR lastname = '$search' OR ordernumber = '$search' OR license ='$search'")
+				or die(mysql_error());
+
+			//If there's no information in database from search query
+			if (mysql_num_rows($result) == 0) {
+				die('No hay información con ese criterio de búsqueda');
+			}
+		}		
+		
+		//loop through results of database query, displaying them in the format
+		while ($row = mysql_fetch_array($result)) {
 	?>
 	<div class="grid">
 		<div class="row">

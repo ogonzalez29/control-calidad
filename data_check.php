@@ -24,6 +24,7 @@ global $comment1Err;
 global $comment2Err;
 global $comment3Err;
 global $comment4Err;
+global $searchErr;
 
 $errors = array('$dateErr' => "",
                 '$orderErr' => "", 
@@ -53,6 +54,9 @@ $errors = array('$dateErr' => "",
 // $orderErr = $nameErr = $last_nameErr = $emailErr = $genderErr = $websiteErr = "";
 $month = $day = $year = $firstname = $lastname = $make = $model = $license = $mileage = $ordernumber = $firstname1 = $lastname1 =  $comment1 = $comment2 = $comment3 = $comment4 = $nextMileage= $signature="";
 
+//search input text field and error in search.php file
+$search ="";
+$searchErr = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if(empty($_POST["month"]) || empty($_POST["day"]) || empty($_POST["year"])){
@@ -121,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   array_push($errors, $last_nameErr);
 
-  if ($_POST['cat'] == "") {
+  if (@$_POST['cat'] == "") {
     $makeErr = "* Marca del vehículo requerida";
   }
 
@@ -283,14 +287,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $nextMileage = test_input($_POST["nextMileage"]);
       // check if order only contains numbers and no whitespaces
-      if (!preg_match("/^[0-9 ]*$/",$nextMileage)) {
+      if (!preg_match("/^[0-9]*$/",$nextMileage)) {
         $nextMileageErr = "* Solo números sin espacios permitidos"; 
       }
     }
 
   array_push($errors, $nextMileageErr);
 
-  if (!json_decode($_POST["output"])){
+  if (!json_decode(@$_POST["output"])){
       $signatureErr = "* Firma del asesor requerida";
     }
 
@@ -306,6 +310,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //   }
   // }
 
+  //Data check for search.php file
+
+  if (empty($_POST['cons'])){
+    $searchErr = "* Ingrese un criterio de búsqueda";
+  } else{
+    $search = test_input($_POST['cons']);
+    // check if search value only contains numbers, letters or whitespaces
+    if(!preg_match("/^[0-9a-zA-Záéíóúñ ]*$/", $search)){
+      $searchErr = "* Solo números, letras y espacios permitidos";
+    }
+  }
 }
 
 function test_input($data) {
