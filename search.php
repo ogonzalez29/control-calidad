@@ -47,34 +47,93 @@ require 'data_check.php'; //Input field data check file
 							<input type="text" name="cons" id="cons" style="width:130px; height:25px;" value="<?php echo $search;?>"/>
 							<span style="width:35%; float:right;"><input type="submit" value="Buscar" class="button_text"></input></span>
 							<span><?php echo $searchErr;?></span>
-							<?php 
-								$_SESSION['cons'] = $search;
-								if (!empty($search)){
-									header("location: print_cc.php");
-									exit;
-								}
-								else {
-									echo "<form method=post action='search.php'>";
-								}
-							?>
 						</div>							
 					</div>
 				</li>
-				<li class="section_break">
-					<p></p>
-				</li>
-				<li id="li_3" class="matrix">
-					<table>
-			            <tr align='center'>
-			            	<th width='60' align='center'>No.</th>
-			            	<th width='190' align='center'>Cliente</th>
-			            	<th width='60' align='center'>Placa</th>
-			            	<th width='50' align='center'>Kilometraje</th>
-			            	<th width='60' align='center'>OR</th>
-			            	<th width='80' align='center'>Fecha</th>
-	            		</tr>
-	            	</table>
-	            </li> 
+				<?php 
+					$_SESSION['cons'] = $search;
+					if (!empty($search)){
+						// header("location: print_cc.php");
+						// exit;
+						if( strlen($search) <= 1 ) {
+							echo "<li id=li_2>
+								<div>
+									<span style=text-align:center>* Término de búsqueda muy corto</span>
+								</div>";
+						}
+						else {
+							// mysql_connect( "localhost","root","") ; 
+							// mysql_select_db("servital_servita3");
+
+							$construct = " SELECT * FROM document WHERE
+													(id LIKE '%$search%'
+													OR firstname LIKE '%$search%'
+													OR lastname LIKE '%$search%'
+													OR license LIKE '%$search%'
+													OR ordernumber LIKE '%$search%')"; 
+							$run = mysql_query($construct);
+							$foundnum = mysql_num_rows($run); 
+
+							if ($foundnum == 0) {
+								echo "<li id=li_2>
+								<div>
+									<span style=text-align:center>* No existen registros para ese criterio de búsqueda</span>
+								</div>"; 
+							}
+							else {
+								//Table column header information 
+									echo "<li class=section_break>
+										<p></p>
+										</li>
+										<li id=li_3 class=matrix>
+										<table>
+											<thead>
+									            <tr align='center'>
+									            	<th width='60' align='center'>No.</th>
+									            	<th width='190' align='center'>Cliente</th>
+									            	<th width='60' align='center'>Placa</th>
+									            	<th width='50' align='center'>Kilometraje</th>
+									            	<th width='60' align='center'>OR</th>
+									            	<th width='80' align='center'>Fecha</th>
+							            		</tr>
+							            	</thead>
+							            	<tbody>
+							            	</form>";
+
+								while($runrows = mysql_fetch_assoc($run)) {
+
+									//Table content variable information based on query
+									$id = $runrows['id']+1000; 
+									$client = $runrows['firstname']. ' '.$runrows['lastname']; 
+									$license = $runrows['license'];
+									$mileage = $runrows['mileage'];
+									$ordernumber = $runrows['ordernumber'];
+									$date = $runrows['day']. '/'.$runrows['month']. '/'.$runrows['year'];
+					            	
+					            	echo "<tr align='center'>
+						            	<form method=post action=print_cc.php>
+							            	<th width='60' align='center'>
+							            		<input type=submit name=doc value=$id>
+							            		<input type=hidden name=doc value=$id>
+							            	</th>
+							            </form>
+						            	<th width='190' align='center'>$client</th>
+						            	<th width='60' align='center'>$license</th>
+						            	<th width='50' align='center'>$mileage</th>
+						            	<th width='60' align='center'>$ordernumber</th>
+						            	<th width='80' align='center'>$date</th>
+						            </tr>";
+			            		}
+			            		echo "</tbody> 
+				            		</table>
+			            			</li>";
+							}
+						}
+					}
+					else {
+						echo "<form method=post action='search.php'>";
+					}
+				?>
 			</ul>
 		</form>
 	</div>

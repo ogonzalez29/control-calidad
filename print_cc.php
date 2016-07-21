@@ -31,10 +31,11 @@ include ('info.php');
 			or die(mysql_error());
 
 		//set search variable to find results from database
-		$search = $_SESSION['cons'];
+		@$search = $_SESSION['cons'];
+		@$doc = $_POST['doc']-1000;
 	
 		if (!empty($search)) {
-			$result = mysql_query("SELECT * FROM document WHERE id = '$search' OR firstname = '$search' OR lastname = '$search' OR ordernumber = '$search' OR license ='$search'")
+			$result = mysql_query("SELECT * FROM document WHERE id = '$doc'")
 				or die(mysql_error());
 
 			//If there's no information in database from search query

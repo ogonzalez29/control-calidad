@@ -842,6 +842,15 @@ form.appnitro
 	border-collapse: collapse;
 	text-align: left;
 }
+#main_body .matrix thead th
+{
+	font-size: 95%;
+	text-align: center;
+	padding: 5px 0px;
+	border: 1px solid #ccc;
+	font-weight: bold;
+	font-family: 'Lato', sans-serif;
+}
 #main_body .matrix th
 {
 	font-size: 95%;

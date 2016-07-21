@@ -237,7 +237,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $comment1 = test_input($_POST["comment1"]);
       // check if comment1 only contains numbers, letters and whitespaces
-      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;: ]*$/",$comment1)) {
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$ ]*$/",$comment1)) {
         $comment1Err = "* Solo números, letras y espacios permitidos"; 
       }
     }
@@ -249,7 +249,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $comment2 = test_input($_POST["comment2"]);
       // check if comment1 only contains numbers, letters and whitespaces
-      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;: ]*$/",$comment2)) {
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$ ]*$/",$comment2)) {
         $comment2Err = "* Solo números, letras y espacios permitidos"; 
       }
     }
@@ -261,7 +261,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $comment3 = test_input($_POST["comment3"]);
       // check if comment1 only contains numbers, letters and whitespaces
-      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;: ]*$/",$comment3)) {
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$ ]*$/",$comment3)) {
         $comment3Err = "* Solo números, letras y espacios permitidos"; 
       }
     }
@@ -273,7 +273,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $comment4 = test_input($_POST["comment4"]);
       // check if comment1 only contains numbers, letters and whitespaces
-      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;: ]*$/",$comment4)) {
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$ ]*$/",$comment4)) {
         $comment4Err = "* Solo números, letras y espacios permitidos"; 
       }
     }
