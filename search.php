@@ -21,6 +21,7 @@ require 'data_check.php'; //Input field data check file
 	<link rel="stylesheet" type="text/css" href="css/view3.css" media="all">
 	<title>Certificado de Control Calidad</title>
 	<link rel="stylesheet" type="text/css" href="view.mobile.css" media="all"/>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
 <body id="main_body">
@@ -55,7 +56,7 @@ require 'data_check.php'; //Input field data check file
 					if (!empty($search)){
 						// header("location: print_cc.php");
 						// exit;
-						if( strlen($search) <= 1 ) {
+						if(strlen($search) <= 1) {
 							echo "<li id=li_2>
 								<div>
 									<span style=text-align:center>* Término de búsqueda muy corto</span>
@@ -66,7 +67,7 @@ require 'data_check.php'; //Input field data check file
 							// mysql_select_db("servital_servita3");
 
 							$construct = " SELECT * FROM document WHERE
-													(id LIKE '%$search%'
+													(id+1000 LIKE '%$search%'
 													OR firstname LIKE '%$search%'
 													OR lastname LIKE '%$search%'
 													OR license LIKE '%$search%'
@@ -111,7 +112,7 @@ require 'data_check.php'; //Input field data check file
 									$date = $runrows['day']. '/'.$runrows['month']. '/'.$runrows['year'];
 					            	
 					            	echo "<tr align='center'>
-						            	<form method=post action=print_cc.php>
+						            	<form method=post action=print_cc.php target=_blank>
 							            	<th width='60' align='center'>
 							            		<input type=submit name=doc value=$id>
 							            		<input type=hidden name=doc value=$id>
