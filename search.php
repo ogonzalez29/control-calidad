@@ -18,9 +18,10 @@ require 'data_check.php'; //Input field data check file
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/view3.css" media="all">
 	<title>Certificado de Control Calidad</title>
-	<link rel="stylesheet" type="text/css" href="view.mobile.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="css/view.mobile3.css" media="all"/>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
@@ -43,12 +44,16 @@ require 'data_check.php'; //Input field data check file
 					</div>
 				</li>
 				<li id="li_2">	
-					<div style="margin: 0 215px 0 215px;">
+					<div class="search_box">
 						<div>
-							<input type="text" name="cons" id="cons" style="width:130px; height:25px;" value="<?php echo $search;?>"/>
-							<span style="width:35%; float:right;"><input type="submit" value="Buscar" class="button_text"></input></span>
-							<span><?php echo $searchErr;?></span>
+							<input class="element text medium" type="text" name="cons" id="cons" value="<?php echo $search;?>"/>
+							<span><input type="submit" value="Buscar" class="button_text"></input></span>
 						</div>							
+					</div>
+				</li>
+				<li id="li_2">
+					<div class="error">
+						<p><?php echo $searchErr;?></p>
 					</div>
 				</li>
 				<?php 
@@ -137,6 +142,9 @@ require 'data_check.php'; //Input field data check file
 				?>
 			</ul>
 		</form>
+		<div id="footer">
+			Copyright &copy; 2016 <a href="http://www.servitalleres.com" target="_blank">Servitalleres</a>
+		</div>
 	</div>
 </body>
 </html>	

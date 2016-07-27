@@ -46,7 +46,7 @@ require_once 'save_data.php'; //Save input to database
 	<meta http-equiv="pragma" content="no-cache"> <!-- says not to use cached stuff, if there is any -->
 	<title>Certificado de Control Calidad</title>
 	<link rel="stylesheet" type="text/css" href="css/view.css" media="all">
-	<link rel="stylesheet" type="text/css" href="view.mobile.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="css/view.mobile.css" media="all"/>
 	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="js/view.js"></script>
 	<script type="text/javascript" src="js/calendar.js"></script>
@@ -133,11 +133,11 @@ require_once 'save_data.php'; //Save input to database
 			</div>						
 			<ul >
 			<li id="li_2">
-				<div style="float:left; width:50%;">
+				<div class="reset">
 					<a href="index.php">Dar click para iniciar un certificado</a>
 					<!-- <span class="error">* Favor oprimir para comenzar</span> -->
 				</div>
-				<div style="float:right;">
+				<div class="search">
 					<a href="search.php">Dar click para buscar un certificado</a>
 				</div>
 			</li>

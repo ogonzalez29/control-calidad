@@ -34,8 +34,8 @@ html{
 	clear:both;
 	color:#999999;
 	text-align:center;
-	width:640px;
-	padding-bottom: 15px;
+	padding-top: 50px;
+	padding-bottom: 5px;
 	font-size: 85%;
 }
 
@@ -151,17 +151,22 @@ form.appnitro
 #main_body form li div
 {
 	color:#444;
-	margin:0 4px 0 0;
+	/*margin:0 4px 0 0;*/
 	padding:0 0 8px;
 }
 
-#main_body form li span
+#main_body form li div.search_box {
+	margin: 0 215px 0 215px;
+	text-align: center;
+}
+
+/*#main_body form li span
 {
 	color:#444;
 	float:left;
 	margin:0 4px 0 0;
 	padding:0 0 8px;
-}
+}*/
 
 #main_body form li span span {
 	display:block;
@@ -359,10 +364,10 @@ form.appnitro
 
 #main_body form li div span {
 	display:block;
-	float:left;
+	float:right;
 	margin:0;
 	padding: 0;
-	width:100%;
+	width:35%;
 	color: #FF0000;
 }
 
@@ -484,7 +489,7 @@ form.appnitro
 	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset;
 	outline: medium none;
 	background: none repeat scroll 0 0 #FBFBFB;
-	padding:6px 0 6px 6px;
+	padding:6px 6px 6px 6px;
 	color:#666666;
 	
 	font-size:100%;
@@ -601,7 +606,8 @@ form.appnitro
 
 #main_body input.medium
 {
-	width:50%;
+	width:65%;
+	text-align: center;
 }
 
 #main_body select.medium
@@ -696,6 +702,16 @@ form.appnitro
 	color:red !important;
 	float:none !important;
 	font-weight:700;
+}
+
+#main_body form li .error
+{
+	clear:both;
+	color:red;
+	font-size:12px;
+	font-weight:100;
+	margin:0 0 5px !important;
+	text-align: center;
 }
 
 /**** Guidelines and Error Highlight ****/
@@ -844,6 +860,8 @@ form.appnitro
 }
 #main_body .matrix thead th
 {
+	background: #525252;
+	color: white;
 	font-size: 95%;
 	text-align: center;
 	padding: 5px 0px;
@@ -881,6 +899,10 @@ form.appnitro
 
 #main_body .matrix tr.alt{
 	background-color: #F5F5F5;
+}
+
+#main_body .matrix tr:nth-of-type(odd){
+	background: #eee;
 }
 
 #main_body .matrix caption{
