@@ -272,7 +272,7 @@ require_once 'save_data.php'; //Save input to database
 			    <tbody>
 			    	<tr class="alt" id="mr_3">
 			        	<td class="first_col">Indicadores y luces de bordo</td>
-			            <td><label style="display: none" for="element_3_1">B</label><input id="element1" name="matrix_1[1]" type="radio" value="1" ></td>
+			            <td><label style="display: none" for="element_3_1">B</label><input id="element1" name="matrix_1[1]" type="radio" value="1" /></td>
 						<td><label style="display: none" for="element_3_2">M</label><input id="element2" name="matrix_1[1]" type="radio" value="2"  /></td>
 						<td><label style="display: none" for="element_3_3">N/A</label><input id="element3" name="matrix_1[1]" type="radio" value="3"  /></td>
 			        </tr>
