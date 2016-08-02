@@ -251,6 +251,18 @@ form.appnitro
 	width:16px;
 }
 
+#main_body .document_container
+{
+	height: 250px;
+	overflow-y:scroll;  
+}
+
+#main_body .export_button
+{
+	float: right;
+	margin-top: 1em;
+}
+
 #main_body .form_description
 {
 	border-bottom:1px dotted #ccc;

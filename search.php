@@ -68,16 +68,7 @@ require 'data_check.php'; //Input field data check file
 								</div>";
 						}
 						else {
-							// mysql_connect( "localhost","root","") ; 
-							// mysql_select_db("servital_servita3");
-
-							$construct = " SELECT * FROM document WHERE
-													(id+1000 LIKE '%$search%'
-													OR firstname LIKE '%$search%'
-													OR lastname LIKE '%$search%'
-													OR license LIKE '%$search%'
-													OR ordernumber LIKE '%$search%')"; 
-							$run = mysql_query($construct);
+							require('search_query.php');
 							$foundnum = mysql_num_rows($run); 
 
 							if ($foundnum == 0) {
@@ -89,8 +80,9 @@ require 'data_check.php'; //Input field data check file
 							else {
 								//Table column header information 
 									echo "<li class=section_break>
-										<p></p>
+									
 										</li>
+										<div class=document_container>
 										<li id=li_3 class=matrix>
 										<table>
 											<thead>
@@ -117,22 +109,28 @@ require 'data_check.php'; //Input field data check file
 									$date = $runrows['day']. '/'.$runrows['month']. '/'.$runrows['year'];
 					            	
 					            	echo "<tr align='center'>
-						            	<form method=post action=print_cc.php target=_blank>
-							            	<th width='60' align='center'>
-							            		<input type=submit name=doc value=$id>
-							            		<input type=hidden name=doc value=$id>
-							            	</th>
-							            </form>
-						            	<th width='190' align='center'>$client</th>
-						            	<th width='60' align='center'>$license</th>
-						            	<th width='50' align='center'>$mileage</th>
-						            	<th width='60' align='center'>$ordernumber</th>
-						            	<th width='80' align='center'>$date</th>
-						            </tr>";
+							            	<form method=post action=print_cc.php target=_blank>
+								            	<th width='60' align='center'>
+								            		<input type=submit name=doc value=$id>
+								            		<input type=hidden name=doc value=$id>
+								            	</th>
+								            </form>
+							            	<th width='190' align='center'>$client</th>
+							            	<th width='60' align='center'>$license</th>
+							            	<th width='50' align='center'>$mileage</th>
+							            	<th width='60' align='center'>$ordernumber</th>
+							            	<th width='80' align='center'>$date</th>
+						            	</tr>";
 			            		}
 			            		echo "</tbody> 
 				            		</table>
-			            			</li>";
+			            			</li>
+			            			</div>
+			            			<div class=export_button>
+			            				<form method=post action=export.php>
+						            		<input type=submit name=export value=Exportar class=button_text>
+								    </form>
+								    </div>";
 							}
 						}
 					}
