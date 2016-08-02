@@ -73,7 +73,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match("/^[0-9 ]*$/",$ordernumber)) {
       $orderErr = "* Solo números sin espacios permitidos"; 
     }
-  }
+    // check if order value already exists in database to avoid duplicate
+    else {
+      require_once('duplicate_query.php');
+      }
+    }
 
   array_push($errors, $orderErr);
 
@@ -169,6 +173,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // check if mileage only contains numbers and no whitespaces
       if (!preg_match("/^[0-9 ]*$/",$mileage)) {
         $mileageErr = "* Solo números sin espacios permitidos"; 
+      }
+      // check if mileage value already exists in database for the same license to avoid duplicate
+      else {
+        require_once('duplicate1_query.php');
       }
     }
 
