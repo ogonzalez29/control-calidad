@@ -20,7 +20,12 @@ $errors_array = array_filter($errors);
  	$model = mysql_real_escape_string(htmlspecialchars($_POST['model']));
  	$license = mysql_real_escape_string(htmlspecialchars($_POST['license']));
  	$mileage = mysql_real_escape_string(htmlspecialchars($_POST['mileage']));
- 	// $element = $_POST['element'];
+ 	
+ 	//Sanitize names and lastnames to store in database properly
+ 	$firstname1 = str_replace('\' ', '\'', ucwords(str_replace('\'', '\' ', strtolower($firstname1))));
+ 	$lastname1 = str_replace('\' ', '\'', ucwords(str_replace('\'', '\' ', strtolower($lastname1))));
+ 	$firstname = str_replace('\' ', '\'', ucwords(str_replace('\'', '\' ', strtolower($firstname))));
+	$lastname = str_replace('\' ', '\'', ucwords(str_replace('\'', '\' ', strtolower($lastname))));
 
  	//Matrix 1 information of print_cc.php (instrumentos y equipamento)
  	@$m1_el1 = $_POST['matrix_1'][1];
@@ -92,6 +97,19 @@ $errors_array = array_filter($errors);
 	$comment3 = $_POST['comment3'];
 	$comment4 = $_POST['comment4'];
 	$nextMileage = mysql_real_escape_string(htmlspecialchars($_POST['nextMileage']));
+
+	//Comments sanitizing for storing in database properly
+	//1. Make everything lowercase and then make the first letter if the entire string capitalized
+	$comment1 = ucfirst(strtolower($comment1));
+	$comment2 = ucfirst(strtolower($comment2));
+	$comment3 = ucfirst(strtolower($comment3));
+	$comment4 = ucfirst(strtolower($comment4));
+
+	//2. Run the function to capitalize every letter after a full-stop (period).
+	$comment1 = preg_replace_callback('/[.!?].*?\w/', create_function('$matches', 'return strtoupper($matches[0]);'), $comment1);
+	$comment2 = preg_replace_callback('/[.!?].*?\w/', create_function('$matches', 'return strtoupper($matches[0]);'), $comment2);
+	$comment3 = preg_replace_callback('/[.!?].*?\w/', create_function('$matches', 'return strtoupper($matches[0]);'), $comment3);
+	$comment4 = preg_replace_callback('/[.!?].*?\w/', create_function('$matches', 'return strtoupper($matches[0]);'), $comment4);
 
 	//Signature information of print_cc.php
 	$signature = filter_input(INPUT_POST, 'output', FILTER_UNSAFE_RAW);
