@@ -45,17 +45,21 @@ require_once 'save_data.php'; //Save input to database
 	<meta http-equiv="expires" content="0"> <!-- says that the cache expires 'now' -->
 	<meta http-equiv="pragma" content="no-cache"> <!-- says not to use cached stuff, if there is any -->
 	<title>Certificado de Control Calidad</title>
-	<link rel="stylesheet" type="text/css" href="css/view.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/view.mobile.css" media="all"/>
 	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="js/view.js"></script>
 	<script type="text/javascript" src="js/calendar.js"></script>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui/ui/jquery.effects.core.js"></script>
+	<script type="text/javascript" src="js/jquery.effects.core.js"></script>
 	<!--[if lt IE 9]><script src="js/signaturepad/flashcanvas.js"></script><![endif]-->
 	<script type="text/javascript" src="js/signaturepad/jquery.signaturepad.min.js"></script>
 	<script type="text/javascript" src="js/signaturepad/json2.min.js"></script>
 	<script type="text/javascript" src="js/checklength.js"></script>
+		<script type="text/javascript" src="js/jquery.mockjax.js"></script>
+    <script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="js/names.js"></script>
+    <script type="text/javascript" src="js/suggestions.js"></script>
 	<script type="text/javascript"> // Drop-down dependent menus script
 		function AjaxFunction()
 		{
@@ -181,13 +185,13 @@ require_once 'save_data.php'; //Save input to database
 		<li id="li_2" >
 		<label class="description" for="element_7">Asesor de servicio </label>
 		<span>
-			<input onKeyPress=check_length_5(this.form); onKeyDown=check_length_5(this.form); id="element_7_1" name= "firstname1" class="element text" maxlength="255" size="8" value="<?php echo $firstname1;?>"/>
+			<input onKeyPress=check_length_5(this.form); onKeyDown=check_length_5(this.form); id="element_7_1" name= "firstname1" class="element text" maxlength="255" size="15" value="<?php echo $firstname1;?>"/>
 			<label>Nombre</label>
 			<input size=1 value=9 name=text_num_5 style="display:none; float:right; text-align:right;">
 			<span><?php echo $nameErr1;?></span>
 		</span>
 		<span>
-			<input onKeyPress=check_length_6(this.form); onKeyDown=check_length_6(this.form); id="element_7_2" name= "lastname1" class="element text" maxlength="255" size="14" value="<?php echo $lastname1;?>"/>
+			<input onKeyPress=check_length_6(this.form); onKeyDown=check_length_6(this.form); id="element_7_2" name= "lastname1" class="element text" maxlength="255" size="15" value="<?php echo $lastname1;?>"/>
 			<label>Apellido</label>
 			<input size=1 value=11 name=text_num_6 style="display:none; float:right; text-align:right;">
 			<span><?php echo $last_nameErr1;?></span>
@@ -199,13 +203,13 @@ require_once 'save_data.php'; //Save input to database
 		<li id="li_2" >
 		<label class="description" for="element_2">Cliente </label>
 		<span>
-			<input onKeyPress=check_length_7(this.form); onKeyDown=check_length_7(this.form); id="element_2_1" name= "firstname" class="element text" maxlength="255" size="8" value="<?php echo $firstname;?>"/>
+			<input onKeyPress=check_length_7(this.form); onKeyDown=check_length_7(this.form); id="element_2_1" name= "firstname" class="element text" maxlength="255" size="15" value="<?php echo $firstname;?>"/>
 			<label>Nombre(s)</label>
 			<input size=1 value=15 name=text_num_7 style="display:none; float:right; text-align:right;">
 			<span><?php echo $nameErr;?></span>
 		</span>
 		<span>
-			<input onKeyPress=check_length_8(this.form); onKeyDown=check_length_8(this.form); id="element_2_2" name= "lastname" class="element text" maxlength="255" size="14" value="<?php echo $lastname;?>"/>
+			<input onKeyPress=check_length_8(this.form); onKeyDown=check_length_8(this.form); id="element_2_2" name= "lastname" class="element text" maxlength="255" size="15" value="<?php echo $lastname;?>"/>
 			<label>Apellido</label>
 			<input size=1 value=11 name=text_num_8 style="display:none; float:right; text-align:right;">
 			<span><?php echo $last_nameErr;?></span>
