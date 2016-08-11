@@ -23,9 +23,9 @@
 	form.appnitro,.embed form.appnitro{
 		margin: 15px 15px 0 15px;
 	}
-	#top,#bottom{
+/*	#top,#bottom{
 		display: none;
-	}
+	}*/
 	#li_resume_email{
 		width: 99%;
 	}
@@ -399,6 +399,10 @@
 	#main_body form li div.search_box {
 		margin:0 39% 0 39%;
 
+	}
+
+	#top,#bottom{
+		display: none;
 	}
 
 }

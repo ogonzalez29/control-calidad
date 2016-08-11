@@ -1,5 +1,6 @@
 <?php
 //Verify if session started, else redirect to login.php
+ob_start();
 session_start();
 if (!$_SESSION['logged']) {
 	header("Location: login.php");
@@ -24,14 +25,14 @@ include ('info.php');
 	</head>
 	<body>
 	<?php
+		//set search variable to find results from database
+		@$search = $_SESSION['cons'];
+		@$doc = $_POST['doc']-1000;
+
 		//get last results from database if recently submitted
 		$result = mysql_query("SELECT * FROM document ORDER BY id DESC LIMIT 1")
 			or die(mysql_error());
 
-		//set search variable to find results from database
-		@$search = $_SESSION['cons'];
-		@$doc = $_POST['doc']-1000;
-	
 		if (!empty($search)) {
 			$result = mysql_query("SELECT * FROM document WHERE id = '$doc'")
 				or die(mysql_error());
@@ -40,8 +41,7 @@ include ('info.php');
 			if (mysql_num_rows($result) == 0) {
 				die('No hay información con ese criterio de búsqueda');
 			}
-		}		
-		
+		}
 		//loop through results of database query, displaying them in the format
 		while ($row = mysql_fetch_array($result)) {
 	?>
@@ -645,6 +645,7 @@ include ('info.php');
 		</div>
 		<?php
 		}
+		file_put_contents('printcc.html', ob_get_contents());
 		?>
 		<!--	
 		<br><br>
@@ -660,4 +661,13 @@ include ('info.php');
 		</div> -->
 	</div>	 
 </body>
+<div style="margin: 10px 0;">
+	<?php $doc1 = $doc;?>
+		<form method="post" action="print_pdf.php">
+			<th width='60' align='center'>
+				<input type="submit" name="pdf" value="Imprimir en PDF">
+				<input type="hidden" name="doc1" value="<?php echo $doc1;?>" >
+			</th>
+		</form>
+	</div>
 </html>

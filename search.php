@@ -112,7 +112,6 @@ require 'data_check.php'; //Input field data check file
 							            	<form method=post action=print_cc.php target=_blank>
 								            	<th width='60' align='center'>
 								            		<input type=submit name=doc value=$id>
-								            		<input type=hidden name=doc value=$id>
 								            	</th>
 								            </form>
 							            	<th width='190' align='center'>$client</th>
