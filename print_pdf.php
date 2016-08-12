@@ -11,6 +11,8 @@ include ('info.php');
 
 //Include the autoloader
 require '../phpwkhtmltopdf/vendor/autoload.php';
+//webserver
+// require '../../phpwkhtmltopdf/vendor/autoload.php';
 
 use mikehaertl\wkhtmlto\Pdf;
 
@@ -24,9 +26,13 @@ $pdf = new Pdf(array(
 	));
 
 $pdf->addPage('localhost/control-calidad/printcc.html');
+//webserver
+// $pdf->addPage('/home/servital/public_html/control-calidad/printcc.html');
 
 // On some systems you may have to set the path to the wkhtmltopdf executable
 $pdf->binary = 'C:\Archivos de programa\wkhtmltopdf\bin\wkhtmltopdf.exe';
+//webserver
+// $pdf->binary = '/home/servital/wkhtmltox/bin/wkhtmltopdf';
 
 @$search = $_SESSION['cons'];
 @$doc1 = $_POST['doc1'];
