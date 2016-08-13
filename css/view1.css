@@ -40,7 +40,7 @@ caption{
 }
 
 .footer{
-	border:1px solid black;
+	/*border:1px solid black;*/
 }
 
 .grid{
@@ -105,8 +105,7 @@ caption{
 .row-2,
 .row-3,
 .row-5,
-.row-6,
-.row-7{
+.row-6{
 	margin: 0;
 	border: 1px solid black;
 }
@@ -118,11 +117,18 @@ caption{
 }
 
 .row-5{
-	padding: 16px 0 16px 0;
+	/*padding-top: 10px;*/
+	padding-bottom: 10px;
 }
 
 .row-7 .col-9{
 	margin-right: 25px;
+}
+
+.row-8{
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
 }
 
 .row-1 .col-12 .col-1_6,
@@ -184,7 +190,7 @@ caption{
 }
 
 .col-09{
-	width: 7.8%;
+	width: 9.3%;
 	display: inline-block;
 	border-left: 1px solid black;
 }
@@ -240,7 +246,7 @@ caption{
 }
 
 .col-3 {
-    width: 24.3%;
+    width: 21%;
     display: inline-block;
 }
 
@@ -356,7 +362,7 @@ caption{
 
 .footer .col-12 h1{
 	width: 309px;
-	height: 130px;
+	height: 126px;
 }
 
 .footer .col-12 h3{
@@ -367,6 +373,14 @@ caption{
 	border-bottom: 1px solid black;
 	width: 100%;
 	margin-top: 10px;
+}
+
+.footer .col-12 .col-6{
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	float: left;
 }
 
 table, th, td {
