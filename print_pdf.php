@@ -19,8 +19,8 @@ use mikehaertl\wkhtmlto\Pdf;
 // You can pass a filename, a HTML string, an URL or an options array to the constructor
 $pdf = new Pdf(array(
 	'page-size' => 'Letter',
-	'margin-top' => 20,
-	'margin-bottom' => 30,
+	// 'margin-top' => 20, //Change margin values to proper display. It depends on server
+	// 'margin-bottom' => 30, //Change margin values to proper display. It depends on server
 	));
 
 $pdf->addPage('localhost/control-calidad/printcc.html');
@@ -28,7 +28,7 @@ $pdf->addPage('localhost/control-calidad/printcc.html');
 // $pdf->addPage('/home/servital/public_html/control-calidad/printcc.html');
 
 // On some systems you may have to set the path to the wkhtmltopdf executable
-$pdf->binary = 'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe';
+$pdf->binary = 'C:\Archivos de programa\wkhtmltopdf\bin\wkhtmltopdf.exe';
 //webserver
 // $pdf->binary = '/home/servital/wkhtmltox/bin/wkhtmltopdf';
 

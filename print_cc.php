@@ -609,8 +609,8 @@ include ('info.php');
 					<div class="col-12">
 						<h2>Conformidad factura / trabajos:</h2>
 					</div>
-					<div style="border-bottom: 1px solid black;" class="col-12">
-						<div id="mf_sigpad_7">
+					<div style="border-top: 1px solid black; border-bottom: 1px solid black; display:inline-block;" class="col-12">
+						<div style="display:inline-block; width:100%;" id="mf_sigpad_7">
 							<div class="mf_sig_wrapper medium">
 					          <canvas class="mf_canvas_pad" width="309" height="129"></canvas>
 					          <input type="hidden" name="output" id="output" class="output"/>
@@ -648,7 +648,7 @@ include ('info.php');
 						</div>
 					
 					<div style="border-top: 1px solid black; display: inline-block;" class="col-12">
-						<h1 style="margin-top: 3px;"></h1>
+						<h1 style="margin-top: 3px; height: 133px;"></h1>
 					</div>
 					<div class="col-12">
 						<h3>Firma del cliente</h3>
