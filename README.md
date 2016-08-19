@@ -1,5 +1,11 @@
 # control-calidad
 
+Files not necessary for working
+
+1. form.php
+2. form.html
+3. tables.php
+
 Requirements
 
 1. Install wkhtmltopdf program. (check wkhtmltopdf.org)
