@@ -99,7 +99,7 @@ include ('info.php');
 					<h3 style="font-weight: bold;">Kilometraje:</h3>
 				</div>
 				<div style="border-left: 1px solid black; border-right: 1px solid black;" class ="col-08">
-					<h3><?php echo $row['mileage']?></h3>
+					<h3><?php echo number_format($row['mileage'],0,",",".")?></h3>
 				</div>	
 				<div class="col-2_3">
 					<h3 style="font-weight: bold;">Orden de reparación:</h3>
@@ -644,7 +644,7 @@ include ('info.php');
 							<h2>Próximo mantenimiento a los:</h2>
 						</div>
 						<div style="float:right;" class="col-4">
-							<h2><?php echo $row['nextMileage']. ' '. "kms"?></h2>
+							<h2><?php echo number_format($row['nextMileage'],0,",","."). ' '. "kms"?></h2>
 						</div>
 					
 					<div style="border-top: 1px solid black; display: inline-block;" class="col-12">
