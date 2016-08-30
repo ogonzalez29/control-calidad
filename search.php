@@ -56,15 +56,14 @@ require 'data_check.php'; //Input field data check file
 						<p><?php echo $searchErr;?></p>
 					</div>
 				</li>
-				<?php 
-					$_SESSION['cons'] = $search;
+				<?php
 					if (!empty($search)){
 						// header("location: print_cc.php");
 						// exit;
 						if(strlen($search) <= 1) {
 							echo "<li id=li_2>
-								<div>
-									<span style=text-align:center>* Término de búsqueda muy corto</span>
+								<div class=error>
+									<p>* Término de búsqueda muy corto</p>
 								</div>";
 						}
 						else {
@@ -73,8 +72,8 @@ require 'data_check.php'; //Input field data check file
 
 							if ($foundnum == 0) {
 								echo "<li id=li_2>
-								<div>
-									<span style=text-align:center>* No existen registros para ese criterio de búsqueda</span>
+								<div class=error>
+									<p>* No existen registros para ese criterio de búsqueda</p>
 								</div>"; 
 							}
 							else {
