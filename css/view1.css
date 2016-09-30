@@ -81,7 +81,7 @@ caption{
 .footer{
     width: 100%;
     margin-bottom: 10px;
-    display: flex;
+    display: inline-block;
 }
 
 .row{
@@ -113,7 +113,7 @@ caption{
 .row-4,
 .row-7{
 	width: 100%;
-    display: flex;
+    display: inline-block;
 }
 
 .row-5{
@@ -121,14 +121,21 @@ caption{
 	padding-bottom: 10px;
 }
 
+.row-6{
+	margin-top: 180px;
+}
+
+.row-7{
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
 .row-7 .col-9{
 	margin-right: 25px;
 }
 
 .row-8{
-	border-top: 1px solid black;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+	border: 1px solid black;
 }
 
 .row-1 .col-12 .col-1_6,

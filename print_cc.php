@@ -548,16 +548,6 @@ include ('info.php');
 				</div>
 			</div>
 		</div>
-		<div class="row-8">
-			<div style="text-align: center;" class="col-12">
-				<h2 style="margin-bottom:0px;">IMPORTANTE:</h2>
-			</div>
-		</div>
-		<div style=" border-top:1px solid white;" class="row-5">
-			<div style="text-align: center;" class="col-12">
-				<h3>Los controles realizados son únicamente sobre los elementos visibles del vehículo y no implican desmontaje alguno, por lo tanto el taller no asume responsabilidad en caso de la no detección de una falla no aparente.</h3>
-			</div>
-		</div>
 		<div class="row-6">
 			<div style="text-align: center;" class="col-12">
 				<h3>Llamamos la atención sobre los siguientes trabajos pendientes de realizar:</h3>
@@ -654,6 +644,14 @@ include ('info.php');
 						<h3>Firma del cliente</h3>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="row-8">
+			<div style="text-align: center;" class="col-12">
+				<h2 style="margin-bottom:0px;">IMPORTANTE:</h2>
+			</div>
+			<div style="text-align: center;" class="col-12">
+				<h3>Los controles realizados son únicamente sobre los elementos visibles del vehículo y no implican desmontaje alguno, por lo tanto el taller no asume responsabilidad en caso de la no detección de una falla no aparente.</h3>
 			</div>
 		</div>
 		<?php
