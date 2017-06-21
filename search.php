@@ -109,7 +109,7 @@ require 'data_check.php'; //Input field data check file
 									$date = $runrows['day']. '/'.$runrows['month']. '/'.$runrows['year'];
 					            	
 					            	echo "<tr align='center'>
-							            	<form method=post action=print_cc.php target=_blank>
+							            	<form name=searchForm method=post action=print.php target=_blank>
 								            	<th width='60' align='center'>
 								            		<input type=submit name=doc value=$id>
 								            	</th>
@@ -143,5 +143,11 @@ require 'data_check.php'; //Input field data check file
 			Copyright &copy; 2016 <a href="http://www.servitalleres.com" target="_blank">Servitalleres</a>
 		</div>
 	</div>
+	<script type="text/javascript">
+  		function closeSelf (f) {
+     	f.submit();
+     	window.close();
+  		}
+	</script>
 </body>
 </html>	
