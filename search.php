@@ -57,6 +57,7 @@ require 'data_check.php'; //Input field data check file
 					</div>
 				</li>
 				<?php
+					$_SESSION['cons'] = $search;
 					if (!empty($search)){
 						// header("location: print_cc.php");
 						// exit;
