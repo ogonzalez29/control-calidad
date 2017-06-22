@@ -59,9 +59,9 @@ while ($row = mysql_fetch_array($result)) {
 	$year = $row['year']-2000;
 
 	if (!$pdf->send($doc1.'_'.$license.'_'.$day.$month.$year.'.pdf'))
-		echo "<script>window.close();</script>";
 	 {
 	    echo $pdf->getError();
 	}
 }
+echo "<script>window.close()</script>";
 ?>
