@@ -19,11 +19,12 @@
 		    position: absolute;
 		    top: 50%;
 		    left: 50%;
-		    font-size: 50px;
+		    font-size: 25px;
 		    color: white;
 		    text-align: center;
 		    transform: translate(-50%,-50%);
 		    -ms-transform: translate(-50%,-50%);
+		    -webkit-transform:translate(-50%, -50%);
 		}
 		body, html{
 			overflow: hidden;
@@ -33,7 +34,13 @@
 </head>
 <body>
 <div id="overlay">
-  <div id="text">Descargando archivo pdf<br>Cerrar al terminar</div>
+  <div id="text">Generando archivo pdf<br>
+  	<form style="display:inline-block" action="send_email.php" method="post">
+  		<input type="submit" value="Enviar por correo">
+  		<input type="hidden" name="emailSend" value="1">
+  	</form>
+  	<button onclick="self.close()">Cerrar ventana</button>
+  </div>
 </div>
 <?php
 include('print_cc.php');

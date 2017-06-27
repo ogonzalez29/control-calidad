@@ -199,7 +199,7 @@ $errors_array = array_filter($errors);
 										 ")
  		or die(mysql_error());
 		
-		header("location: print_cc.php");
+		header("location: print_doc.php");
 	}
 }
 // var_dump($errors_array);
