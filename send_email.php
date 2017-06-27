@@ -36,7 +36,7 @@ if (isset($_POST['emailSend'])) {
 	    $mail = new PHPMailer();   
 	    $mail->isSMTP();
 		// change this to 0 if the site is going live and 2 if working on localhost or development
-	    $mail->SMTPDebug = 1;
+	    $mail->SMTPDebug = 0;
 	    $mail->Debugoutput = 'html';
 	    $mail->Host = 'smtp.gmail.com';
 	    $mail->Port = 465;
@@ -67,14 +67,12 @@ if (isset($_POST['emailSend'])) {
 	
 	    if (!$mail->send()) {
 	        $confMsg = "El correo no fue enviado correctamente, favor intentar de nuevo.";
-	        echo $confMsg;
 	    } else {
 	        $confMsg = "El correo fue enviado correctamente.";
-	        echo $confMsg;
 	        }
 }
 ?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -85,4 +83,4 @@ if (isset($_POST['emailSend'])) {
 		 <div id="text"><?php echo $confMsg;?></div>
 	</div>
 </body>
-</html> -->
+</html>
