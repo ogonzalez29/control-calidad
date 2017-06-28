@@ -5,7 +5,9 @@ require 'assets/phpmailer/PHPMailerAutoload.php';
 
 //Verify if session started, else redirect to login.php
 ob_start();
-session_start();
+if(!isset($_SESSION)) { 
+    session_start(); 
+} 
 if (!$_SESSION['logged']) {
 	header("Location: login.php");
 	exit;
@@ -24,6 +26,7 @@ while ($row = mysql_fetch_array($result)) {
 	$doc = $row['id'];
 	$firstname = $row['firstname'];
 	$lastname = $row['lastname'];
+	$email = $row['email'];
 	$make = $row['make'];
 	$line = $row['type'];
 	$license = $row['license'];
@@ -60,8 +63,8 @@ if (isset($_POST['emailSend'])) {
 	    $mail->Username = $data['config']['email'][0];
 	    $mail->Password = $data['config']['email'][1];
 	    $mail->setFrom($data['config']['email'][0], 'Servitalleres');
-	    $mail->addAddress('dgonzalez@servitalleres.com', 'Daniel González');
-	    $mail->Subject = "Certificado de Control Calidad". " ". $make."  ". $line." "."placas"." ". $license;
+	    $mail->addAddress($email, $firstname." ".$lastname);
+	    $mail->Subject = "Certificado de control calidad". " ". $make."  ". $line." "."placas"." ". $license;
 	    // $message is gotten from the form
     	$mail->msgHTML($bodytext);
 	
@@ -77,10 +80,17 @@ if (isset($_POST['emailSend'])) {
 <head>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+		function home(){
+			window.location.replace("index.php");
+		}
+	</script>
 </head>
-<body>
+<body id="report">
 	<div id="overlay">
-		 <div id="text"><?php echo $confMsg;?></div>
+		 <div id="text"><?php echo $confMsg;?><br>
+		 	<button onclick= "home()">Ir al inicio</button>
+		 </div>
 	</div>
 </body>
 </html>

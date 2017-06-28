@@ -2705,7 +2705,7 @@ div.mf_progress_value span{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,1);
     z-index: 2;
 }
 
@@ -2720,6 +2720,6 @@ div.mf_progress_value span{
     -ms-transform: translate(-50%,-50%);
     -webkit-transform:translate(-50%, -50%);
 }
-body, html{
+#report{
 	overflow: hidden;
 }

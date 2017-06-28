@@ -1,7 +1,9 @@
 <?php
 //Verify if session started, else redirect to login.php
 ob_start();
-session_start();
+if(!isset($_SESSION)) { 
+    session_start(); 
+} 
 if (!$_SESSION['logged']) {
 	header("Location: login.php");
 	exit;
@@ -22,9 +24,9 @@ include ('info.php');
 		<script type="text/javascript" src="js/signaturepad/jquery.signaturepad.min.js"></script>
 		<script type="text/javascript" src="js/signaturepad/json2.min.js"></script>
 	</head>
-	<body>
+	<body id="report">
 	<?php
-		//set search variable to find results from database
+		//set search variable to find results from database if no form submitted
 		@$search = $_SESSION['cons'];
 		@$doc = $_POST['doc']-1000;
 

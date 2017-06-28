@@ -214,6 +214,13 @@ require_once 'save_data.php'; //Save input to database
 			<input size=1 value=11 name=text_num_8 style="display:none; float:right; text-align:right;">
 			<span><?php echo $last_nameErr;?></span>
 		</span> 
+		</li>
+		<li id="li_2" >
+		<label class="description" for="element_2">Email </label>
+		<div>
+			<input id="element_2_1" name= "email" class="element text medium" type="text" maxlength="255" value="<?php echo $email;?>"/>
+			<span><?php echo $emailErr;?></span>
+		</div>
 		</li>	
 		<li id="li_15" >
 			<label class="description" for="element_15">Marca </label>
@@ -800,10 +807,8 @@ require_once 'save_data.php'; //Save input to database
 			</script> 
 		</div> 
 		</li>
-			
 		<li class="buttons">
-			    <input type="hidden" name="form_id" value="1134337" />
-			    
+			    <input type="hidden" name="form_id" value="1134337" />   
 				<input id="saveForm" class="button_text" type="submit" name="submit" value="Enviar" />
 		</li>
 			</ul>
