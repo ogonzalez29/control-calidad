@@ -8,6 +8,19 @@ if (!$_SESSION['logged']) {
 	header("Location: login.php");
 	exit;
 }
+//Connect to the database
+include ('info.php');
+
+//Search for the number of document in db
+@$doc = $_POST['doc']-1000;
+
+//get last results from database if recently submitted
+$result = mysql_query("SELECT * FROM document ORDER BY id DESC LIMIT 1")
+	or die(mysql_error());
+
+while ($row = mysql_fetch_array($result)) {
+	$doc = $row['id'];
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,12 +38,17 @@ if (!$_SESSION['logged']) {
 		}
 	</script>
 </head>
+  	<?php 
+  		$doc = $doc+1000;
+  	?>
 <body id="report">
 <div id="overlay">
   <div id="text">Generando archivo pdf<br>
-  	<form style="display:inline-block" action="send_email.php" method="post">
-  		<input type="submit" value="Enviar por correo">
-  		<input type="hidden" name="emailSend" value="1">
+	<form style="display:inline-block" name="send" id="send" action="send_email.php" method="post">
+  		<th width='60' align='center'>
+	  		<input type="submit" name="emailSend" value="Enviar por correo">
+	  		<input type="hidden" name="doc" value="<?php echo $doc;?>" >
+		</th>
   	</form>
   	<button onclick= "search()">Buscar certificado</button>
   	<button onclick= "home()">Ir al inicio</button>

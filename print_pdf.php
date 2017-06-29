@@ -64,6 +64,7 @@ while ($row = mysql_fetch_array($result)) {
 	 {
 	    echo $pdf->getError();
 	}
+
+	$pdf->saveAs('C:/Temp/'.$doc1.'_'.$license.'_'.$day.$month.$year.'.pdf');
 }
-echo "<script>window.close()</script>";
 ?>

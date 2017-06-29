@@ -64,9 +64,12 @@ while ($row = mysql_fetch_array($result)) {
 				<input type="hidden" name="doc1" value="<?php echo $doc1;?>" >
 			</th>
 	</form>
-  	<form style="display:inline-block" action="send_email.php" method="post">
-  		<input type="submit" value="Enviar por correo">
-  		<input type="hidden" name="emailSend" value="1">
+  	<form style="display:inline-block" name="send" id="send" action="send_email.php" method="post">
+  		<th width='60' align='center'>
+	  		<input type="submit" name="emailSend" value="Enviar por correo">
+	  		<input type="hidden" name="doc" value="<?php echo $doc;?>" >
+			<input type="hidden" name="doc1" value="<?php echo $doc1;?>" >
+		</th>
   	</form>
   	<button onclick= "search()">Buscar otro certificado</button>
   	<button onclick= "home()">Ir al inicio</button>
