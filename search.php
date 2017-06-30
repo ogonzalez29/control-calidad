@@ -146,11 +146,5 @@ require 'data_check.php'; //Input field data check file
 			Copyright &copy; 2016 <a href="http://www.servitalleres.com" target="_blank">Servitalleres</a>
 		</div>
 	</div>
-	<script type="text/javascript">
-  		function closeSelf (f) {
-     	f.submit();
-     	window.close();
-  		}
-	</script>
 </body>
 </html>	

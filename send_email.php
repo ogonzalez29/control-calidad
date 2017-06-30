@@ -46,9 +46,6 @@ while ($row = mysql_fetch_array($result)) {
 	$line = $row['type'];
 	$license = $row['license'];
 }
-// $compartment = $doc.'_'.$license.'_'.$day.$month.$year.'.pdf';
-// $files = glob("*.txt");
-
 
 if (isset($_POST['emailSend'])) {
 		$bodytext = $firstname." ".$lastname."<p>Adjunto se encuentra el certificado de control calidad de la reparación hecha a tu vehículo". " ". $make."  ". $line." "."de placas"." ". $license."."." ". "Ten presente las observaciones dadas. Recuerda revisar la política de garantía en el siguiente vínculo: <a href='http://servitalleres.com/politica-de-garantia'>click aquí</a>.<p>Cordial saludo,<p>Servicio al cliente<br>Servitalleres Ltda<br>Carrera 22 # 76-57<br>Tels: 2117943 - 2119290<br><a href='http://servitalleres.com'>www.servitalleres.com</a>";
@@ -83,6 +80,15 @@ if (isset($_POST['emailSend'])) {
 	    $mail->Password = $data['config']['email'][1];
 	    $mail->setFrom($data['config']['email'][0], 'Servitalleres');
 	    $mail->addAddress($email, $firstname." ".$lastname);
+	    //Create an array with recipients addresses
+		$recipients = array(
+			'dgonzalez@servitalleres.com' => 'Daniel González',
+			// 'corjuela@servitalleres.com' => 'Carlos Orjuela'
+		);
+		foreach ($recipients as $m => $name) {
+			$mail->AddBCC($m, $name);
+		}
+
 	    $mail->Subject = "Certificado de control calidad". " ". $make."  ". $line." "."placas"." ". $license;
 
 	    //Handle attachment storing a copy in temp folder
