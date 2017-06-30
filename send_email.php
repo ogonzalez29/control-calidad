@@ -104,12 +104,19 @@ if (isset($_POST['emailSend'])) {
 
 	    // $message is gotten from the form
     	$mail->msgHTML($bodytext);
-	
-	    if (!$mail->send()) {
-	        $confMsg = "El correo no fue enviado correctamente, favor intentar de nuevo.";
-	    } else {
-	        $confMsg = "El correo fue enviado correctamente.";
-	        }
+
+
+		//Check if email exist in database then send the message or report the error
+    	if(!empty($email)){
+		    if (!$mail->send()) {
+		        $confMsg = "El correo no fue enviado correctamente, favor intentar de nuevo.";
+		    } else {
+		        $confMsg = "El correo fue enviado correctamente.";
+		    }
+		}
+		else {
+			$confMsg = "No existe dirección de correo registrada. Favor verificar.";
+		}
 }
 ?>
 <!DOCTYPE html>
