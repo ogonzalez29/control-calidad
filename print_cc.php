@@ -464,25 +464,25 @@ include ('info.php');
 								<td><label style="display: none" >N/A</label><input  name="matrix_6[5]" type="radio" value="3"  <?php if(isset($row['m6_el5']) && $row['m6_el5']=="3") echo "checked";?>/></td>
 					        </tr>
 					        <tr class="alt" >
-					        	<td class="first_col">Agua limpiabrisas del. y tras</td>
+					        	<td class="first_col">Nivel agua de batería</td>
 					            <td><label style="display: none" >B</label><input  name="matrix_6[6]" type="radio" value="1"  <?php if(isset($row['m6_el6']) && $row['m6_el6']=="1") echo "checked";?>/></td>
 								<td><label style="display: none" >M</label><input  name="matrix_6[6]" type="radio" value="2"  <?php if(isset($row['m6_el6']) && $row['m6_el6']=="2") echo "checked";?>/></td>
 								<td><label style="display: none" >N/A</label><input  name="matrix_6[6]" type="radio" value="3"  <?php if(isset($row['m6_el6']) && $row['m6_el6']=="3") echo "checked";?>/></td>
 					        </tr>
 					        <tr class="alt" >
-					        	<td class="first_col">Fijación y ajuste bornes batería</td>
+					        	<td class="first_col">Agua limpiabrisas del. y tras</td>
 					            <td><label style="display: none" >B</label><input  name="matrix_6[7]" type="radio" value="1"  <?php if(isset($row['m6_el7']) && $row['m6_el7']=="1") echo "checked";?>/></td>
 								<td><label style="display: none" >M</label><input  name="matrix_6[7]" type="radio" value="2"  <?php if(isset($row['m6_el7']) && $row['m6_el7']=="2") echo "checked";?>/></td>
 								<td><label style="display: none" >N/A</label><input  name="matrix_6[7]" type="radio" value="3"  <?php if(isset($row['m6_el7']) && $row['m6_el7']=="3") echo "checked";?>/></td>
 					        </tr>
 					        <tr class="alt" >
-					        	<td class="first_col">Presencia de tapas, obturadores</td>
+					        	<td class="first_col">Fijación y ajuste bornes batería</td>
 					            <td><label style="display: none" >B</label><input  name="matrix_6[8]" type="radio" value="1"  <?php if(isset($row['m6_el8']) && $row['m6_el8']=="1") echo "checked";?>/></td>
 								<td><label style="display: none" >M</label><input  name="matrix_6[8]" type="radio" value="2"  <?php if(isset($row['m6_el8']) && $row['m6_el8']=="2") echo "checked";?>/></td>
 								<td><label style="display: none" >N/A</label><input  name="matrix_6[8]" type="radio" value="3"  <?php if(isset($row['m6_el8']) && $row['m6_el8']=="3") echo "checked";?>/></td>
 					        </tr>
 					        <tr class="alt" >
-					        	<td class="first_col">Presencia del protector motor</td>
+					        	<td class="first_col">Presencia de obturadores y protectores</td>
 					            <td><label style="display: none" >B</label><input  name="matrix_6[9]" type="radio" value="1"  <?php if(isset($row['m6_el9']) && $row['m6_el9']=="1") echo "checked";?>/></td>
 								<td><label style="display: none" >M</label><input  name="matrix_6[9]" type="radio" value="2"  <?php if(isset($row['m6_el9']) && $row['m6_el9']=="2") echo "checked";?>/></td>
 								<td><label style="display: none" >N/A</label><input  name="matrix_6[9]" type="radio" value="3"  <?php if(isset($row['m6_el9']) && $row['m6_el9']=="3") echo "checked";?>/></td>

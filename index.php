@@ -536,25 +536,25 @@ require_once 'save_data.php'; //Save input to database
 						<td><label style="display: none" for="element_3_3">N/A</label><input id="element93" name="matrix_6[5]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
-			        	<td class="first_col">Agua limpiabrisas del. y tras</td>
+			        	<td class="first_col">Nivel agua de batería</td>
 			            <td><label style="display: none" for="element_3_1">B</label><input id="element94" name="matrix_6[6]" type="radio" value="1"  /></td>
 						<td><label style="display: none" for="element_3_2">M</label><input id="element95" name="matrix_6[6]" type="radio" value="2"  /></td>
 						<td><label style="display: none" for="element_3_3">N/A</label><input id="element96" name="matrix_6[6]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
-			        	<td class="first_col">Fijación y ajuste bornes batería</td>
+			        	<td class="first_col">Agua limpiabrisas del. y tras</td>
 			            <td><label style="display: none" for="element_3_1">B</label><input id="element97" name="matrix_6[7]" type="radio" value="1"  /></td>
 						<td><label style="display: none" for="element_3_2">M</label><input id="element98" name="matrix_6[7]" type="radio" value="2"  /></td>
 						<td><label style="display: none" for="element_3_3">N/A</label><input id="element99" name="matrix_6[7]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
-			        	<td class="first_col">Presencia de tapas, obturadores</td>
+			        	<td class="first_col">Fijación y ajuste bornes batería</td>
 			            <td><label style="display: none" for="element_3_1">B</label><input id="element100" name="matrix_6[8]" type="radio" value="1"  /></td>
 						<td><label style="display: none" for="element_3_2">M</label><input id="element101" name="matrix_6[8]" type="radio" value="2"  /></td>
 						<td><label style="display: none" for="element_3_3">N/A</label><input id="element102" name="matrix_6[8]" type="radio" value="3"  /></td>
 			        </tr>
 			        <tr class="alt" id="mr_3">
-			        	<td class="first_col">Presencia del protector motor</td>
+			        	<td class="first_col">Presencia de obturadores y protectores</td>
 			            <td><label style="display: none" for="element_3_1">B</label><input id="element103" name="matrix_6[9]" type="radio" value="1"  /></td>
 						<td><label style="display: none" for="element_3_2">M</label><input id="element104" name="matrix_6[9]" type="radio" value="2"  /></td>
 						<td><label style="display: none" for="element_3_3">N/A</label><input id="element105" name="matrix_6[9]" type="radio" value="3"  /></td>
